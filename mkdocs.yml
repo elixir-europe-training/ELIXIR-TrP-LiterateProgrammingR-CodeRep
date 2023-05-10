@@ -1,4 +1,4 @@
-site_name: ELIXIR Training Lesson
+site_name: Literate Programming in R
 nav:
     - About: index.md
     - Course Content:
@@ -20,8 +20,8 @@ theme:
     text: Lato
 
 # Repository
-repo_name: elixir-europe-training/ELIXIR-TrP-LessonTemplate-MkDocs
-repo_url: https://github.com/elixir-europe-training/ELIXIR-TrP-LessonTemplate-MkDocs
+repo_name: elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep
+repo_url: https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep
 edit_uri: edit/main/docs/
 
 plugins:
