@@ -1,4 +1,4 @@
-## 1.1 First subtopic
+## 1.1 Introduction to Markdown
 Here you can enter text and create inline citations[@Garcia2020] by using the bibtex plugin. Add your references in `references.bib`, and cite [@hoebelheinrich_nancy_j_2022_6769695] by adding the @refid inside brackets like this `[@10.1093/bioinformatics/btt113]`
 
 You can also embed videos from a local source (with a relative path) or from an url (like youtube). To use a youtube URL, 
