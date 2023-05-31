@@ -3,7 +3,7 @@ nav:
     - About: index.md
     - Course Content:
       - "1. title of first chapter": chapters/chapter_01.md
-      - "2. title of second chapter": chapters/chapter_02.md
+      - "2. An Introduction to Markdown": chapters/chapter_02.md
       - "References": chapters/references.md
     - "Follow up training": follow_up_training.md
 
