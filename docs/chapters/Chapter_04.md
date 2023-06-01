@@ -1,6 +1,7 @@
-## Title 
+## 1.1 Title 
 
 The pressure on scientific personnel to produce reports for public, governmental, and scientific audiences is rising. 
 This takes a long time because you'll need to use several different applications to write, analyze data, make tables and figures, and so on.
 Learning effective tools that integrate programming with report generation is crucial for streamlining this process. The markdown-based Quarto report framework, which is second-generation, provides an answer.
 The ability to run code for data formatting, analysis, and visualization makes it possible for researchers to produce reports with minimal effort, all while writing in the familiar markdown format.
+
