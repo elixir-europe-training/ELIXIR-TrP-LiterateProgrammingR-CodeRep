@@ -1,4 +1,4 @@
-## 2.1 An Introduction to Markdown
+## 2.1 What is Markdown?
 Here you can enter text and if you need to cite[@creative_commons_2022]
 
 !!! example "Challenge 1"
