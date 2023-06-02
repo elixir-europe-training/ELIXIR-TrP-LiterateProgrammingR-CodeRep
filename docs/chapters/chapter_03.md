@@ -13,7 +13,7 @@ Recall that for literate programming, the narrative, rather than code, is the ke
  
 ```html
 <figure>
-<img src="../../assets/images/LaTeXvsMd.png" width="600" alt="Image comparing LaTex vs. Markdown sytnax"/>
+<img src="../assets/images/LaTeXvsMd.png" width="600" alt="Image comparing LaTex vs. Markdown sytnax"/>
 <figcaption> Figure 3.1 Comparing markup syntax of Latex verus Markdown. Code for either markup language is highlighted in yellow. On rendering either document, the markedup text should display in bold, italics or both font. </figcaption>
 </figure>
 ```
