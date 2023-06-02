@@ -12,7 +12,7 @@ Recall that for literate programming, the narrative, rather than code, is the ke
 **Figure 3.1** displays a comparison of the code require to format plain text into bold, italic or both in LaTex _versus_ Markdown. From the code below it showed be obvious how the markdown syntax is much simpler than LaTeX (or indeed other markup languages). Additionally, withouth even rendering the markdown annotated text, it remains easily readable by humans. More complex formatting like generating tables, inserting images, requires even more complex code in markup languages like LaTex or HTML, but remains simple in Markdown as you will see in the next section. This simplicity of Markdown means there is little overhead in learning the document formatting language for literate programming, freeing your mind to focus on your content.
  
 <figure>
-<img src="../assets/images/LaTeXvsMd.png" width="100%"  alt="Image comparing LaTex vs. Markdown sytnax"/>
+<img src="../../assets/images/LaTeXvsMd.png" width="100%"  alt="Image comparing LaTex vs. Markdown sytnax"/>
 <figcaption> Figure 3.1 Comparing markup syntax of Latex verus Markdown. Code for either markup language is highlighted in yellow. On rendering either document, the markedup text should display in bold, italics or both font. </figcaption>
 </figure>
 
