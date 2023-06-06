@@ -35,7 +35,6 @@ It is common that the analysis changes direction as you go along, and/or that th
 If you feel dissatisfied with this workflow, you will benefit from this training programme. You will be able to adopt a more efficient workflow that not only generates a deliverable with reproducible results, but also keeps track of the versions of the files so there won't be anything like `presentation-final-final-02.pdf`.
 
 ## Literate Programming
-### Code + Prose
 Practically, literate programming (almost) means merging the .R/.py and .tex files in the old workflow. Let's start with a snippet of an R script:
 
 ```
@@ -45,7 +44,10 @@ dim(cancer_data) # the dimensions
 colnames(cancer_data) # column names
 ```
 
-It is an acceptable practice to comment the code so others, including your future self, will understand the analysis. However, the comments make the code more difficult to read as the analysis expands, and it is better to have the code and the text that explains the analysis (called the prose hereafter) in separate sections, but still in the same file. This *is* the essence of literate programming. Let's try to do this naively:
+It is an acceptable practice to comment the code so others, including your future self, will understand the analysis. However, the comments make the code more difficult to read as the analysis expands, and it is better to have the code and the text that explains the analysis (called the prose hereafter) in separate sections, but still in the same file. This *is* the essence of literate programming.
+
+### First pass
+Let's try to separate the code and prose in the same file in the most naive way:
 
 ```
 We first load the Wisconsin breast cancer data:
@@ -61,22 +63,59 @@ You will immediately come up with questions:
 1. How does someone else tell the code from the data?
 2. This piece of code cannot be run as running the prose will return errors. Then what good does it do to me?
 
+### Second pass
 It is the worst of both worlds if neither a human nor a machine can understand the lines. Fortunately, standards and syntaxes have been created to make literate programming possible. This is how such a script looks like:
 
-```
-We first load the Wisconsin breast cancer data:
-```` ``` ````\{r\}
+````
+We first load the Wisconsin breast cancer data: 
+
+```{r}
 cancer_data <- read.csv("breast-cancer-wisconsin/data.csv")
-```` ``` ````
+```
+
 Then we print the first few lines, the dimensions and the column names, using the following three commands respectively:
-```` ``` ````\{r\}
+
+```{r}
 head(cancer_data)
 dim(cancer_data)
 colnames(cancer_data)
-```` ``` ````
+```
+````
+
+We shall call any R code, together with the preceding line (triple backticks and `{r}`) and succeeding line (triple backticks) a *code chunk*. Code chunks will be an important concept throughout.
+
+### Self-contained file
+What you have seen above is just a snippet. A self-contained file will look like this:
+````
+---
+title: "Analysis of Wisconson Breast Cancer Data"
+date: "2023-06-06"
+author: "CodeRep Literate Programming Team"
+output: pdf_document
+---
+
+We first load the Wisconsin breast cancer data: 
+
+```{r}
+cancer_data <- read.csv("breast-cancer-wisconsin/data.csv")
 ```
 
-You can see any R code is preceded by a line with triple backticks and `\{r\}`, and followed by a line with only triple backticks. 
+Then we print the first few lines, the dimensions and the column names, using the following three commands respectively:
+
+```{r}
+head(cancer_data)
+dim(cancer_data)
+colnames(cancer_data)
+```
+````
+
+### The components
+This hybrid format starts to get confusing, as you may wonder what all those triple dashes, triple backticks, lines at the top etc. do. This is a good point to preview the next few chapters:
+
+1. The syntax of the file, barring the code chunks, is in Markdown, which will be introduced in [next chapter](../chapter_03). If you have used LaTeX to write documents, Markdown is a similar (yet simpler) typesetting system. As we will see, it has a gentler learning curve and more functionality to offer.
+2. The file format is called Quarto ([Chapter 4](../Chapter_04)), which facilitates the interweaving of code chunks and prose. When you save the file, the file extension is .qmd. 
+
+## Reproducibility, and more
 
 ## I'm confused with all these terms
 Don't worry, we've got you covered
