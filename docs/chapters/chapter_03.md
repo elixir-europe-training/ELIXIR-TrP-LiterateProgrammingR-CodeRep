@@ -13,12 +13,36 @@ Recall that for literate programming, the narrative, rather than code, is the ke
  
 <figure>
 <img src="../../assets/images/LaTeXvsMd.png" width="100%"  alt="Image comparing LaTex vs. Markdown sytnax"/>
-<figcaption> Figure 3.1 Comparing markup syntax of Latex verus Markdown. Code for either markup language is highlighted in yellow. On rendering either document, the markedup text should display in bold, italics or both font. </figcaption>
+<figcaption> Figure 3.1 Comparing markup syntax of Latex verus Markdown. Code for either markup language is highlighted in yellow. On rendering either document, the markedup text should display in bold, italics or both. </figcaption>
 </figure>
 
 Markdown's growing popularity as the document formatting language of choice in literate programming needs is reflected in the availability of markdown support (in many cases right out of the box without any additional installation!) for popular IDEs and notebook formats such as RStudio, VS Code, Jupyter Notebooks (NEEDS FACT CHECKED) and even GitHub (a code hosting platform for colloboration and version control - if you are unfamiliar with GitHub, don't worry, this will be covered in the next module). However, Markdown's simplicity comes at a cost: there are only a limited amount of formatting effects available to you.  If your needs ever grow, worry not, tools like [pandoc](LINK) allows you to mix more flexible formatting languages such as LaTeX and/or HTML with Markdown allowing you to format your text to your heart's desire. However, For most narratives , the formatting elements in Markdown will be sufficient and our focus in this lesson (and on remainder of this course) will be on learning Markdown syntax. In the following chapters you can implement in your Markdown skills for literate programming.
 
 ## 3.3 How to use Markdown
+
+It's time to get our hands dirty and start getting some practise in how to use Markdown to format our text. To be able to follow the lessons below, you are going to need a Markdown editor, where we can write the Markdown language in a document but then also render or preview the document so we can see if the desire formatting effect was achieved.
+
+:simple-rstudio:
+If **Rstudio** your go to tool, you can do this by:
+1. Go to the *File* menu, select *New file*, theb select *Quarto Document...*, alternatively you also use the **new file button** to do the same, and this is what is done in the video below. This will open up a *dialog* box with several options. Leave everything as default but **uncheck** the `use visual markdown editor` option. Feel free to add a **Title** and **Author** in the relevant fields, then hit the **create** button.
+2. This will open a new **Quarto Document** in RStudio's **source** editor (this where you normally write your R scripts). You can then add your text and markdown annotation in the **body** of the document. The **body** of the document referes to any space below the text between the `---` at the top. This latter section is called the YAML and controls how the document will look when rendered. You can just ignore the YAML for now, we'll talk more about this in the next lesson (LINK TO NEXT CHAPTER). Note that RStudio will automatically generate some standard text, code and markdown to give you flavour of this literate programming document works. *Optional:* delete everything in the body of the file making sure **not to delete** the YAML.
+3. After adding your text and markdown annotation to the document hit the `render` button to generate an HTML document (default). If you haven't yet saved your document, RStudio will ask you save the document before rendering. Once saved, RStudio will generate an HTML docuement that shows your text but formatted according to any markdown code. The next time you make a cahnge to your Quarto Document and hit **render**, RStudio will automatically save the changes to your Quarto document before rendering. Note: since 2021 RStudio now has also has a [**visual** markdown editor]([ ](https://posit.co/blog/exploring-rstudio-visual-markdown-editor/) that renders your markdown formatting live as you type it in the Quarto document, however, I wouldn't recommend this for the exercises below. 
+
+[![type:video](https://youtube.com/embed/oAX9DSPVxX0)
+
+:simple-jupyter:
+If you are using **JupyterNotebooks**, you can create markdown cells to write formatted text in markdown:
+1. In your JupyterNotebook, select **Markdown** from the drop-down menu on the centre middle of the screen.
+2. Write your text and add your markdown formatting as you please within this cell.
+3. In Jupyter Notebooks, you will immediately see the markdown annotation **and** the resulting formatting on the screen. To see the formatting only, hit the `Run` button
+
+[![type:video](https://youtube.com/embed/7IwWejXqKTQ)
+
+Finally, to learn markdown, we don't necessarily need RStudio or JupyterNotebooks, we can also use a standalone Markdown editor. [**Dillinger**](https://dillinger.io/) is a popular web-based Markdown editor and is sufficient to follow the rest of this lesson. If you want to use [Dillinger](https://dillinger.io/), just head on over to the link and see the video below on how to use this editor. It is extremely simple to use, write your text and markdown in the **editor window** to the left of your screen and you will immediately see the results in the **preview window** on the right.
+
+[![type:video](https://youtube.com/embed/V8TV-r-Lafo)
+
+You can use any of the 3 options from above to follow the markdown lessons below.
 
 ### 3.3.1 Formatting text
 
