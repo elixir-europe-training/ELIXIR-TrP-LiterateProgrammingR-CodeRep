@@ -155,11 +155,8 @@ The whole system of Quarto and Markdown allows us to generate deliverables in mu
 You may already notice the self-referentiality of these materials - yes, they have been written using the literate programming approach. And what is the syntax in which they are written? Markdown. And are they version controlled? Absolutely yes. Once you have understood enough, you can even look at the files for generating these materials. I hope that will convince you to start adopting these practices.
 
 ## Still confused?
-One major obstacle with learning literate programming (and the rest of this training programme) is that the sheer amount of technical terms and seeming jargons confuses a researcher who codes but is not primarily in the field of computing and statistics. Here is a glossary that contains the terms that you might have come across with. If this looks Greek to you, don't worry, you can refer to this list after you have covered the next two chapters.
+One major obstacle with learning literate programming, and the rest of this training programme is that the sheer amount of technical terms aka jargons confuses a researcher who codes but is not primarily in the field of computing and statistics. Here is a glossary that contains the terms that you might have come across with. If this looks Greek to you, don't worry, come back to this after you have covered the next two chapters. 
 
-- RStudio: primarily Integrated Development Environment (IDE) for R, but growing support for other languages (Julia, Python)
-- Markdown: as a testament, these materials are written in Markdown
-- Rmarkdown: essentially R + Markdown, generating results dynamically, thus guaranteeing reproducibility
-- YAML: the definition is not very useful; essentially a preamble; similar to lines before `\begin{document}` in a .tex file
-- Quarto: the next version of Rmarkdown i.e. R/Python/Julia etc. + Markdown
-- pandoc
+- RStudio: Some poeple equate RStudio (the IDE) with R (the programming language), because they have been using RStudio the whole time to code in R, even though such equivalence is technically inaccurate. They cannot be blamed, however, because RStudio is arguably the best IDE for R, and there is growing support for other languages such as Julia, Python, C++, etc. And yes, you can write Quarto and Markdown documents in RStudio. The company that created RStudio has recently been renamed Posit, as the IDE becomes more agnostic on the programming language.
+- Rmarkdown: The predecessor of Quarto, and essentially R + Markdown. There is another slightly inaccurate equivalence between Markdown and Rmarkdown. In short, an Markdown document is also an Rmarkdown document, but the converse is not true.
+- pandoc: Its official description cannot be more precise: it is a universal document converter. This is the magic that creates the deliverable in multiple formats. You do not need to know how to work with pandoc directly, because RStudio takes care of it in the background.
