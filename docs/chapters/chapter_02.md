@@ -62,7 +62,7 @@ colnames(cancer_data) # column names
 It is an acceptable practice to comment the code so others, including your future self, will understand the analysis. However, the comments make the code more difficult to read as the analysis expands, and it is better to have the code and the text that explains the analysis (called the prose hereafter) in separate sections, but still in the same file. This *is* the essence of literate programming.
 
 ### First pass
-Let's try to separate the code and prose in the same file in the most naive way:
+Let's try to separate the code and prose in the same file in the most naive way, without thinking about what format it is yet:
 
 ```
 We first load the Wisconsin breast cancer data:
@@ -97,7 +97,7 @@ colnames(cancer_data)
 ```
 ````
 
-We shall call any R code, together with the preceding line (triple backticks and `{r}`) and succeeding line (triple backticks) a *code chunk*. Code chunks will be an important concept throughout.
+Notice the extra lines that begin with triple backticks, which separate the prose from the code. We shall call any R code, together with the preceding line (triple backticks and `{r}`) and succeeding line (triple backticks) a *code chunk*. Code chunks will be an important concept throughout.
 
 ### Self-contained file
 What you have seen above is just a snippet. A self-contained file will look like this:
@@ -146,16 +146,20 @@ This is what reproducibility is about.
 ### Version control, and more
 Reproducibility is greatly enhanced if you combine literate programming with version control. Essentially, you track the changes made to `wisconsin.qmd` and all the other files (but pherhaps not in the same way word processing systems track changes in word documents), so the safety net of previous versions is always there for you to fall back in case mistakes are made in your analysis. Practically and more importantly, you will not need to duplicate files and name them `wisconsin-draft.qmd`, `wisconsin-draft-02.qmd`, `wisconsin-final.qmd`, `wisconsin-final-final.qmd`. You will learn more in the module on [version control](../../../ELIXIR-TrP-VersionControlR-CodeRep/).
 
-There is more that needs to be done to complete reproducibility i.e. your analysis can be full reproduced on someone else's computer, without the need of ever say "but it worked on my computer yesterday". This is where documentation, software testing, CI/CD, and containers come in.
+There is more that needs to be done to complete reproducibility i.e. your analysis can be full reproduced on someone else's computer, without the need of ever say "but it worked on my computer yesterday". This is where [documentation](../../../ELIXIR-TrP-DocumentationR-CodeRep/), [software testing](../../../ELIXIR-TrP-TestingR-CodeRep/), [CI/CD](../../../ELIXIR-TrP-CICD-R-CodeRep/), and [containers](../../../ELIXIR-TrP-ContainersR-CodeRep/) come in.
+
+### Same script, multiple formats 
+The whole system of Quarto and Markdown allows us to generate deliverables in multiple formats. Usually it involves (almost) changing nothing in the .qmd file. You have created some slides in pdf and want to convert them to html so that you can host them on your website? There's no need for conversion, you can generate the html slides directly. You have written a pdf document and need to change it to word document (e.g. for some collaborators who work with word documents exclusively) and html page (e.g. for accessibility reasons)? No problem, just focus on writing the content, Quarto and Markdown will take care of the formats for you, once you specify what you want (this is, as you will learn, where YAML comes in).
 
 ### Testament
 You may already notice the self-referentiality of these materials - yes, they have been written using the literate programming approach. And what is the syntax in which they are written? Markdown. And are they version controlled? Absolutely yes. Once you have understood enough, you can even look at the files for generating these materials. I hope that will convince you to start adopting these practices.
 
-## I'm confused with all these terms
-Don't worry, we've got you covered
+## Still confused?
+One major obstacle with learning literate programming (and the rest of this training programme) is that the sheer amount of technical terms and seeming jargons confuses a researcher who codes but is not primarily in the field of computing and statistics. Here is a glossary that contains the terms that you might have come across with. If this looks Greek to you, don't worry, you can refer to this list after you have covered the next two chapters.
 
 - RStudio: primarily Integrated Development Environment (IDE) for R, but growing support for other languages (Julia, Python)
 - Markdown: as a testament, these materials are written in Markdown
 - Rmarkdown: essentially R + Markdown, generating results dynamically, thus guaranteeing reproducibility
 - YAML: the definition is not very useful; essentially a preamble; similar to lines before `\begin{document}` in a .tex file
 - Quarto: the next version of Rmarkdown i.e. R/Python/Julia etc. + Markdown
+- pandoc
