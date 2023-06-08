@@ -1,13 +1,14 @@
 - title: Zeus
   content: |
     [:custom-orcid:](https://orcid.org/) [:simple-github:](https://github.com/) [:simple-linkedin:](https://linkedin.com/)<br>
-    Lorem ipsum dolor sit amet.
+    Lorem ipsum dolor sit amet
+    
   image: ./assets/images/cards/001-zeus.png
-
-- title: Athena
+  
+- title: Elisa Pierfederici
   content: |
-    [:custom-orcid:](https://orcid.org/) [:simple-github:](https://github.com/) [:simple-linkedin:](https://linkedin.com/)<br>
-    Lorem ipsum dolor sit amet.
+    [:custom-orcid:](https://orcid.org/) [:simple-github:](https://github.com/mariapie) [:simple-linkedin:](https://www.linkedin.com/in/maria-elisa-pierfederici-5392aa182/)<br>
+    PhD Candidate - Research consultant, University of Oslo (UiO), Norway 
   image: ./assets/images/cards/003-athena.png
 
 - title: Poseidon
