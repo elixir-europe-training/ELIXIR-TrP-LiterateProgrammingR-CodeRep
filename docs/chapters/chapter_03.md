@@ -22,13 +22,15 @@ Markdown's growing popularity as the document formatting language of choice in l
 
 It's time to get our hands dirty and start getting some practise in how to use Markdown to format our text. To be able to follow the lessons below, you are going to need a Markdown editor, where we can write the Markdown language in a document but then also render or preview the document so we can see if the desire formatting effect was achieved.
 
-If **Rstudio** is your go to tool, you can do this by:
+:simple-rstudio:
+If **Rstudio** your go to tool, you can do this by:
 1. Go to the *File* menu, select *New file*, theb select *Quarto Document...*, alternatively you also use the **new file button** to do the same, and this is what is done in the video below. This will open up a *dialog* box with several options. Leave everything as default but **uncheck** the `use visual markdown editor` option. Feel free to add a **Title** and **Author** in the relevant fields, then hit the **create** button.
 2. This will open a new **Quarto Document** in RStudio's **source** editor (this where you normally write your R scripts). You can then add your text and markdown annotation in the **body** of the document. The **body** of the document referes to any space below the text between the `---` at the top. This latter section is called the YAML and controls how the document will look when rendered. You can just ignore the YAML for now, we'll talk more about this in the next lesson (LINK TO NEXT CHAPTER). Note that RStudio will automatically generate some standard text, code and markdown to give you flavour of this literate programming document works. *Optional:* delete everything in the body of the file making sure **not to delete** the YAML.
 3. After adding your text and markdown annotation to the document hit the `render` button to generate an HTML document (default). If you haven't yet saved your document, RStudio will ask you save the document before rendering. Once saved, RStudio will generate an HTML docuement that shows your text but formatted according to any markdown code. The next time you make a cahnge to your Quarto Document and hit **render**, RStudio will automatically save the changes to your Quarto document before rendering. Note: since 2021 RStudio now has also has a [**visual** markdown editor]([ ](https://posit.co/blog/exploring-rstudio-visual-markdown-editor/) that renders your markdown formatting live as you type it in the Quarto document, however, I wouldn't recommend this for the exercises below. 
 
 [![type:video](https://youtube.com/embed/oAX9DSPVxX0)
 
+:simple-jupyter:
 If you are using **JupyterNotebooks**, you can create markdown cells to write formatted text in markdown:
 1. In your JupyterNotebook, select **Markdown** from the drop-down menu on the centre middle of the screen.
 2. Write your text and add your markdown formatting as you please within this cell.
