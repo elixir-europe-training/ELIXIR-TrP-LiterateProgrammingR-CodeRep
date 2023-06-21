@@ -1,5 +1,5 @@
 ## 1.1 What is Literate programming?
-The expression "Literate programming" was coined in 1984 by the Mathematician and Computer Scientist [Donald Knoth](https://en.wikipedia.org/wiki/Donald_Knuth). It involves an explanation of how a program works in a natural language as opposed to the syntax of a formal programming language (Like R & Python).   
+The expression "Literate programming" was coined in 1984 by the Mathematician and Computer Scientist [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth). It involves an explanation of how a program works in a natural language as opposed to the syntax of a formal programming language (Like R & Python).   
 
 ## 1.2 Why do we need Literate programming?
 Have you ever considered how a computer "reads' its instructions? At the silicon level ([Machine code](https://en.wikipedia.org/wiki/Machine_code)) the language is purely binary numbers i.e. 1s and 0s and comprise of extremely mechanistic operations e.g. roll bits to left. This is not very intuitive to humans so when we write computer programs we tend to write them in high-level languages like R & Python which are a very structured, very natural form of English.    
