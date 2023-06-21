@@ -13,7 +13,9 @@ We could choose to annotate our code in many ways. Programming languages both fe
 
 So what would help us is a language that can have the code and its outputs embedded in our exposition of the analysis. This should be written in a form aimed at humans not computers and spporting rich formatting similar to a word-processed document.   
 
-* In this course, one of the key deliverables is for you to gain familiarity with a language called Markdown. This is a very simple language that enables you to code formatted text using a simple [ASCII](https://en.wikipedia.org/wiki/ASCII) text editor and in appropriate Integrated Design Environments (IDEs) like PyCharm, Quarto,Jupyter Notebooks and Rstudio allow you to intersperse foramtted text blocks with computer code chunks and practically implement the concept of literate programming.    
-* Another deliverable of this course will be to also provide an introduction to at least one of these IDEs and how they support you in carrying out literate programming.   
-* There will be a practical implementation of literate programming where we will transform a plain script into an annotated, rich markdown implementation that retains the functionality of the computational workflow but additionally narrates the concepts of said workflow.   
+In this course, one of the key deliverables is for you to gain familiarity with a language called Markdown. This is a very simple language that enables you to code formatted text using a simple [ASCII](https://en.wikipedia.org/wiki/ASCII) text editor and in appropriate Integrated Design Environments (IDEs) like PyCharm, Quarto,Jupyter Notebooks and Rstudio allow you to intersperse foramtted text blocks with computer code chunks and practically implement the concept of literate programming.   
+
+Another deliverable of this course will be to also provide an introduction to at least one of these IDEs and how they support you in carrying out literate programming.   
+
+There will be a practical implementation of literate programming where we will transform a plain script into an annotated, rich markdown implementation that retains the functionality of the computational workflow but additionally narrates the concepts of said workflow.   
 
