@@ -1,4 +1,4 @@
-# ELIXIR Lesson Title 
+# Literate Programming (in R)
 
 ## Authors
 
@@ -10,21 +10,21 @@ Greek Mythology icons made by [max.icons](https://www.flaticon.com/authors/maxic
 
 !!! overview ""
     :fontawesome-regular-bookmark: **Description**  
-    Add a short description of the training materail should be inserted here. 
-    
+   A course to introduce the theory, advantages and implementation of Literate Programming practices to enhance the students abilities to produce reproducible code.    
+   
     </br>
     
     :fontawesome-solid-arrow-left: **Prerequisites**  
     To be able to follow this course, learners should have knowledge in:  
-    &emsp;1. First requirement  
-    &emsp;2. Second requirement  
+    &emsp;1. Basic programming skills in R    
+    &emsp;2. A familiarity in using the RStudio Integrated Development Environment    
     
     </br>
     
     :fontawesome-solid-arrow-right: **Learning Outcomes:**  
     By the end of the course, learners will be able to:  
-    &emsp;1. First item  
-    &emsp;2. Second item  
+    &emsp;1. Have an understanding of the principles and goals of Literate programming   
+    &emsp;2. Practically implement LP in their R programs using Markdown in Quarto/Rstudio      
     
     </br>
     
@@ -62,9 +62,11 @@ Please cite as:
 ## Setup
 
 ### Data setup
-To run this lesson you need to install data from …
+To run this lesson you need to install data from the [Elixir CodeRep R script repository](https://github.com/elixir-europe-training/ELIXIR-TrP-CodeRep-Example-Python) NB This currently points to the __Python___ example script - need Alexia to create one for R and then use link to that here....   
 
 ### Software setup
-To run this course you need to install… continue with software installation instructions
+To run this course you need to install the following:
+* R and Rstudio - pleadse follow the instructions [here](https://posit.co/download/rstudio-desktop/) for your machine.   
+* Quarto - please follow the instructions [here](https://quarto.org/docs/get-started/) for your machine.    
 
 
