@@ -12,7 +12,7 @@ Recall that for literate programming, the narrative, rather than code, is the ke
 **Figure 3.1** displays a comparison of the code require to format plain text into bold, italic or both in LaTex _versus_ Markdown. From the code below it showed be obvious how the markdown syntax is much simpler than LaTeX (or indeed other markup languages). Additionally, withouth even rendering the markdown annotated text, it remains easily readable by humans. More complex formatting like generating tables, inserting images, requires even more complex code in markup languages like LaTex or HTML, but remains simple in Markdown as you will see in the next section. This simplicity of Markdown means there is little overhead in learning the document formatting language for literate programming, freeing your mind to focus on your content.
  
 <figure>
-<img src="../../assets/images/LaTeXvsMd.png" width="600"  alt="Image comparing LaTex vs. Markdown sytnax"/>
+<img src="../../assets/images/LaTeXvsMd.png" width="700"  alt="Image comparing LaTex vs. Markdown sytnax"/>
 <figcaption> Figure 3.1 Comparing markup syntax of Latex verus Markdown. Code for either markup language is highlighted in yellow. On rendering either document, the markedup text should display in bold, italics or both. </figcaption>
 </figure>
 
@@ -22,9 +22,8 @@ Markdown's growing popularity as the document formatting language of choice in l
 
 It's time to get our hands dirty and start getting some practise in how to use Markdown to format our text. To be able to follow the lessons below, you are going to need a Markdown editor, where we can write the Markdown language in a document but then also render or preview the document so we can see if the desire formatting effect was achieved.
 
-:simple-rstudio:
 
-If **Rstudio** your go to tool, you can do this by:
+If **Rstudio** :simple-rstudio: your go to tool, you can do this by:
 
 1. Go to the *File* menu, select *New file*, theb select *Quarto Document...*, alternatively you also use the **new file button** to do the same, and this is what is done in the video below. This will open up a *dialog* box with several options. Leave everything as default but **uncheck** the `use visual markdown editor` option. Feel free to add a **Title** and **Author** in the relevant fields, then hit the **create** button.
 2. This will open a new **Quarto Document** in RStudio's **source** editor (this where you normally write your R scripts). You can then add your text and markdown annotation in the **body** of the document. The **body** of the document referes to any space below the text between the `---` at the top. This latter section is called the YAML and controls how the document will look when rendered. You can just ignore the YAML for now, we'll talk more about this in the next lesson (LINK TO NEXT CHAPTER). Note that RStudio will automatically generate some standard text, code and markdown to give you flavour of this literate programming document works. *Optional:* delete everything in the body of the file making sure **not to delete** the YAML.
@@ -32,9 +31,8 @@ If **Rstudio** your go to tool, you can do this by:
 
 ![type:video](https://youtube.com/embed/oAX9DSPVxX0)
 
-:simple-jupyter:
 
-If you are using **JupyterNotebooks**, you can create markdown cells to write formatted text in markdown:
+If you are using **JupyterNotebooks** :simple-jupyter: , you can create markdown cells to write formatted text in markdown:
 
 1. In your JupyterNotebook, select **Markdown** from the drop-down menu on the centre middle of the screen.
 2. Write your text and add your markdown formatting as you please within this cell.
@@ -46,13 +44,13 @@ Finally, to learn markdown, we don't necessarily need RStudio or JupyterNotebook
 
 ![type:video](https://youtube.com/embed/V8TV-r-Lafo)
 
-You can use any of the 3 options from above to follow the markdown lessons below.
+You can use any of the 3 options from above to attempt the **Exercises** and **Challenges** below.
 
 ### 3.3.1 Formatting text
 
 You should have already seen examples of how to _italicise_ or **embolden** you text (and both simulatenously) with markdown. There is other useful markdown sytnax for example for starting a new paragraph, use a blank like to seperate your paragraphs or if you want a [monospaced font](https://en.wikipedia.org/wiki/Monospaced_font) to represent `code` in your text, enclose the relevant code in single backticks:\`\<YOURCODEHERE>\`.
 
-!!! example "Try It Yourself"
+!!! example "Exercise"
 
     Below is some text produced using markdown formatting. Use your preferred markdown editor, to write markdown annotated text, to achieve the following result:   
     
@@ -96,5 +94,5 @@ The above should give you enough Markdown to get started and follow any later le
 * Want to practise some more markdown? Try this excellent, standalone [Markdown tutorial](https://www.markdowntutorial.com/).
 * Several application for e.g. R and Github use their own extensions of Markdown. These means you not only get the basic Markdown syntax but also some simpler extensions for more complex formatting (HTML and LaTeX can wait). Some of this extended syntax is is documented [here](https://www.markdownguide.org/extended-syntax/).
 * A nifty [cheatsheet](https://www.markdownguide.org/cheat-sheet/) for **basic** markdown can be handy.
-* :simple-jupyter: A [cheatsheet for extended Markdown in Jupyter Notebooks](https://www.ibm.com/docs/en/watson-studio-local/1.2.3?topic=notebooks-markdown-jupyter-cheatsheet)going beyond  basic Markdown.
-* :simple-rstudio: R users fret not, there is also a reference [cheatsheet for extended Markdown syntax in R](https://shiny.posit.co/r/articles/build/rm-cheatsheet/) (or Rmarkdown)
+* :simple-jupyter: A [cheatsheet for extended Markdown in Jupyter Notebooks](https://www.ibm.com/docs/en/watson-studio-local/1.2.3?topic=notebooks-markdown-jupyter-cheatsheet) going beyond basic Markdown.
+* :simple-rstudio: R users fret not, there is also a reference [cheatsheet for extended Markdown syntax in R](https://shiny.posit.co/r/articles/build/rm-cheatsheet/) (or Rmarkdown).
