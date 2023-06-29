@@ -12,7 +12,7 @@ Recall that for literate programming, the narrative, rather than code, is the ke
 **Figure 3.1** displays a comparison of the code require to format plain text into bold, italic or both in LaTex _versus_ Markdown. From the code below it showed be obvious how the markdown syntax is much simpler than LaTeX (or indeed other markup languages). Additionally, withouth even rendering the markdown annotated text, it remains easily readable by humans. More complex formatting like generating tables, inserting images, requires even more complex code in markup languages like LaTex or HTML, but remains simple in Markdown as you will see in the next section. This simplicity of Markdown means there is little overhead in learning the document formatting language for literate programming, freeing your mind to focus on your content.
  
 <figure>
-<img src="../../assets/images/LaTeXvsMd.png" width="100%"  alt="Image comparing LaTex vs. Markdown sytnax"/>
+<img src="../../assets/images/LaTeXvsMd.png" width="600"  alt="Image comparing LaTex vs. Markdown sytnax"/>
 <figcaption> Figure 3.1 Comparing markup syntax of Latex verus Markdown. Code for either markup language is highlighted in yellow. On rendering either document, the markedup text should display in bold, italics or both. </figcaption>
 </figure>
 
@@ -64,7 +64,7 @@ You should have already seen examples of how to _italicise_ or **embolden** you 
     
         The \`mean()\` function on \`line 13\` calcualtes the \*\*average\*\* of the vector.
 
-As mentioned in Section 3.2, Markdown's simplicity comes at a cost. Not all formatting elements are natively represented in markdown. In many cases HTML can help you acheive the desired result. This does not mean you need to know HTML but you may have to rely on your googling or [prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering#:~:text=Prompt%20engineering%20is%20a%20concept,of%20it%20being%20explicitly%20given.) skills.
+As mentioned in Section 3.2, Markdown's simplicity comes at a cost. Not all formatting elements are natively represented in markdown. Depending on your application an **extended syntax** for Markdown may exist (e.g. [Rmarkdown](https://rmarkdown.rstudio.com/), which may offer a solution. In many cases HTML can help you acheive the desired result. Most applications rendering Markdown also support HTML. This does not mean you need to know HTML but you may have to rely on your googling or [prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering#:~:text=Prompt%20engineering%20is%20a%20concept,of%20it%20being%20explicitly%20given.) skills.
 
 !!! example "Challenge"
 
@@ -78,9 +78,9 @@ As mentioned in Section 3.2, Markdown's simplicity comes at a cost. Not all form
 
         An example of a subscript is C0`<sub>`2`</sub>`. An example of a superscript is 3`<sup>`3`</sup>`=27.
 
-        `<sub></sub>` and `<sup></sup>` are the HTML thags for subscripts and superscripts respectively. 
+        `<sub></sub>` and `<sup></sup>` are the HTML tags for subscripts and superscripts respectively. Some Makrdown editos also support encapsulating text in \^ or \~ for formattting superscript and subscript. respetively.
 
-### 3.3.2 Adding Headers/Section Titles
+### 3.3.2 Adding Headers
 
 ### 3.3.3 Making Lists
 
@@ -89,3 +89,12 @@ As mentioned in Section 3.2, Markdown's simplicity comes at a cost. Not all form
 ### 3.3.5 Making Tables
 
 ## 3.4 Further Learning and Resources for Markdown
+
+The above should give you enough Markdown to get started and follow any later lessons. If you want more, here is a very short selection of some resources that might be helpful:
+
+* [Markdown Guide](https://www.markdownguide.org/basic-syntax/) offers a short and handy reference to the basic syntax or grammar of markdown.
+* Want to practise some more markdown? Try this excellent, standalone [Markdown tutorial](https://www.markdowntutorial.com/).
+* Several application for e.g. R and Github use their own extensions of Markdown. These means you not only get the basic Markdown syntax but also some simpler extensions for more complex formatting (HTML and LaTeX can wait). Some of this extended syntax is is documented [here](https://www.markdownguide.org/extended-syntax/).
+* A nifty [cheatsheet](https://www.markdownguide.org/cheat-sheet/) for **basic** markdown can be handy.
+* :simple-jupyter: A [cheatsheet for extended Markdown in Jupyter Notebooks](https://www.ibm.com/docs/en/watson-studio-local/1.2.3?topic=notebooks-markdown-jupyter-cheatsheet)going beyond  basic Markdown.
+* :simple-rstudio: R users fret not, there is also a reference [cheatsheet for extended Markdown syntax in R](https://shiny.posit.co/r/articles/build/rm-cheatsheet/) (or Rmarkdown)
