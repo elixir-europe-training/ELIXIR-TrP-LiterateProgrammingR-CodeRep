@@ -54,11 +54,11 @@ You should have already seen examples of how to _italicise_ or **embolden** you 
 
 !!! example "Try It Yourself"
 
-   Below is some text produced using markdown formatting. Use your preferred markdown editor, to write markdown annotated, to achieve the following result:   
-   The `mean()` function on `line 13` calcualtes the **average** of the vector.
+    Below is some text produced using markdown formatting. Use your preferred markdown editor, to write markdown annotated, to achieve the following result:   
+    The `mean()` function on `line 13` calcualtes the **average** of the vector.
 
-   ??? success "Solution"
-
+    ??? success "Solution"
+    
         The `mean()` function on `line 13` calcualtes the **average** of the vector.
 
 ### 3.3.2 Adding Headers/Section Titles
