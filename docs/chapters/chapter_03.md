@@ -54,12 +54,25 @@ You should have already seen examples of how to _italicise_ or **embolden** you 
 
 !!! example "Try It Yourself"
 
-    Below is some text produced using markdown formatting. Use your preferred markdown editor, to write markdown annotated, to achieve the following result:   
+    Below is some text produced using markdown formatting. Use your preferred markdown editor, to write markdown annotated text, to achieve the following result:   
     The `mean()` function on `line 13` calcualtes the **average** of the vector.
 
     ??? success "Solution"
     
-        The `mean()` function on `line 13` calcualtes the **average** of the vector.
+        The \`mean()\` function on \`line 13\` calcualtes the \**average\** of the vector.
+
+As mentioned in Section 3.2, Markdown's simplicity comes at a cost. Not all formatting elements are natively represented in markdown. In many cases HTML can help you acheive the desired result. This does not mean you need to know HTML but you may have to rely on your googling or [prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering#:~:text=Prompt%20engineering%20is%20a%20concept,of%20it%20being%20explicitly%20given.) skills.
+
+!!! example "Challenge"
+
+    There is no native support for sub- or superscripts in markdown, however HTML tags can do the trick. Use your technical sophistication (googling or otherwise) to write markdown (and HTML) annotated text to achive the following result.
+    An example of a subscript is C0<sub>2</sub>. An example of a superscript is 3<sup>3</sup>=27.
+
+    Make sure to rener your markdown text to make sure it works like you think it should.
+
+    ??? success "Solution"
+
+        An example of a subscript is C0\<sub>2\</sub>. An example of a superscript is 3\<sup>3\</sup>=27.
 
 ### 3.3.2 Adding Headers/Section Titles
 
