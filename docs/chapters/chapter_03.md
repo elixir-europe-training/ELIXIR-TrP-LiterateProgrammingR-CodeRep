@@ -18,9 +18,8 @@ Recall that for literate programming, the narrative, rather than code, is the ke
 
 Markdown's growing popularity as the document formatting language of choice in literate programming needs is reflected in the availability of markdown support (in many cases right out of the box without any additional installation!) for popular IDEs and notebook formats such as RStudio, VS Code, Jupyter Notebooks (NEEDS FACT CHECKED) and even GitHub (a code hosting platform for colloboration and version control - if you are unfamiliar with GitHub, don't worry, this will be covered in the next module). 
 
-!!! warning "Extending Markdown"
 
-    Markdown's simplicity comes at a cost: there are only a limited amount of formatting effects available to you in basic Markdown. However, many applications supporting Markdown e.g. Jupyter Notebooks, R/RStudio, GitHub etc. provide thier own [extensions of Markdown syntax](https://www.markdownguide.org/extended-syntax/) which let you do more complex formatting with the simplicity of Markdown-like syntax. Additionally,
+Markdown's simplicity comes at a cost: there are only a limited amount of formatting effects available to you in basic Markdown. However, many applications supporting Markdown e.g. Jupyter Notebooks, R/RStudio, GitHub etc. provide thier own [extensions of Markdown syntax](https://www.markdownguide.org/extended-syntax/) which let you do more complex formatting with the simplicity of Markdown-like syntax. Additionally,
 if your needs ever grow, worry not, tools like [pandoc]([LINK](https://pandoc.org/)) allow you to mix more flexible formatting languages such as LaTeX and/or HTML with Markdown allowing you to format your text to your heart's desire.
 
 ## 3.3 How to use Markdown
@@ -87,12 +86,18 @@ As mentioned in Section 3.2, Markdown's simplicity comes at a cost. Not all form
 
 Your literate programming document needs to be divided into sections. Perhaps you sub-sections or sub-sub-sections? Markdown provides simple syntax for **header** formatting that provides **6 levels** of headings to fullfill your sub-sectioning needs. To render headers using markdown all you need to do is start a line with a `#`, followed by a space and then your title, like so:
 
-\# My Biggest Title Yet
+!!! example
 
-Which when rendered using yoru favorite markdown editor , should result in:
+    === "A header in Markdown:"
 
-# My Biggest Title Yet
+        ```# My Biggest Title Yet```
+        
 
+    === "Rendered output:"
+
+        # My Biggest Title Yet
+
+        
 The number of `#` controls the size or level of the headers - more means smaller headers.
 
 !!! example "Exercise"
@@ -105,9 +110,9 @@ The number of `#` controls the size or level of the headers - more means smaller
 
     ??? success "Solution"
 
-        \#\#\# My smaller section title
+        ```### My smaller section title```
 
-        \#\#\#\#\# You can add \_other\_ formatting elements in headers
+        ```##### You can add _other_ formatting elements in headers```
 
 ### 3.3.3 Making Lists
 
@@ -117,7 +122,7 @@ You can make ordered ordered lists by adding line items with numbers followed by
 
 !!! example
 
-    === "Ordered list in Markdown"
+    === "Ordered list in Markdown:"
 
         ```
         1. first item
@@ -125,7 +130,7 @@ You can make ordered ordered lists by adding line items with numbers followed by
         3. third item
         ```
 
-    === "Rendered output"
+    === "Rendered output:"
 
         1. first item
         2. second tiem
@@ -135,7 +140,7 @@ You can generate an unordered list, add dashes (-), asterisks (*), or plus signs
     
 !!! example
 
-    === "Unordered list in Markdown"
+    === "Unordered list in Markdown:"
 
         ```
         * first item
@@ -143,7 +148,7 @@ You can generate an unordered list, add dashes (-), asterisks (*), or plus signs
         * third item
         ```
 
-    === "Rendered output"
+    === "Rendered output:"
 
         * first item
         * second tiem
@@ -156,8 +161,8 @@ You can generate an unordered list, add dashes (-), asterisks (*), or plus signs
     1. First item
     2. Second item
     3. Third item
-       - Indented item A
-       - Indented item B
+         - Indented item A
+         - Indented item B
     4. Fourth item
 
     !!! success "Solution"
@@ -166,8 +171,8 @@ You can generate an unordered list, add dashes (-), asterisks (*), or plus signs
         1. First item
         2. Second item
         3. Third item
-           - Indented item A
-           - Indented item B
+             - Indented item A
+             - Indented item B
         4. Fourth item
         ```
 
