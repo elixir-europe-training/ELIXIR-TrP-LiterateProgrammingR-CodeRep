@@ -12,7 +12,7 @@ Recall that for literate programming, the narrative, rather than code, is the ke
 **Figure 3.1** displays a comparison of the code require to format plain text into bold, italic or both in LaTex _versus_ Markdown. From the code below it showed be obvious how the markdown syntax is much simpler than LaTeX (or indeed other markup languages). Additionally, withouth even rendering the markdown annotated text, it remains easily readable by humans. More complex formatting like generating tables, inserting images, requires even more complex code in markup languages like LaTex or HTML, but remains simple in Markdown as you will see in the next section. This simplicity of Markdown means there is little overhead in learning the document formatting language for literate programming, freeing your mind to focus on your content.
  
 <figure>
-<img src="../../assets/images/LaTeXvsMd.png" width="700"  alt="Image comparing LaTex vs. Markdown sytnax"/>
+<img src="../../assets/images/LaTeXvsMd.png" width="800"  alt="Image comparing LaTex vs. Markdown sytnax"/>
 <figcaption> Figure 3.1 Comparing markup syntax of Latex verus Markdown. Code for either markup language is highlighted in yellow. On rendering either document, the markedup text should display in bold, italics or both. </figcaption>
 </figure>
 
@@ -51,7 +51,7 @@ Finally, to learn markdown, we don't necessarily need RStudio or JupyterNotebook
 
 ![type:video](https://youtube.com/embed/V8TV-r-Lafo)
 
-You can use any of the 3 options from above to attempt the **Exercises** and **Challenges** below.
+You can use any of the 3 options from above to attempt the **Exercises** below. Boxes starting with :octicons/beaker-16: demonstrate examples in Markdown use, whereas boxes starting with :octicons/question-16: are small coe exercises for you to attempt.
 
 ### 3.3.1 Formatting text
 
@@ -71,7 +71,7 @@ You should have already seen examples of how to _italicise_ or **embolden** you 
 
 As mentioned in Section 3.2, Markdown's simplicity comes at a cost. Not all formatting elements are natively represented in markdown. Depending on your application an **extended syntax** for Markdown may exist (e.g. [Rmarkdown](https://rmarkdown.rstudio.com/), which may offer a solution. In many cases HTML can help you acheive the desired result. Most applications rendering Markdown also support HTML. This does not mean you need to know HTML but you may have to rely on your googling or [prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering#:~:text=Prompt%20engineering%20is%20a%20concept,of%20it%20being%20explicitly%20given.) skills.
 
-!!! question "Challenge"
+!!! question "Exercise"
 
     There is no native support for sub- or superscripts in markdown, however HTML tags can do the trick. Use your technical sophistication (googling or otherwise) to write Markdown- (and HTML) formatted text text to achive the following result:  
     
@@ -209,7 +209,7 @@ To make a table, use three or more hyphens (---) to create each column’s heade
         | blah        | blah        |
         | blah        | blah        |
 
-??? question "Challenge"
+!!! question "Exercise"
 
     Can you write the Markdown-formatted text to generate the exact following table (hint: don't forget the cell alginment)?
 
@@ -219,7 +219,7 @@ To make a table, use three or more hyphens (---) to create each column’s heade
     | Gene B      | 0.005|
     | Gene C      | 0.01 |
 
-    !!! success "Solution"
+    ??? success "Solution"
 
         ```
         | Gene        | _p-value_ |
