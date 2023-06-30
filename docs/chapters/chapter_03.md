@@ -16,7 +16,12 @@ Recall that for literate programming, the narrative, rather than code, is the ke
 <figcaption> Figure 3.1 Comparing markup syntax of Latex verus Markdown. Code for either markup language is highlighted in yellow. On rendering either document, the markedup text should display in bold, italics or both. </figcaption>
 </figure>
 
-Markdown's growing popularity as the document formatting language of choice in literate programming needs is reflected in the availability of markdown support (in many cases right out of the box without any additional installation!) for popular IDEs and notebook formats such as RStudio, VS Code, Jupyter Notebooks (NEEDS FACT CHECKED) and even GitHub (a code hosting platform for colloboration and version control - if you are unfamiliar with GitHub, don't worry, this will be covered in the next module). However, Markdown's simplicity comes at a cost: there are only a limited amount of formatting effects available to you.  If your needs ever grow, worry not, tools like [pandoc](LINK) allows you to mix more flexible formatting languages such as LaTeX and/or HTML with Markdown allowing you to format your text to your heart's desire. However, For most narratives , the formatting elements in Markdown will be sufficient and our focus in this lesson (and on remainder of this course) will be on learning Markdown syntax. In the following chapters you can implement in your Markdown skills for literate programming.
+Markdown's growing popularity as the document formatting language of choice in literate programming needs is reflected in the availability of markdown support (in many cases right out of the box without any additional installation!) for popular IDEs and notebook formats such as RStudio, VS Code, Jupyter Notebooks (NEEDS FACT CHECKED) and even GitHub (a code hosting platform for colloboration and version control - if you are unfamiliar with GitHub, don't worry, this will be covered in the next module). 
+
+!!! warning "Extending Markdown"
+
+    Markdown's simplicity comes at a cost: there are only a limited amount of formatting effects available to you in basic Markdown. However, many applications supporting Markdown e.g. Jupyter Notebooks, R/RStudio, GitHub etc. provide thier own [extensions of Markdown syntax](https://www.markdownguide.org/extended-syntax/) which let you do more complex formatting with the simplicity of Markdown-like syntax. Additionally,
+if your needs ever grow, worry not, tools like [pandoc]([LINK](https://pandoc.org/)) allow you to mix more flexible formatting languages such as LaTeX and/or HTML with Markdown allowing you to format your text to your heart's desire.
 
 ## 3.3 How to use Markdown
 
@@ -80,7 +85,94 @@ As mentioned in Section 3.2, Markdown's simplicity comes at a cost. Not all form
 
 ### 3.3.2 Adding Headers
 
+Your literate programming document needs to be divided into sections. Perhaps you sub-sections or sub-sub-sections? Markdown provides simple syntax for **header** formatting that provides **6 levels** of headings to fullfill your sub-sectioning needs. To render headers using markdown all you need to do is start a line with a `#`, followed by a space and then your title, like so:
+
+\# My Biggest Title Yet
+
+Which when rendered using yoru favorite markdown editor , should result in:
+
+# My Biggest Title Yet
+
+The number of `#` controls the size or level of the headers - more means smaller headers.
+
+!!! example "Exercise"
+
+    The following headers have been produced using Markdown. Can you reproduce them using Markdown?
+
+    ### My smaller section title
+
+    ##### You can add _other_ formatting elements in headers
+
+    ??? success "Solution"
+
+        \#\#\# My smaller section title
+
+        \#\#\#\#\# You can add \_other\_ formatting elements in headers
+
 ### 3.3.3 Making Lists
+
+Every now and then, documentation of your code or analysis will need a list. Maybe it is a list of dependencies your colleague s need to run your code or perhaps it a list of genes you need to highlight in your latest gene expression anlaysi. It is easy to generate lists in Markdown. Basic Markdown supports ordered (i.e. numbered) or unordered lists.
+
+You can make ordered ordered lists by adding line items with numbers followed by periods. The numbers don’t have to be in numerical order, but the list should start with the number one.
+
+!!! example
+
+    === "Ordered list in Markdown"
+
+        ```
+        1. first item
+        2. second item
+        3. third item
+        ```
+
+    === "Rendered output"
+
+        1. first item
+        2. second tiem
+        3. third item
+
+You can generate an unordered list, add dashes (-), asterisks (*), or plus signs (+) in front of line items.
+    
+!!! example
+
+    === "Unordered list in Markdown"
+
+        ```
+        * first item
+        * second item
+        * third item
+        ```
+
+    === "Rendered output"
+
+        * first item
+        * second tiem
+        * third item
+
+!!! example "Exercise"
+
+    It is easy to generate nested lists in Markdown. Can you reproduce the following nested list using Markdown?
+
+    1. First item
+    2. Second item
+    3. Third item
+       - Indented item A
+       - Indented item B
+    4. Fourth item
+
+    !!! success "Solution"
+
+        ```
+        1. First item
+        2. Second item
+        3. Third item
+           - Indented item A
+           - Indented item B
+        4. Fourth item
+        ```
+
+
+   
 
 ### 3.3.4 Adding Images
 
