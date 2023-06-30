@@ -18,7 +18,7 @@ Recall that for literate programming, the narrative, rather than code, is the ke
 
 Markdown's growing popularity as the document formatting language of choice in literate programming needs is reflected in the availability of markdown support (in many cases right out of the box without any additional installation!) for popular IDEs and notebook formats such as RStudio, VS Code, Jupyter Notebooks (NEEDS FACT CHECKED) and even GitHub (a code hosting platform for colloboration and version control - if you are unfamiliar with GitHub, don't worry, this will be covered in the next module). 
 
-!!! tip "Extending Markdown..
+!!! tip "Extending Markdown..."
 
     Markdown's simplicity comes at a cost: there are only a limited amount of formatting effects available to you in basic Markdown. However, many applications supporting Markdown e.g. Jupyter Notebooks, R/RStudio,  
     GitHub etc. provide thier own [extensions of Markdown syntax](https://www.markdownguide.org/extended-syntax/) which let you do more complex formatting with the simplicity of Markdown-like syntax. Additionally,
@@ -169,7 +169,7 @@ You can generate an unordered list, add dashes (-), asterisks (*), or plus signs
          - Indented item B
     4. Fourth item
     
-    !!! success "Solution"
+    ??? success "Solution"
 
         ```
         1. First item
@@ -180,13 +180,13 @@ You can generate an unordered list, add dashes (-), asterisks (*), or plus signs
         4. Fourth item
         ```
    
-### 3.3.4 Adding Images
+### 3.3.4 Adding Images and Links
 
 #TODO
 
 ### 3.3.5 Making Tables
 
-At some point in your literate document, you may need to present a table. Although basic Markdown does not come with a syntax to make tables, almost all [extensions](https://www.markdownguide.org/extended-syntax/#tables) now have a universal syntax to do so. 
+At some point in your literate document, you may wanr to present a table. Although basic Markdown does not come with a syntax to make tables, almost all [extensions](https://www.markdownguide.org/extended-syntax/#tables) now have a universal syntax to do so. 
 
 To make a table, use three or more hyphens (---) to create each column’s header, and use pipes (|) to separate each column.
 
@@ -209,11 +209,11 @@ To make a table, use three or more hyphens (---) to create each column’s heade
         | blah        | blah        |
         | blah        | blah        |
 
-!!! question "Challenge"
+??? question "Challenge"
 
     Can you write the Markdown-formatted text to generate the exact following table (hint: don't forget the cell alginment)?
 
-    | **Gene**    | **-p-value-**   |
+    | Gene   | _p-value_   |
     | :---------- | :-------------- |
     | Gene A      | 0.1  |
     | Gene B      | 0.005|
@@ -222,8 +222,8 @@ To make a table, use three or more hyphens (---) to create each column’s heade
     !!! success "Solution"
 
         ```
-        | **Gene**    | **-p-value-**   |
-        | :---------- | :-------------- |
+        | Gene        | _p-value_ |
+        | :----------:| :--------:|
         | Gene A      | 0.1  |
         | Gene B      | 0.005|
         | Gene C      | 0.01 |
