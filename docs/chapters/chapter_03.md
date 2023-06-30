@@ -51,7 +51,7 @@ Finally, to learn markdown, we don't necessarily need RStudio or JupyterNotebook
 
 ![type:video](https://youtube.com/embed/V8TV-r-Lafo)
 
-You can use any of the 3 options from above to attempt the **Exercises** below. Boxes starting with :octicons/beaker-16: demonstrate examples in Markdown use, whereas boxes starting with :octicons/question-16: are small coe exercises for you to attempt.
+You can use any of the 3 options from above to attempt the **Exercises** below. Boxes starting with :octicons/beaker-16: demonstrate examples in Markdown use, whereas boxes starting with :octicons/question-16: are small code exercises for you to attempt.
 
 ### 3.3.1 Formatting text
 
