@@ -18,9 +18,12 @@ Recall that for literate programming, the narrative, rather than code, is the ke
 
 Markdown's growing popularity as the document formatting language of choice in literate programming needs is reflected in the availability of markdown support (in many cases right out of the box without any additional installation!) for popular IDEs and notebook formats such as RStudio, VS Code, Jupyter Notebooks (NEEDS FACT CHECKED) and even GitHub (a code hosting platform for colloboration and version control - if you are unfamiliar with GitHub, don't worry, this will be covered in the next module). 
 
+!!! tip "Extending Markdown..
 
-Markdown's simplicity comes at a cost: there are only a limited amount of formatting effects available to you in basic Markdown. However, many applications supporting Markdown e.g. Jupyter Notebooks, R/RStudio, GitHub etc. provide thier own [extensions of Markdown syntax](https://www.markdownguide.org/extended-syntax/) which let you do more complex formatting with the simplicity of Markdown-like syntax. Additionally,
-if your needs ever grow, worry not, tools like [pandoc]([LINK](https://pandoc.org/)) allow you to mix more flexible formatting languages such as LaTeX and/or HTML with Markdown allowing you to format your text to your heart's desire.
+    Markdown's simplicity comes at a cost: there are only a limited amount of formatting effects available to you in basic Markdown. However, many applications supporting Markdown e.g. Jupyter Notebooks, R/RStudio,  
+    GitHub etc. provide thier own [extensions of Markdown syntax](https://www.markdownguide.org/extended-syntax/) which let you do more complex formatting with the simplicity of Markdown-like syntax. Additionally,
+    if your needs ever grow, worry not, tools like [pandoc](https://pandoc.org/) allow you to mix more flexible formatting languages such as LaTeX and/or HTML with Markdown allowing you to format your text to 
+    your heart's desire.
 
 ## 3.3 How to use Markdown
 
@@ -54,7 +57,7 @@ You can use any of the 3 options from above to attempt the **Exercises** and **C
 
 You should have already seen examples of how to _italicise_ or **embolden** you text (and both simulatenously) with markdown. There is other useful markdown sytnax for example for starting a new paragraph, use a blank like to seperate your paragraphs or if you want a [monospaced font](https://en.wikipedia.org/wiki/Monospaced_font) to represent `code` in your text, enclose the relevant code in single backticks:\`\<YOURCODEHERE>\`.
 
-!!! example "Exercise"
+!!! question "Exercise"
 
     Below is some text produced using markdown formatting. Use your preferred markdown editor, to write markdown annotated text, to achieve the following result:   
     
@@ -64,13 +67,13 @@ You should have already seen examples of how to _italicise_ or **embolden** you 
 
     ??? success "Solution"
     
-        The \`mean()\` function on \`line 13\` calcualtes the \*\*average\*\* of the vector.
+        ```The `mean()` function on `line 13` calcualtes the **average** of the vector.```
 
 As mentioned in Section 3.2, Markdown's simplicity comes at a cost. Not all formatting elements are natively represented in markdown. Depending on your application an **extended syntax** for Markdown may exist (e.g. [Rmarkdown](https://rmarkdown.rstudio.com/), which may offer a solution. In many cases HTML can help you acheive the desired result. Most applications rendering Markdown also support HTML. This does not mean you need to know HTML but you may have to rely on your googling or [prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering#:~:text=Prompt%20engineering%20is%20a%20concept,of%20it%20being%20explicitly%20given.) skills.
 
-!!! example "Challenge"
+!!! question "Challenge"
 
-    There is no native support for sub- or superscripts in markdown, however HTML tags can do the trick. Use your technical sophistication (googling or otherwise) to write markdown (and HTML) annotated text to achive the following result:  
+    There is no native support for sub- or superscripts in markdown, however HTML tags can do the trick. Use your technical sophistication (googling or otherwise) to write Markdown- (and HTML) formatted text text to achive the following result:  
     
     An example of a subscript is C0<sub>2</sub>. An example of a superscript is 3<sup>3</sup>=27.
 
@@ -100,19 +103,19 @@ Your literate programming document needs to be divided into sections. Perhaps yo
         
 The number of `#` controls the size or level of the headers - more means smaller headers.
 
-!!! example "Exercise"
+!!! question "Exercise"
 
-    The following headers have been produced using Markdown. Can you reproduce them using Markdown?
+    The following headers have been produced using Markdown. Can you reproduce them using Markdown-formatted text?
 
     ### My smaller section title
 
-    ##### You can add _other_ formatting elements in headers
-
+    #### This is my _other_ header
+    
     ??? success "Solution"
 
         ```### My smaller section title```
 
-        ```##### You can add _other_ formatting elements in headers```
+        ```#### This is my _other_ header```
 
 ### 3.3.3 Making Lists
 
@@ -154,9 +157,10 @@ You can generate an unordered list, add dashes (-), asterisks (*), or plus signs
         * second tiem
         * third item
 
-!!! example "Exercise"
 
-    It is easy to generate nested lists in Markdown. Can you reproduce the following nested list using Markdown?
+!!! question "Exercise"
+
+    It is easy to generate nested lists in Markdown. Can you reproduce the following nested list using Markdown-formatted text?
 
     1. First item
     2. Second item
@@ -164,7 +168,7 @@ You can generate an unordered list, add dashes (-), asterisks (*), or plus signs
          - Indented item A
          - Indented item B
     4. Fourth item
-
+    
     !!! success "Solution"
 
         ```
@@ -175,13 +179,61 @@ You can generate an unordered list, add dashes (-), asterisks (*), or plus signs
              - Indented item B
         4. Fourth item
         ```
-
-
    
-
 ### 3.3.4 Adding Images
 
+#TODO
+
 ### 3.3.5 Making Tables
+
+At some point in your literate document, you may need to present a table. Although basic Markdown does not come with a syntax to make tables, almost all [extensions](https://www.markdownguide.org/extended-syntax/#tables) now have a universal syntax to do so. 
+
+To make a table, use three or more hyphens (---) to create each column’s header, and use pipes (|) to separate each column.
+
+!!! example
+
+    === "Table in Markdown:"
+
+        ```
+        | Column 1    | Column 2    |
+        | ----------- | ----------- |
+        | blah        | blah        |
+        | blah        | blah        |
+        ```
+        **Note:** the cell widths don't have to be fixed as above and can vary, yiedling the same output (try it yourself if you don't believe me)
+        
+    === "Rendered output:"
+    
+        | Column 1    | Column 2    |
+        | ----------- | ----------- |
+        | blah        | blah        |
+        | blah        | blah        |
+
+!!! question "Challenge"
+
+    Can you write the Markdown-formatted text to generate the exact following table (hint: don't forget the cell alginment)?
+
+    | **Gene**    | **-p-value-**   |
+    | :---------- | :-------------- |
+    | Gene A      | 0.1  |
+    | Gene B      | 0.005|
+    | Gene C      | 0.01 |
+
+    !!! success "Solution"
+
+        ```
+        | **Gene**    | **-p-value-**   |
+        | :---------- | :-------------- |
+        | Gene A      | 0.1  |
+        | Gene B      | 0.005|
+        | Gene C      | 0.01 |
+        ```
+
+!!! tip "Making tables in Markdown..."
+
+    Making small tables is simple enough but making larger tables can get painful in markdown. If you need to make tables from your own data, R or Python will have appropriate extensions to help you with that. For other 
+    larger tables in markdon the [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables) is a great tool. Make your table using their graphical interface and then copy the generated Markdown- 
+    formatted text into your file.
 
 ## 3.4 Further Learning and Resources for Markdown
 
