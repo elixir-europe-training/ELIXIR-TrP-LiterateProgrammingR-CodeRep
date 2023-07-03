@@ -18,10 +18,10 @@ Recall that for literate programming, the narrative, rather than code, is the ke
 
 Markdown's growing popularity as the document formatting language of choice in literate programming needs is reflected in the availability of markdown support (in many cases right out of the box without any additional installation!) for popular IDEs and notebook formats such as RStudio, VS Code, Jupyter Notebooks (NEEDS FACT CHECKED) and even GitHub (a code hosting platform for colloboration and version control - if you are unfamiliar with GitHub, don't worry, this will be covered in the next module). 
 
-!!! tip "Extending Markdown..."
+!!! tip "Basic Markdown _vs._ Markdown Extensions"
 
-    Markdown's simplicity comes at a cost: there are only a limited amount of formatting effects available to you in basic Markdown. However, many applications supporting Markdown e.g. Jupyter Notebooks, R/RStudio,  
-    GitHub etc. provide thier own [extensions of Markdown syntax](https://www.markdownguide.org/extended-syntax/) which let you do more complex formatting with the simplicity of Markdown-like syntax. Additionally,
+    Markdown's simplicity comes at a cost: there are only a limited amount of formatting effects available to you in **basic** or **native** Markdown. However, many applications supporting Markdown e.g. Jupyter Notebooks, R/RStudio,  
+    GitHub etc. provide thier own [**extensions** of Markdown syntax](https://www.markdownguide.org/extended-syntax/) which let you do more complex formatting with the simplicity of Markdown-like syntax. Additionally,
     if your needs ever grow, worry not, tools like [pandoc](https://pandoc.org/) allow you to mix more flexible formatting languages such as LaTeX and/or HTML with Markdown allowing you to format your text to 
     your heart's desire.
 
@@ -123,9 +123,9 @@ Every now and then, documentation of your code or analysis will need a list. May
 
 You can make ordered ordered lists by adding line items with numbers followed by periods. The numbers don’t have to be in numerical order, but the list should start with the number one.
 
-!!! example
+!!! example "Ordered lists"
 
-    === "Ordered list in Markdown:"
+    === "Markdown:"
 
         ```
         1. first item
@@ -141,9 +141,9 @@ You can make ordered ordered lists by adding line items with numbers followed by
 
 You can generate an unordered list, add dashes (-), asterisks (*), or plus signs (+) in front of line items.
     
-!!! example
+!!! example "Unordered lists"
 
-    === "Unordered list in Markdown:"
+    === "Markdown:"
 
         ```
         * first item
@@ -182,17 +182,75 @@ You can generate an unordered list, add dashes (-), asterisks (*), or plus signs
    
 ### 3.3.4 Adding Images and Links
 
-#TODO
+Everynow and then you may need to provide a link in your literate document. You can provide links in basic Markdown in two ways. The first one we demonstrate are called _inline_links: here you provide the text of the link in square brackets (`[]`) and the link itself follows in paranthesis.
 
+!!! example "Inline links"
+
+    === "Markdown:"
+
+        ```
+        [Visit Elixir!](https://elixir-europe.org/)
+        ```
+
+    === "Rendered output:"
+
+        [Visit Elixir!](https://elixir-europe.org/)
+
+The other type of link in basic Markdown is a _reference_ link. In this case the link is to another place in your literate document itself, kind of almost like a citation. 
+
+!!! example "Reference links"
+
+    === "Markdown:"
+
+        ```
+        Want to do [Repdroducible Science?][link one].
+        Here are some [practical guides][another-link]. 
+        Don't forget to read [this article][link one] in its entirety. 
+       
+
+       [link one]: https://www.nature.com/articles/s41562-016-0021
+       [another-link]: https://ziemann-lab.net/public/5pillars/practical_guides.html
+        ```
+
+    === "Rendered output:
+
+        Want to do [Repdroducible Science?][link one].
+        Here are some [practical guides][another-link]. 
+        Don't forget to read [this article][link one] in its entirety. 
+       
+
+       [link one]: https://www.nature.com/articles/s41562-016-0021
+       [another-link]: https://ziemann-lab.net/public/5pillars/practical_guides.html
+
+        
+The "references" above are the second set of brackets: [link one] and [another-link]. At the bottom of a Markdown document, these brackets are defined as proper with a colon and then links to outside websites. An advantage of the reference link style is that multiple links to the same place only need to be updated once, as you would expect from a citation management software e.g. (Zotero), but as you'll see later there are better ways to do citations using extended in Markdown. Also note the reference links (the one at the bottom) don't actually appear in the rendreded markdown document above.
+
+Similar to links you can add images in two ways. Additionally images can be online urls or from your local computer (in which case you need to provide the path to the image on your local computer instead of the url). Similar to links, one way to displayimg images is called _inline image_ link. To generate one if these you add an exclamation mark (`!`), followed by square brackets (`[]`) that can optional include [alt text](https://www.w3schools.com/tags/att_img_alt.asp) the image (to make your content more accessible for visually impaired readers) and then finally the link (or path) to the image in parenthesis.
+
+!!! example "Inline image links"
+
+    === "Markdown:"
+
+        ```
+        ![Quebec Ciy at night](https://commons.wikimedia.org/wiki/Main_Page#/media/File:Qu%C3%A9bec_city_at_night,_view_from_L%C3%A9vis_city.jpg)
+        ```
+
+    === "Rendered output:"
+
+        ![Quebec Ciy at night](https://commons.wikimedia.org/wiki/Main_Page#/media/File:Qu%C3%A9bec_city_at_night,_view_from_L%C3%A9vis_city.jpg)
+
+You can make _refernce image_ links very similar to how you would make inline links. Redoing the inline image link is a reference image link is left as an  :octicons/beaker-16: for the reader. 
+
+        
 ### 3.3.5 Making Tables
 
 At some point in your literate document, you may wanr to present a table. Although basic Markdown does not come with a syntax to make tables, almost all [extensions](https://www.markdownguide.org/extended-syntax/#tables) now have a universal syntax to do so. 
 
 To make a table, use three or more hyphens (---) to create each column’s header, and use pipes (|) to separate each column.
 
-!!! example
+!!! example "Tables"
 
-    === "Table in Markdown:"
+    === "Markdown:"
 
         ```
         | Column 1    | Column 2    |
@@ -235,9 +293,70 @@ To make a table, use three or more hyphens (---) to create each column’s heade
     larger tables in markdon the [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables) is a great tool. Make your table using their graphical interface and then copy the generated Markdown- 
     formatted text into your file.
 
+### 3.3.6 Paragraphs
+
+Formatting paragrahs is simple but perhaps not as intuitive in Markdown. For example, consider the verse below (I got [ChatGPT](https://openai.com/blog/chatgpt) to wax poetic about the graces of Markdown):
+
+In the realm of code, where words and logic intertwine,  
+There exists a tool, both simple and sublime.  
+Markdown, the poet's brush, the programmer's aid,  
+Unveils the advantages of a seamless cascade.  
+
+You may be tempted to think, that way you format a pargraph like this in Markdown would be like so:
+
+```
+In the realm of code, where words and logic intertwine,
+There exists a tool, both simple and sublime.
+Markdown, the poet's brush, the programmer's aid,
+Unveils the advantages of a seamless cascade.
+```
+
+Unfortunately, if you did this the whole verse would come in a single line! Not very fitting for a poem.
+
+To acheive the desired affect, you can enforce a _hard break_ by inserting a new line between each line of the verse:
+
+!!! example "Hard breaks for formatting"
+
+    === "Markdown:"
+    
+        ```
+        In the realm of code, where words and logic intertwine,
+        
+        There exists a tool, both simple and sublime.
+        
+        Markdown, the poet's brush, the programmer's aid,
+        
+        Unveils the advantages of a seamless cascade.
+        ```
+
+    === "Rendered output:"
+
+        In the realm of code, where words and logic intertwine,
+        
+        There exists a tool, both simple and sublime.
+        
+        Markdown, the poet's brush, the programmer's aid,
+        
+        Unveils the advantages of a seamless cascade.
+
+
+The hard break works but not the formatting is now disconnected between the Markdown document and the rendered output. A more subtle way to achieve this sort of paragraph formatting effect is to use what is called _soft break_. A soft break involves inserting two blank spaces with the ++space++ key at the end of each line. A soft break acheives the same effect a a hard break but leaves more of a semblance between the text in the Markdown document and the final rendered document. which may be more desirable in several instances.
+
+!!! exercise
+
+    Here is the last verse from the ChatGP epic poem about the advanatges of Makrdown for literate progamming:
+
+    So let markdown be your ally, your creative friend,  
+    In the realm of literate programming, where wonders never end.  
+    For within its simplicity lies a powerful tool,  
+    Unleashing the potential of both scholar and fool.  
+
+    Use **_soft breaks_** in Markdown to recreate the formatted verse above.
+
+
 ## 3.4 Further Learning and Resources for Markdown
 
-The above should give you enough Markdown to get started and follow any later lessons. If you want more, here is a very short selection of some resources that might be helpful:
+The above should give you enough Markdown to get started and follow any later lessons. There are a handful os basic markdown elements that are covered in the [Markdown Guide](https://www.markdownguide.org/basic-syntax/) below and there are plenty of extensions as well.  If you want more, here is a very short selection of some resources that might be helpful:
 
 * [Markdown Guide](https://www.markdownguide.org/basic-syntax/) offers a short and handy reference to the basic syntax or grammar of markdown.
 * Want to practise some more markdown? Try this excellent, standalone [Markdown tutorial](https://www.markdowntutorial.com/).
