@@ -53,7 +53,7 @@ Finally, to learn markdown, we don't necessarily need RStudio or JupyterNotebook
 
 ![type:video](https://youtube.com/embed/V8TV-r-Lafo)
 
-You can use any of the 3 options from above to attempt the **Exercises** below. Boxes starting with :octicons/beaker-16: demonstrate examples in Markdown use, whereas boxes starting with :octicons/question-16: are small code exercises for you to attempt.
+You can use any of the 3 options from above to attempt the **Exercises** below. Boxes starting with :octicons-beaker-16: demonstrate examples in Markdown use, whereas boxes starting with :octicons-question-16: are small code exercises for you to attempt.
 
 ### 3.3.1 Formatting text
 
@@ -184,7 +184,7 @@ You can generate an unordered list, add dashes (-), asterisks (*), or plus signs
    
 ### 3.3.4 Adding Images and Links
 
-Everynow and then you may need to provide a link in your literate document. You can provide links in basic Markdown in two ways. The first one we demonstrate are called _inline_links: here you provide the text of the link in square brackets (`[]`) and the link itself follows in paranthesis.
+Everynow and then you may need to provide a link in your literate document. You can provide links in basic Markdown in two ways. The first one we demonstrate are called _inline_links: here you provide the text of the link in square brackets (++bracket-left++ ++bracket-right++`) and the link itself follows in paranthesis.
 
 !!! example "Inline links"
 
@@ -225,23 +225,27 @@ The other type of link in basic Markdown is a _reference_ link. In this case the
        [another-link]: https://ziemann-lab.net/public/5pillars/practical_guides.html
 
         
-The "references" above are the second set of brackets: [link one] and [another-link]. At the bottom of a Markdown document, these brackets are defined as proper with a colon and then links to outside websites. An advantage of the reference link style is that multiple links to the same place only need to be updated once, as you would expect from a citation management software e.g. (Zotero), but as you'll see later there are better ways to do citations using extended in Markdown. Also note the reference links (the one at the bottom) don't actually appear in the rendreded markdown document above.
+The "references" above are the second set of brackets: [link one] and [another-link]. At the bottom of a Markdown document, these brackets are defined as proper with a colon and then links to outside websites. An advantage of the reference link style is that multiple links to the same place only need to be updated once, as you would expect from a citation management software e.g. (Zotero), but as you'll see later there are better ways to do citations using extended in Markdown. Also note the reference links (the one at the bottom) don't actually appear in the renderded markdown document above.
 
-Similar to links you can add images in two ways. Additionally images can be online urls or from your local computer (in which case you need to provide the path to the image on your local computer instead of the url). Similar to links, one way to displayimg images is called _inline image_ link. To generate one if these you add an exclamation mark (++!++), followed by square brackets (++[++ ++]++`) that can optional include [alt text](https://www.w3schools.com/tags/att_img_alt.asp) the image (to make your content more accessible for visually impaired readers) and then finally the link (or path) to the image in parenthesis (++(++ ++)++).
+Similar to links you can add images in two ways. Additionally images can be online urls or from your local computer (in which case you need to provide the path to the image on your local computer instead of the url). Similar to links, one way to displayimg images is called _inline image_ link. To generate one if these you add an exclamation mark (++exclam++), followed by square brackets (++bracket-left++ ++bracket-right++`) that can optional include [alt text](https://www.w3schools.com/tags/att_img_alt.asp) the image (to make your content more accessible for visually impaired readers) and then finally the link (or path) to the image in parenthesis.
+
 
 !!! example "Inline image links"
 
     === "Markdown:"
 
         ```
-        ![Quebec Ciy at night](https://commons.wikimedia.org/wiki/Main_Page#/media/File:Qu%C3%A9bec_city_at_night,_view_from_L%C3%A9vis_city.jpg)
+        ![Two happy penguins taking a selfie together in a snowy landscape](https://github.com/allisonhorst/stats-illustrations/blob/main/julie-mine-quarto-keynote/quarto_share.png?raw=true)  
+
+        "Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst."
         ```
 
     === "Rendered output:"
 
-        ![Quebec Ciy at night](https://commons.wikimedia.org/wiki/Main_Page#/media/File:Qu%C3%A9bec_city_at_night,_view_from_L%C3%A9vis_city.jpg)
-
-You can make _refernce image_ links very similar to how you would make inline links. Redoing the inline image link is a reference image link is left as an  :octicons/beaker-16: for the reader. 
+         ![Two happy penguins taking a selfie together in a snowy landscape](https://github.com/allisonhorst/stats-illustrations/blob/main/julie-mine-quarto-keynote/quarto_share.png?raw=true)  
+         "Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst."
+         
+You can make _reference image_ links very similar to how you would make inline links. Redoing the inline image link is a reference image link is left as an  :octicons-beaker-16: for the reader. 
 
         
 ### 3.3.5 Making Tables
