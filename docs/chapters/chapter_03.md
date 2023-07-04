@@ -53,7 +53,7 @@ Finally, to learn markdown, we don't necessarily need RStudio or JupyterNotebook
 
 ![type:video](https://youtube.com/embed/V8TV-r-Lafo)
 
-You can use any of the 3 options from above to attempt the **Exercises** below. Boxes starting with :octicons-beaker-16: demonstrate examples in Markdown use, whereas boxes starting with :octicons-question-16: are small code exercises for you to attempt.
+You can use any of the 3 options from above to attempt the **Exercises** below. 
 
 ### 3.3.1 Formatting text
 
@@ -65,7 +65,7 @@ You should have already seen examples of how to _italicise_ or **embolden** you 
     
     The `mean()` function on `line 13` calcualtes the **average** of the vector.
 
-    Make sure to rener your markdown text to make sure it works like you think it should.
+    Make sure to render your markdown text to make sure it works like you think it should.
 
     ??? success "Solution"
     
@@ -91,9 +91,9 @@ As mentioned in Section 3.2, Markdown's simplicity comes at a cost. Not all form
 
 Your literate programming document needs to be divided into sections. Perhaps you sub-sections or sub-sub-sections? Markdown provides simple syntax for **header** formatting that provides **6 levels** of headings to fullfill your sub-sectioning needs. To render headers using markdown all you need to do is start a line with a `#`, followed by a space and then your title, like so:
 
-!!! example
+!!! example "Headers"
 
-    === "A header in Markdown:"
+    === "Markdown:"
 
         ```# My Biggest Title Yet```
         
@@ -214,7 +214,7 @@ The other type of link in basic Markdown is a _reference_ link. In this case the
        [another-link]: https://ziemann-lab.net/public/5pillars/practical_guides.html
         ```
 
-    === "Rendered output:
+    === "Rendered output:"
 
         Want to do [Repdroducible Science?][link one].
         Here are some [practical guides][another-link]. 
