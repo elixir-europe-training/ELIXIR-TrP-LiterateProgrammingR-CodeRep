@@ -245,7 +245,7 @@ Similar to links you can add images in two ways. Additionally images can be onli
          ![Two happy penguins taking a selfie together in a snowy landscape](https://github.com/allisonhorst/stats-illustrations/blob/main/julie-mine-quarto-keynote/quarto_share.png?raw=true)  
          "Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst."
          
-You can make _reference image_ links very similar to how you would make inline links. Redoing the inline image link is a reference image link is left as an  :octicons-beaker-16: for the reader. 
+You can make _reference image_ links very similar to how you would make inline links. Redoing the inline image link is a reference image link is left as an **exercise** for the reader. 
 
         
 ### 3.3.5 Making Tables
