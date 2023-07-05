@@ -1,13 +1,31 @@
-## Aim of the lesson
-After learning about literacy programming in Chapter 1 and Chapter 2, and Rmarkdown methods in Chapter 3. In this chapter, we will finally put together what we've learned to create a thorough final report, article, or other output that complies with the FAIR principle. To do this, we'll use the Quarto tool, which enables us to use the Rmarkdown syntax to easily blend coding and programming within the same text.
- 
+## Aim of the Lesson 📚
 
-## Why using Quarto?
+After covering literacy programming in Chapter 1 and Chapter 2, as well as Rmarkdown methods in Chapter 3, this chapter focuses on integrating our knowledge to create a comprehensive final report, article, or other outputs that adhere to the FAIR principle. To accomplish this, we will utilize the Quarto tool, which allows us to seamlessly combine coding and programming within the same text using Rmarkdown syntax.
 
-The pressure on scientific personnel to produce reports for public, governmental, and scientific audiences is rising. 
-This takes a long time because you'll need to use several different applications to write, analyze data, make tables and figures, and so on.
-Learning effective tools that integrate programming with report generation is crucial for streamlining this process. The markdown-based Quarto report framework, which is second-generation, provides an answer.
-The ability to run code for data formatting, analysis, and visualization makes it possible for researchers to produce reports with minimal effort, all while writing in the familiar markdown format.
+## Why Use Quarto? 🔍
+
+The demand for scientific personnel to generate reports for public, governmental, and scientific audiences is increasing. However, this process often consumes a significant amount of time due to the need to use multiple applications for writing, data analysis, table and figure creation, and more. It is essential to learn effective tools that integrate programming with report generation in order to streamline this workflow. Quarto, a markdown-based report framework of the second generation, offers a solution. Researchers can leverage its ability to execute code for data formatting, analysis, and visualization, enabling them to produce reports with minimal effort while writing in the familiar markdown format.
+
+# Before Starting
+
+## Installation Instructions ⚙️
+
+To install Quarto, please refer to the Quarto webpages for the installation instructions.
+
+## R Packages 📦
+
+To ensure the necessary functionality, run the following code in R:
+
+```R
+install.packages(c(
+  "tinytex",       # for PDF rendering
+  "rmarkdown",     # rendering everything
+  "tidyverse",     # data-wrangling
+  "knitr",         # table printing
+  "kableExtra",    # pretty table printing
+  "palmerpenguins" # dataset
+))
+
 
 
 ## Introduction
