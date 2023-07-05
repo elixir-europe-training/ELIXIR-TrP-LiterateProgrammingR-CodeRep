@@ -13,6 +13,56 @@ The ability to run code for data formatting, analysis, and visualization makes i
 ## Introduction
 This lesson will use as an example the analysis of the **Wisconsin breast cancer data** (available [here](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data)). The first usage of this data was described in @Streetetal1993.
 
+# The header yaml
+
+## Setting up the document
+
+::: columns
+::: {.column width="32%"}
+``` yaml
+---
+title: "Document title"
+author: "Your Name"
+execute:
+  echo: false
+format: html
+--- 
+```
+
+``` yaml
+---
+title: "Document title"
+author: "Your Name"
+execute:
+  echo: false
+format: pdf
+--- 
+```
+
+``` yaml
+---
+title: "Document title"
+author: "Your Name"
+execute:
+  echo: false
+format: revealjs
+--- 
+```
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="58%"}
+-   Set up important document settings
+-   Changing format is easy
+    -   some settings might not work
+-   Many more options
+    -   some depending on output format
+    -   some depending on template
+:::
+:::
+
 ## Upload needed packages  
 Before looking at the data:
 
