@@ -1,3 +1,7 @@
+## Aim of the lesson
+After learning about literacy programming in Chapter 1 and Chapter 2, and Rmarkdown methods in Chapter 3. In this chapter, we will finally put together what we've learned to create a thorough final report, article, or other output that complies with the FAIR principle. To do this, we'll use the Quarto tool, which enables us to use the Rmarkdown syntax to easily blend coding and programming within the same text.
+ 
+
 ## Why using Quarto?
 
 The pressure on scientific personnel to produce reports for public, governmental, and scientific audiences is rising. 
@@ -5,7 +9,6 @@ This takes a long time because you'll need to use several different applications
 Learning effective tools that integrate programming with report generation is crucial for streamlining this process. The markdown-based Quarto report framework, which is second-generation, provides an answer.
 The ability to run code for data formatting, analysis, and visualization makes it possible for researchers to produce reports with minimal effort, all while writing in the familiar markdown format.
 
-## Aim of the lesson
 
 ## Introduction
 This lesson will use as an example the analysis of the **Wisconsin breast cancer data** (available [here](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data)). The first usage of this data was described in @Streetetal1993.
