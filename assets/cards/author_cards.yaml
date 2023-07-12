@@ -1,0 +1,42 @@
+- title: Zeus
+  content: |
+    [:custom-orcid:](https://orcid.org/) [:simple-github:](https://github.com/) [:simple-linkedin:](https://linkedin.com/)<br>
+    Lorem ipsum dolor sit amet
+    
+  image: ./assets/images/cards/001-zeus.png
+  
+- title: Elisa Pierfederici
+  content: |
+    [:custom-orcid:](https://orcid.org/) [:simple-github:](https://github.com/mariapie) [:simple-linkedin:](https://www.linkedin.com/in/maria-elisa-pierfederici-5392aa182/)<br>
+    PhD Candidate - Research consultant, University of Oslo (UiO), Norway 
+  image: ./assets/images/cards/003-athena.png
+
+- title: Clement Lee
+  content: |
+    [:custom-orcid:](https://orcid.org/0000-0003-1785-8671) [:simple-github:](https://github.com/clement-lee) [:simple-linkedin:](https://www.linkedin.com/in/clement-lee-153a9bb8/)<br>
+    Lecturer, School of Maths, Stats and Physics, Newcastle University
+  image: ./assets/images/cards/clement.png
+ 
+- title: Saad Arif
+  content: |
+    [:custom-orcid:](https://https://orcid.org/0000-0003-0811-8604) [:simple-github:](https://github.com/saadarif)<br>
+    Saad Arif, Senior Lecturer, Dept. of BMS, Oxford Brookes University
+  image: ./assets/images/cards/saad.jpg
+
+- title: Prometheus
+  content: |
+    [:custom-orcid:](https://orcid.org/) [:simple-github:](https://github.com/) [:simple-linkedin:](https://linkedin.com/)<br>
+    Lorem ipsum dolor sit amet.
+  image: ./assets/images/cards/019-prometheus.png
+
+- title: Artemis
+  content: |
+    [:custom-orcid:](https://orcid.org/) [:simple-github:](https://github.com/) [:simple-linkedin:](https://linkedin.com/)<br>
+    Lorem ipsum dolor sit amet.
+  image: ./assets/images/cards/021-artemis.png
+  
+- title: Mark Fernandes
+  content: |
+    [:custom-orcid:](https://orcid.org/) [:simple-github:](https://github.com/mfernandes61) [:simple-linkedin:](https://www.linkedin.com/in/mark-fernandes-a5533641/)<br>
+    Mark Fernandes, Teaching Associate, Bioinformatics Training Facility, Dept. of Genetics, University of Cambridge
+  image: ./assets/images/cards/mark_photo.jpg
