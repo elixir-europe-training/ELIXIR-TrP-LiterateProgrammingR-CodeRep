@@ -1,4 +1,4 @@
-## Aim of the Lesson 📚
+# Aim of the Lesson 📚
 
 After covering literacy programming in Chapter 1 and Chapter 2, as well as Rmarkdown methods in Chapter 3, this chapter focuses on integrating our knowledge to create a comprehensive final report, article, or other outputs that adhere to the FAIR principle. To accomplish this, we will utilize the Quarto tool, which allows us to seamlessly combine coding and programming within the same text using Rmarkdown syntax.
 
@@ -24,14 +24,13 @@ If you want to explore more about Quarto and its capabilities, consider checking
 
 - [Quarto documentation](https://quarto.org/docs/)
 - [R Markdown documentation](https://rmarkdown.rstudio.com/)
-- [RStudio cheatsheets](https://rstudio.com/resources/cheatsheets/)## Additional Resources 📚
-
+- [RStudio cheatsheets](https://rstudio.com/resources/cheatsheets/)
 
 # Before Starting
 
 ## Installation Instructions ⚙️
 
-To install Quarto, you can take a look at the [Quarto webpages](https://quarto.org/) for the installation instructions.
+To install Quarto, follow the installation instructions provided on the [Quarto webpages](https://quarto.org/).
 
 ## R Packages 📦
 
@@ -48,7 +47,7 @@ install.packages(c(
 ))
 ```
 
-When creating PDFs from Quarto, we need to install LaTeX for that conversion. We will use the tinytex package to install a lightweight LaTeX distribution on your computer.
+When creating PDFs from Quarto, we must install LaTeX for that conversion. We will use the Tinytex package to install a lightweight LaTeX distribution on your computer.
 
 Open RStudio, and find the section called “Console”.
 
@@ -56,11 +55,24 @@ Open RStudio, and find the section called “Console”.
 tinytex::install_tinytex()
 tinytex:::install_yihui_pkgs()
 ```
-
-# Introduction
 ## Example Dataset 📊
 
-Throughout this tutorial, we will be using a sample dataset called "Wisconsin breast cancer data." Please make sure to download this dataset and save it in a location accessible to your R environment. You can download the dataset from [this link]((https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data). The first usage of this data was described in @Streetetal1993.
+Throughout this tutorial, we will be using a sample dataset called "Wisconsin breast cancer data." Please make sure to download this dataset and save it in a location accessible to your R environment. You can download the dataset from [this link](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data). The first usage of this data was described in @Streetetal1993.
+
+# Introduction
+Quarto uses a two-step workflow to render documents. First, the .qmd file is sent to knitr (https://yihui.org/knitr/), which executes the code chunks and generates a markdown (.md) document with code and output. Then, pandoc (https://pandoc.org) processes the markdown file to create the final output file. This flexible process allows for a wide range of output formats. 
+
+ADD FIGURE
+
+## Let's Get Started!
+
+Let's set up our environment and create a basic Quarto document. 
+
+### Creating a Basic Quarto Document
+
+To begin working with your own .qmd file, simply navigate to the menu bar and choose **File > New File > Quarto Document...** This action will trigger RStudio to open a wizard, which assists in automatically filling your file with helpful content that serves as a reminder of the fundamental functionalities of Quarto.
+
+In the subsequent sections, we will delve deeper into the three main elements of a Quarto document: the markdown text, the code chunks, and the YAML header.
 
 
 # The header yaml
