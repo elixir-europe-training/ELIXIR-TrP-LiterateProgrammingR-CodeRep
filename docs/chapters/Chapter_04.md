@@ -1,5 +1,5 @@
 # Aim of the lesson 
-We’ll teach you how to get started creating and fully customizing Quarto outputs (HTML, PDF, Presentations) and the use of RStudio’s Visual Editor which provides a user interface for editing all of Pandoc markdown.
+We will learn how to create and customize documents, articles, or reports that combine narrative text and code. We will use the Quarto tool to build our document and generate various output formats, including HTML, PDF, and Presentations. 
 
 After covering literacy programming in Chapter 1 and Chapter 2, as well as Rmarkdown methods in Chapter 3, this chapter focuses on integrating our knowledge to create a comprehensive final report, article, or other outputs that adhere to the FAIR principle. To accomplish this, we will utilize the Quarto tool, which allows us to seamlessly combine coding and programming within the same text using Rmarkdown syntax.
 
@@ -14,7 +14,7 @@ This tutorial assumes that you are familiar with the following concepts:
 - Markdown syntax and document rendering
 
 ## Why Use Quarto? 
-Quarto is the next generation of RMarkdown for publishing, including dynamic and static documents and multi-lingual programming language support. With Quarto you can create documents, books, presentations, blogs or other online resources.
+This tutorial introduces Quarto, an **open-source** publishing system based on Pandoc. Quarto is the next generation of RMarkdown, offering support for dynamic and static documents and multiple programming languages. With Quarto, you can effortlessly combine narrative text and code to create various resources like documents, books, presentations, web pages, and more. It also provides multiple output formats, including HTML, Word, PDF, PowerPoint, and E-book.
 
 The demand for scientific personnel to generate reports for public, governmental, and scientific audiences is increasing. However, this process often consumes a significant amount of time due to the need to use multiple applications for writing, data analysis, table and figure creation, and more. It is essential to learn effective tools that integrate programming with report generation in order to streamline this workflow. Quarto, a markdown-based report framework of the second generation, offers a solution. Researchers can leverage its ability to execute code for data formatting, analysis, and visualization, enabling them to produce reports with minimal effort while writing in the familiar markdown format.
 
