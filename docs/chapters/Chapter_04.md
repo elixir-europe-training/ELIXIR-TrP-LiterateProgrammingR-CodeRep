@@ -1,20 +1,20 @@
-# Aim of the Lesson 📚
+# Aim of the lesson 
+We’ll teach you how to get started creating and fully customizing Quarto outputs (HTML, PDF, Presentations) and the use of RStudio’s Visual Editor which provides a user interface for editing all of Pandoc markdown.
 
 After covering literacy programming in Chapter 1 and Chapter 2, as well as Rmarkdown methods in Chapter 3, this chapter focuses on integrating our knowledge to create a comprehensive final report, article, or other outputs that adhere to the FAIR principle. To accomplish this, we will utilize the Quarto tool, which allows us to seamlessly combine coding and programming within the same text using Rmarkdown syntax.
 
-## Prerequisites ✅
-
+## Prerequisites 
 Before proceeding with this tutorial, it is recommended to have a basic understanding of R programming and familiarity with RStudio. Some knowledge of R Markdown syntax would also be beneficial.
 
 ## Prior Knowledge Assumed
-
 This tutorial assumes that you are familiar with the following concepts:
 
 - Basic R programming
 - RStudio and its interface
-- R Markdown syntax and document rendering
+- Markdown syntax and document rendering
 
-## Why Use Quarto? 🔍
+## Why Use Quarto? 
+Quarto is the next generation of RMarkdown for publishing, including dynamic and static documents and multi-lingual programming language support. With Quarto you can create documents, books, presentations, blogs or other online resources.
 
 The demand for scientific personnel to generate reports for public, governmental, and scientific audiences is increasing. However, this process often consumes a significant amount of time due to the need to use multiple applications for writing, data analysis, table and figure creation, and more. It is essential to learn effective tools that integrate programming with report generation in order to streamline this workflow. Quarto, a markdown-based report framework of the second generation, offers a solution. Researchers can leverage its ability to execute code for data formatting, analysis, and visualization, enabling them to produce reports with minimal effort while writing in the familiar markdown format.
 
@@ -27,14 +27,11 @@ If you want to explore more about Quarto and its capabilities, consider checking
 - [RStudio cheatsheets](https://rstudio.com/resources/cheatsheets/)
 
 # Before Starting
-
 ## Installation Instructions ⚙️
 
-To install Quarto, follow the installation instructions provided on the [Quarto webpages](https://quarto.org/).
-
-## R Packages 📦
-
-To ensure the necessary functionality, run the following code in R:
+- Install latest version of RStudio
+- Install Quarto. Follow the installation instructions on the [Quarto webpages](https://quarto.org/)
+- After installing Quarto, open the terminal in RStudio and Install/Update the following 📦:
 
 ```R
 # Run in R
