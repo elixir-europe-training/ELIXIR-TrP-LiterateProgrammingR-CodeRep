@@ -1,8 +1,7 @@
 # Aim of the lesson 
-We will learn how to create and customize documents, articles, or reports that combine narrative text and code. We will use the Quarto tool to build our document and generate various output formats, including HTML, PDF, and Presentations. 
+The demand for scientific reports, documents, and articles is increasing, but the process often involves multiple applications and consumes significant time. Quarto, a second-generation markdown-based report framework, offers a solution. It allows researchers to execute code for data formatting, analysis, and visualization, streamlining report generation while writing in a familiar markdown format.
 
-After covering literacy programming in Chapter 1 and Chapter 2, as well as Rmarkdown methods in Chapter 3, this chapter focuses on integrating our knowledge to create a comprehensive final report, article, or other outputs that adhere to the FAIR principle. To accomplish this, we will utilize the Quarto tool, which allows us to seamlessly combine coding and programming within the same text using Rmarkdown syntax.
-The demand for scientific personnel to generate reports for public, governmental, and scientific audiences is increasing. However, this process often consumes a significant amount of time due to the need to use multiple applications for writing, data analysis, table and figure creation, and more. It is essential to learn effective tools that integrate programming with report generation in order to streamline this workflow. Quarto, a markdown-based report framework of the second generation, offers a solution. Researchers can leverage its ability to execute code for data formatting, analysis, and visualization, enabling them to produce reports with minimal effort while writing in the familiar markdown format.
+This Chapter will teach us how to create and customize documents, articles, or reports that combine narrative text and code. We will use the Quarto tool to build our document and generate various output formats, including HTML, PDF, and Presentations. We will combine our understanding of literacy programming and Rmarkdown methods to create thorough reports and articles that follow the FAIR principle. To accomplish this, we use the Quarto tool, which effortlessly blends coding and programming within the text using Rmarkdown syntax.
 
 ## Prerequisites 
 Before proceeding with this tutorial, it is recommended to have a basic understanding of R programming and familiarity with RStudio. Some knowledge of R Markdown syntax would also be beneficial.
@@ -25,7 +24,7 @@ This tutorial introduces Quarto, an **open-source** publishing system based on P
 - Journal articles
 
 Summary:
-- Easier to organize/structure document and document layout
+- Easier to organize/structure documents and document layout
 - Features largely cross-format
 - Better ability to integrate multiple languages in a PROJECT
 - Evaluate native language (R in knitr, Python/Julia in Jupyter)
@@ -137,6 +136,7 @@ ggplot(airquality, aes(Temp, Ozone)) +
 ```
 
 ## Text 
+Example (need to fix this)
 # Heading 1
 This is a sentence with some **bold text**, some *italic text* and an [image](image.png).
 
