@@ -81,14 +81,14 @@ Let's set up our environment and create a basic Quarto document.
 
 ### Creating a Basic Quarto Document
 
-To begin working with your own .qmd file, simply navigate to the menu bar and choose **File > New File > Quarto Document...** This action will trigger RStudio to open a wizard, which assists in automatically filling your file with helpful content that serves as a reminder of the fundamental functionalities of Quarto.
+To begin working with your .qmd file, navigate to the menu bar and choose **File > New File > Quarto Document...** This action will trigger RStudio to open a wizard, which assists in automatically filling your file with helpful content that serves as a reminder of the fundamental functionalities of Quarto.
 
 In the subsequent sections, we will delve deeper into the three main elements of a Quarto document: the markdown text, the code chunks, and the YAML header.
 
+# Anatomy of a Quarto document
 
-# The header yaml
-
-## Setting up the document
+## The header yaml (Metadata)
+The YAMAL metadata or header is processed in many stages of the rendering process and can influence the final document differently. It is placed at the very beginning of the document and is read by each of Pandoc, Quarto and knitr. Along the way, the information it contains can affect the code, content, and the rendering process.
 
 ::: columns
 ::: {.column width="32%"}
@@ -121,20 +121,26 @@ execute:
 format: revealjs
 --- 
 ```
-:::
+## Code
+```{r}
+#| output-location: column
+#| label: fig-airquality
+#| fig-cap: Temperature and ozone level.
+#| warning: false
 
-::: {.column width="10%"}
-:::
+library(ggplot2)
 
-::: {.column width="58%"}
--   Set up important document settings
--   Changing format is easy
-    -   some settings might not work
--   Many more options
-    -   some depending on output format
-    -   some depending on template
-:::
-:::
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess"
+)
+```
+
+## Text 
+# Heading 1
+This is a sentence with some **bold text**, some *italic text* and an [image](image.png).
+
+For how to write the text see Chpater 3 in this tutorial
 
 ## Exercise 
 Use RStudio to create a new default Quarto document
