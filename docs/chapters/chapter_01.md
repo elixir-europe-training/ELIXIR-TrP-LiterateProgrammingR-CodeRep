@@ -1,9 +1,10 @@
 ## 1.1 What is Literate programming?
-The expression "Literate programming" was coined in 1984 by the Mathematician and Computer Scientist [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth). <a title="Alex Handy, CC BY-SA 2.0 &lt;https://creativecommons.org/licenses/by-sa/2.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Donald_Ervin_Knuth.jpg"><img width="512" alt="Donald Ervin Knuth" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Donald_Ervin_Knuth.jpg/512px-Donald_Ervin_Knuth.jpg"></a>   
+The expression "__Literate programming__" was coined in 1984 by the Mathematician and Computer Scientist [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth).   <a title="Alex Handy, CC BY-SA 2.0 &lt;https://creativecommons.org/licenses/by-sa/2.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Donald_Ervin_Knuth.jpg"><img width="512" alt="Donald Ervin Knuth" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Donald_Ervin_Knuth.jpg/512px-Donald_Ervin_Knuth.jpg"></a>   
 It involves an explanation of how a program works in a natural language as opposed to the syntax of a formal programming language (Like R & Python). Another contribution made to this field by Knuth is the TeX mathematical typsetting language that can be used to insert production quality mathematical formulae into documents using panin text ASCII characters - it is used in the freely available LaTeX software.   
 
 !!! info "Example LaTeX code"
     ```The quadratic formula is $-b \pm \sqrt{b^2 - 4ac} \over 2a$```   
+    
     The quadratic formula is $-b \pm \sqrt{b^2 - 4ac} \over 2a$   
     
 
@@ -17,14 +18,14 @@ Use of Literate programming enbles us to annotate the programs code with meaning
 !!! example "Exercise in Literate Programming thinking"
     Here is some code - try describing what it does and how it is calculated as if you were explaining it to a non-programmer
 
-    ```recur_fact <- function(n) {
-       if(n <= 1) {
-           return(1) }
-       else { 
-           return(n * recur_fact(n-1)) }
-    } 
+    ```recur_fact <- function(n) {    
+       if(n <= 1) {    
+           return(1) }    
+       else {    
+           return(n * recur_fact(n-1)) }   
+    }    
     
-   recur_fact(5) ```
+   recur_fact(5) ```    
 
     ??? success "Solution"
         This is an example of some R code that calculates the factorial of n by the process of recursion such that:
@@ -45,11 +46,11 @@ Another deliverable of this course will be to also provide an introduction to at
 There will be a practical implementation of literate programming where we will transform a plain script into an annotated, rich markdown implementation that retains the functionality of the computational workflow but additionally narrates the concepts of said workflow.   
 
 !!! example "Ranking desirable features in a Literate Programming tool"
-    Discuss/Rank these with 1 = most important to 4 = least important
-    a) Inclusion of program outputs
-    b) Ability to view/edit in any plain text editor
-    c) (Progamming)Language-agnostic
-    d) Ability to be exported to other formats (e.g. PDF, Word & HTML web-pages)
+    Discuss/Rank these with 1 = most important to 4 = least important:    
+    a) Inclusion of program outputs   
+    b) Ability to view/edit in any plain text editor   
+    c) (Progamming)Language-agnostic    
+    d) Ability to be exported to other formats (e.g. PDF, Word & HTML web-pages)    
     
     ??? success "Solution"
         The point of this exercise was to get you to think about the benefits of a Literate Programming tool. In fact, all of these 
@@ -58,5 +59,5 @@ There will be a practical implementation of literate programming where we will t
 
 
    
-   
+
 
