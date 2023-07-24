@@ -1,11 +1,13 @@
 ## 1.1 What is Literate programming?
-The expression "__Literate programming__" was coined in 1984 by the Mathematician and Computer Scientist [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth).   <a title="Alex Handy, CC BY-SA 2.0 &lt;https://creativecommons.org/licenses/by-sa/2.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Donald_Ervin_Knuth.jpg"><img width="512" alt="Donald Ervin Knuth" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Donald_Ervin_Knuth.jpg/512px-Donald_Ervin_Knuth.jpg"></a>   
-It involves an explanation of how a program works in a natural language as opposed to the syntax of a formal programming language (Like R & Python). Another contribution made to this field by Knuth is the TeX mathematical typsetting language that can be used to insert production quality mathematical formulae into documents using panin text ASCII characters - it is used in the freely available LaTeX software.   
+The expression "__Literate programming__" was coined in 1984 by the Mathematician, Computer Scientist and Professor Emeritus at Stanford University [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth).  
+<a title="Alex Handy, CC BY-SA 2.0 &lt;https://creativecommons.org/licenses/by-sa/2.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Donald_Ervin_Knuth.jpg"><img width="512" alt="Donald Ervin Knuth" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Donald_Ervin_Knuth.jpg/512px-Donald_Ervin_Knuth.jpg"></a>   
+It involves an explanation of how a program works in a natural language as opposed to the syntax of a formal programming language (Like R & Python).   
+Another contribution made to this field by Knuth is the TeX mathematical typsetting language that can be used to insert production quality mathematical formulae into documents using panin text ASCII characters - it is used in the freely available LaTeX software.   
 
 !!! info "Example LaTeX code"
     ```The quadratic formula is $-b \pm \sqrt{b^2 - 4ac} \over 2a$```   
     
-    The quadratic formula is $-b \pm \sqrt{b^2 - 4ac} \over 2a$   
+The quadratic formula is $-b \pm \sqrt{b^2 - 4ac} \over 2a$   
     
 
 ## 1.2 Why do we need Literate programming?
@@ -29,7 +31,7 @@ Use of Literate programming enbles us to annotate the programs code with meaning
 
     ??? success "Solution"
         This is an example of some R code that calculates the factorial of n by the process of recursion such that:
-        n! = n \times (n-1) \times \dots \times 1
+$n! = n \times (n-1) \times \dots \times 1$
 
         (and yes it is possible to write equations in LaTex in some Literate programming documents!)
 
