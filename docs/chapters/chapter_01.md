@@ -6,8 +6,7 @@ Another contribution made to this field by Knuth is the TeX mathematical typsett
 
 !!! info "Example LaTeX code"
     ```The quadratic formula is $-b \pm \sqrt{b^2 - 4ac} \over 2a$```   
-    
-The quadratic formula is $-b \pm \sqrt{b^2 - 4ac} \over 2a$   
+    The quadratic formula is $$-b \pm \sqrt{b^2 - 4ac} \over 2a$$  
     
 
 ## 1.2 Why do we need Literate programming?
@@ -31,7 +30,7 @@ Use of Literate programming enbles us to annotate the programs code with meaning
 
     ??? success "Solution"
         This is an example of some R code that calculates the factorial of n by the process of recursion such that:
-$n! = n \times (n-1) \times \dots \times 1$
+        $$n! = n \times (n-1) \times \dots \times 1$$
 
         (and yes it is possible to write equations in LaTex in some Literate programming documents!)
 
