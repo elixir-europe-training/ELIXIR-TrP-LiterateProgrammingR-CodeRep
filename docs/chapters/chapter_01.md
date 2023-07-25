@@ -19,15 +19,14 @@ Use of Literate programming enbles us to annotate the programs code with meaning
     Here is some code - try describing what it does and how it is calculated as if you were explaining it to a non-programmer
 
    
-     recur_fact <- function(n) {    \
-        if(n <= 1) {    \
-           return(1) }    \
-        else {    \
-           return(n * recur_fact(n-1)) }    \
-        }    \
-    recur_fact(5)   \
+    recur_fact <- function(n) {
+    if(n <= 1) {    
+       return(1) }    
+    else {    
+       return(n * recur_fact(n-1)) }    
+    }    
+    recur_fact(5)   
       
-
     ??? success "Solution"    
         This is an example of some R code that calculates the factorial of n by the process of recursion such that:
         ${n! = n \times (n-1) \times \dots \times 1}$
