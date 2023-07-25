@@ -6,7 +6,7 @@ Another contribution made to this field by Knuth is the TeX mathematical typsett
 
 !!! info "Example LaTeX code"
     ```The quadratic formula is $-b \pm \sqrt{b^2 - 4ac} \over 2a$```   
-    The quadratic formula is $${-b \pm \sqrt{b^2 - 4ac} \over 2a}$$      
+    The quadratic formula is ${-b \pm \sqrt{b^2 - 4ac} \over 2a}$      
 
 ## 1.2 Why do we need Literate programming?
 Have you ever considered how a computer "reads' its instructions? At the silicon level ([Machine code](https://en.wikipedia.org/wiki/Machine_code)) the language is purely binary numbers i.e. 1s and 0s and comprise of extremely mechanistic operations e.g. roll bits to left. This is not very intuitive to humans so when we write computer programs we tend to write them in high-level languages like R & Python which are a very structured, very natural form of English.    
@@ -23,15 +23,13 @@ Use of Literate programming enbles us to annotate the programs code with meaning
            return(1) }    
        else {    
            return(n * recur_fact(n-1)) }   
-    }    
-     
-   recur_fact(5) ```    
+       }         
+       recur_fact(5) ```        
+   ??? success "Solution"    
+       This is an example of some R code that calculates the factorial of n by the process of recursion such that:
+       ${n! = n \times (n-1) \times \dots \times 1}$
 
-    ??? success "Solution"
-        This is an example of some R code that calculates the factorial of n by the process of recursion such that:
-        $${n! = n \times (n-1) \times \dots \times 1}$$
-
-        (and yes it is possible to write equations in LaTex in some Literate programming documents!)
+       (and yes it is possible to write equations in LaTex in some Literate programming documents!)
 
 
 ## 1.3 How can we implement Literate programming?
