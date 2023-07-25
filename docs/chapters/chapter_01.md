@@ -23,15 +23,13 @@ Use of Literate programming enbles us to annotate the programs code with meaning
            return(1) }    
        else {    
            return(n * recur_fact(n-1)) }   
-    }    
-         
-   recur_fact(5) ```    
-    
-    ??? success "Solution"
-        This is an example of some R code that calculates the factorial of n by the process of recursion such that:
-        ${n! = n \times (n-1) \times \dots \times 1}$
+       }         
+       recur_fact(5) ```        
+   ??? success "Solution"    
+       This is an example of some R code that calculates the factorial of n by the process of recursion such that:
+       ${n! = n \times (n-1) \times \dots \times 1}$
 
-        (and yes it is possible to write equations in LaTex in some Literate programming documents!)
+       (and yes it is possible to write equations in LaTex in some Literate programming documents!)
 
 
 ## 1.3 How can we implement Literate programming?
