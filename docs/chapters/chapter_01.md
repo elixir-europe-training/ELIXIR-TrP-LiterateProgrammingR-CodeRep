@@ -18,25 +18,21 @@ Use of Literate programming enbles us to annotate the programs code with meaning
 !!! example "Exercise in Literate Programming thinking"
     Here is some code - try describing what it does and how it is calculated as if you were explaining it to a non-programmer
 
-     ```recur_fact <- function(n) {    
+     ```
+     recur_fact <- function(n) {    
         if(n <= 1) {    
            return(1) }    
         else {    
            return(n * recur_fact(n-1)) }   
         }         
-        recur_fact(5) ```        
+    recur_fact(5)
+    ```        
 
     ??? success "Solution"    
         This is an example of some R code that calculates the factorial of n by the process of recursion such that:
         ${n! = n \times (n-1) \times \dots \times 1}$
 
        (and yes it is possible to write equations in LaTex in some Literate programming documents!)
-
-!!! example "Exercise"
-    This is a question
-
-    ??? success "Solution"
-        this is the soluiton to the question
 
 ## 1.3 How can we implement Literate programming?
 We could choose to annotate our code in many ways. Programming languages both feature and encourage the use of comments in coding. Whilst these are adequate for discussing the program in terms of the feature-set of the programming language, they are lacking in the ability to provide rich formatted dialogue with emphasus styles such as bold and italics or to incorporate images and diagrams. Similarly, the code and it's outputs remain distinct and seperate entities.    
