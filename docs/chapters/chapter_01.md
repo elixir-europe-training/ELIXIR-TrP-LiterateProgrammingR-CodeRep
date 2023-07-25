@@ -13,19 +13,21 @@ Have you ever considered how a computer "reads' its instructions? At the silicon
 They are written to be read and understood by __Humans__. In fact, other programs (interpreters and compilers are necessary for the computer to actually make sense of our code. Since this form of the code is clearly designed to be read by humans, it is emminently sensible to make the logical goals of the program equally readasble by humans.    
 
 Like any other form of scientific communication (Papers, Posters or Lectures) an anlysis script or program is a narration of a scientific story.
-Use of Literate programming enbles us to annotate the programs code with meaningful insights into the assumptions, considerations and decisions involved in the analyssis of the data. Which in turn leades to more unerstandable and reproducible research.  
+Use of Literate programming enbles us to annotate the programs code with meaningful insights into the assumptions, considerations and decisions involved in the analyssis of the data. Which in turn leads to more unerstandable and reproducible research.  
 
-!!! example "Exercise in Literate Programming thinking"
-    Here is some code - try describing what it does and how it is calculated as if you were explaining it to a non-programmer
-
-   
+```
     recur_fact <- function(n) {
     if(n <= 1) {    
        return(1) }    
     else {    
        return(n * recur_fact(n-1)) }    
     }    
-    recur_fact(5)   
+    recur_fact(5)
+```
+
+!!! example "Exercise in Literate Programming thinking"
+    Above is some example code - try describing what it does and how it is calculated as if you were    
+    explaining it to a non-programmer
       
     ??? success "Solution"    
         This is an example of some R code that calculates the factorial of n by the process of recursion such that:
