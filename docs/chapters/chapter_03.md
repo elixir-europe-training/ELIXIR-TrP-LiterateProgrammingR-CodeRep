@@ -194,13 +194,13 @@ The other type of link in basic Markdown is a _reference_ link. In this case the
     === "Markdown:"
 
         ```
-        Want to do [Repdroducible Science?][link one].
+        Want to do [Repdroducible Science?][link one]
         Here are some [practical guides][another-link]. 
         Don't forget to read [this article][link one] in its entirety. 
-       
+    
 
-       [link one]: https://www.nature.com/articles/s41562-016-0021
-       [another-link]: https://ziemann-lab.net/public/5pillars/practical_guides.html
+        [link one]: https://www.nature.com/articles/s41562-016-0021
+        [another-link]: https://ziemann-lab.net/public/5pillars/practical_guides.html
         ```
 
     === "Rendered output:"
