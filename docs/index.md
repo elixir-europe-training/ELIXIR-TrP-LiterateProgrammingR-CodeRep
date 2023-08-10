@@ -10,7 +10,7 @@ Greek Mythology icons made by [max.icons](https://www.flaticon.com/authors/maxic
 
 !!! overview ""
     :fontawesome-regular-bookmark: **Description**  
-   A course to introduce the theory, advantages and implementation of Literate Programming practices to enhance the students abilities to produce reproducible code.    
+    A course to introduce the theory, advantages and implementation of Literate Programming practices for R users working in RStudio to enhance the students abilities to produce reproducible code.    
    
     </br>
     
@@ -23,7 +23,7 @@ Greek Mythology icons made by [max.icons](https://www.flaticon.com/authors/maxic
     
     :fontawesome-solid-arrow-right: **Learning Outcomes:**  
     By the end of the course, learners will be able to:  
-    &emsp;1. Have an understanding of the principles and goals of Literate programming   
+    &emsp;1. Have an understanding of the principles and goals of Literate Programming (LP) 
     &emsp;2. Practically implement LP in their R programs using Markdown in Quarto/Rstudio      
     
     </br>
@@ -31,7 +31,7 @@ Greek Mythology icons made by [max.icons](https://www.flaticon.com/authors/maxic
     :fontawesome-solid-users: **Target Audience:** Researchers, undergraduate students, postgraduate students, etc...  
     </br>
     
-    :fontawesome-solid-stairs: **Level:** Beginner/Intermediate/Advanced  
+    :fontawesome-solid-stairs: **Level:** Beginner to Intermediate  
     
     :fontawesome-solid-lock: **License:** [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/)  
     
