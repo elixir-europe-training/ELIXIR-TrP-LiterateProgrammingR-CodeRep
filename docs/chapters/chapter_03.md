@@ -28,16 +28,15 @@ Markdown's growing popularity as the document formatting language of choice in l
 
 ## 3.3 How to use Markdown
 
-It's time to get our hands dirty and start getting some practise in how to use Markdown to format our text. To be able to follow the lessons below, you are going to need a Markdown editor, where we can write the Markdown language in a document but then also render or preview the document so we can see if the desire formatting effect was achieved.
+It's time to get our hands dirty and start getting some practise in how to use Markdown to format our text. For the examples and exercises that follow, you will need to implement markdown in RStudio/Quarto. Latest versions of RStudio come pre-packafed with Quarto.
 
-
-If **Rstudio** :simple-rstudio: is your go to tool, you can do this by:
+In **Rstudio** you can do this as follows:
 
 1. Go to the *File* menu, select *New file*, theb select *Quarto Document...*, alternatively you also use the **new file button** to do the same, and this is what is done in the video below. This will open up a *dialog* box with several options. Leave everything as default but **uncheck** the `use visual markdown editor` option. Feel free to add a **Title** and **Author** in the relevant fields, then hit the **create** button.
 2. This will open a new **Quarto Document** in RStudio's **source** editor (this where you normally write your R scripts). You can then add your text and markdown annotation in the **body** of the document. The **body** of the document referes to any space below the text between the `---` at the top. This latter section is called the YAML and controls how the document will look when rendered. You can just ignore the YAML for now, we'll talk more about this in the (next lesson)[../Chapter_04]. Note that RStudio will automatically generate some standard text, code and markdown to give you flavour of this literate programming document works. *Optional:* delete everything in the body of the file making sure **not to delete** the YAML.
 3. After adding your text and markdown annotation to the document hit the `render` button to generate an HTML document (default). If you haven't yet saved your document, RStudio will ask you save the document before rendering. Once saved, RStudio will generate an HTML docuement that shows your text but formatted according to any markdown code. The next time you make a cahnge to your Quarto Document and hit **render**, RStudio will automatically save the changes to your Quarto document before rendering.
  
-!!! tip "Rendering Markdown without a rendering step"
+!!! info "Rendering Markdown without a rendering step"
 
 
     Since 2021 RStudio now has also has a [**visual** markdown editor]([ ](https://posit.co/blog/exploring-rstudio-visual-markdown-editor/) that renders your markdown formatting live as 
@@ -46,19 +45,6 @@ If **Rstudio** :simple-rstudio: is your go to tool, you can do this by:
 ![type:video](https://youtube.com/embed/oAX9DSPVxX0)
 
 
-If you are using **JupyterNotebooks** :simple-jupyter: , you can create markdown cells to write formatted text in markdown:
-
-1. In your JupyterNotebook, select **Markdown** from the drop-down menu on the centre middle of the screen.
-2. Write your text and add your markdown formatting as you please within this cell.
-3. In Jupyter Notebooks, you will immediately see the markdown annotation **and** the resulting formatting on the screen. To see the formatting only, hit the `Run` button
-
-![type:video](https://youtube.com/embed/7IwWejXqKTQ)
-
-Finally, to learn markdown, we don't necessarily need :simple-rstudio: or  :simple-jupyter:, we can also use a standalone Markdown editor. [**Dillinger**](https://dillinger.io/) is a popular web-based Markdown editor and is sufficient to follow the rest of this lesson. If you want to use [Dillinger](https://dillinger.io/), just head on over to the link and see the video below on how to use this editor. It is extremely simple to use, write your text and markdown in the **editor window** to the left of your screen and you will immediately see the results in the **preview window** on the right.
-
-![type:video](https://youtube.com/embed/V8TV-r-Lafo)
-
-You can use any of the 3 options from above to attempt the **Exercises** below. 
 
 ### 3.3.1 Formatting text
 
@@ -189,7 +175,7 @@ You can generate an unordered list, add dashes (-), asterisks (*), or plus signs
    
 ### 3.3.4 Adding Images and Links
 
-Everynow and then you may need to provide a link in your literate document. You can provide links in basic Markdown in two ways. The first one we demonstrate are called _inline_links: here you provide the text of the link in square brackets (++bracket-left++ ++bracket-right++`) and the link itself follows in paranthesis.
+Every now and then you may need to provide a link in your literate document. You can provide links in basic Markdown in two ways. The first one we demonstrate are called _inline_links: here you provide the text of the link in square brackets (++bracket-left++ ++bracket-right++`) and the link itself follows in paranthesis.
 
 !!! example "Inline links"
 
@@ -368,18 +354,16 @@ The hard break works but not the formatting is now disconnected between the Mark
 
 - Markdown is a simple language for formatting text.  
 - Markdown is not the only tool for formatting text but it's easy to learn making it one of the most popular tools for various purposes including Literate Programming.  
-- Markdown is supported by many of the popular IDEs for :simple-r:, :simple-python: and other programming languages.  
+- Markdown is supported by many of the popular IDEs including RStudio
 - Although basic Markdown has limited functionality, many extensions, often language-specific, exist to enhance Markdown's capability.
-- Finally, in some platforms e.g. RStudio, Markdown can be combined with other formtting or typesetting languages such as HTML or LaTeX.
 
 
 ## 3.5 Further Learning and Resources for Markdown
 
-The above should give you enough Markdown to get started and follow any later lessons. There are a handful os basic markdown elements that are covered in the [Markdown Guide](https://www.markdownguide.org/basic-syntax/) below and there are plenty of extensions as well.  If you want more, here is a very short selection of some resources that might be helpful:
+The above should give you enough Markdown to get started and follow any later lessons. There are a handful of basic markdown elements that are covered in the [Markdown Guide](https://www.markdownguide.org/basic-syntax/) below and there are plenty of extensions as well.  If you want more, here is a very short selection of some resources that might be helpful:
 
 * [Markdown Guide](https://www.markdownguide.org/basic-syntax/) offers a short and handy reference to the basic syntax or grammar of markdown.
 * Want to practise some more markdown? Try this excellent, standalone [Markdown tutorial](https://www.markdowntutorial.com/). Some of the examples on this page are based on these lessons.
-* Several application for e.g. R and Github use their own extensions of Markdown. These means you not only get the basic Markdown syntax but also some simpler extensions for more complex formatting (HTML and LaTeX can wait). Some of this extended syntax is is documented [here](https://www.markdownguide.org/extended-syntax/).
+* Several applications for e.g. R and Github use their own extensions of Markdown. These means you not only get the basic Markdown syntax but also some simpler extensions for more complex formatting (HTML and LaTeX can wait). Some of this extended syntax is is documented [here](https://www.markdownguide.org/extended-syntax/).
 * A nifty [cheatsheet](https://www.markdownguide.org/cheat-sheet/) for *basic* markdown can be handy.
-* :simple-jupyter: A [cheatsheet for extended Markdown in Jupyter Notebooks](https://www.ibm.com/docs/en/watson-studio-local/1.2.3?topic=notebooks-markdown-jupyter-cheatsheet) going beyond basic Markdown.
-* :simple-rstudio: R users fret not, there is also a reference [cheatsheet for extended Markdown syntax in R](https://shiny.posit.co/r/articles/build/rm-cheatsheet/) (also known as _Rmarkdown_).
+* A guide for the Markdown extension in RStudio there is also a reference [cheatsheet for extended Markdown syntax in R](https://shiny.posit.co/r/articles/build/rm-cheatsheet/) (also known as _Rmarkdown_).
