@@ -19,7 +19,7 @@ When using Markdown you annotate your text with chracters, such  as \*s or \#s, 
 
 Markdown's growing popularity as the document formatting language of choice in literate programming needs is reflected in the availability of markdown support (in many cases right out of the box without any additional installation!) for popular IDEs and notebook formats such as RStudio, VS Code, Jupyter Notebooksand even GitHub (a code hosting platform for colloboration and version control - if you are unfamiliar with GitHub, don't worry, this will be covered in a following course). 
 
-!!! tip "Basic Markdown _vs._ Markdown Extensions"
+!!! info "Basic Markdown _vs._ Markdown Extensions"
 
     Markdown's simplicity comes at a cost: there are only a limited amount of formatting effects available to you in **basic** or **native** Markdown. However, many applications supporting Markdown e.g. Jupyter Notebooks, R/RStudio,  
     GitHub etc. provide thier own [**extensions** of Markdown syntax](https://www.markdownguide.org/extended-syntax/) which let you do more complex formatting with the simplicity of Markdown-like syntax. Additionally,
@@ -31,7 +31,7 @@ Markdown's growing popularity as the document formatting language of choice in l
 It's time to get our hands dirty and start getting some practise in how to use Markdown to format our text. To be able to follow the lessons below, you are going to need a Markdown editor, where we can write the Markdown language in a document but then also render or preview the document so we can see if the desire formatting effect was achieved.
 
 
-If **Rstudio** :simple-rstudio: your go to tool, you can do this by:
+If **Rstudio** :simple-rstudio: is your go to tool, you can do this by:
 
 1. Go to the *File* menu, select *New file*, theb select *Quarto Document...*, alternatively you also use the **new file button** to do the same, and this is what is done in the video below. This will open up a *dialog* box with several options. Leave everything as default but **uncheck** the `use visual markdown editor` option. Feel free to add a **Title** and **Author** in the relevant fields, then hit the **create** button.
 2. This will open a new **Quarto Document** in RStudio's **source** editor (this where you normally write your R scripts). You can then add your text and markdown annotation in the **body** of the document. The **body** of the document referes to any space below the text between the `---` at the top. This latter section is called the YAML and controls how the document will look when rendered. You can just ignore the YAML for now, we'll talk more about this in the (next lesson)[../Chapter_04]. Note that RStudio will automatically generate some standard text, code and markdown to give you flavour of this literate programming document works. *Optional:* delete everything in the body of the file making sure **not to delete** the YAML.
@@ -110,7 +110,7 @@ Your literate programming document needs to be divided into sections. Perhaps yo
         
 The number of `#` controls the size or level of the headers - more means smaller headers.
 
-!!! question "Exercise"
+!!! question "Generating Headers of different size"
 
     The following headers have been produced using Markdown. Can you reproduce them using Markdown-formatted text?
 
@@ -165,7 +165,7 @@ You can generate an unordered list, add dashes (-), asterisks (*), or plus signs
         * third item
 
 
-!!! question "Exercise"
+!!! question "Making nested lists"
 
     It is easy to generate nested lists in Markdown. Can you reproduce the following nested list using Markdown-formatted text?
 
@@ -278,7 +278,7 @@ To make a table, use three or more hyphens (---) to create each column’s heade
         | blah        | blah        |
         | blah        | blah        |
 
-!!! exercise "Exercise"
+!!! exercise "Making a two column table"
 
     Can you write the Markdown-formatted text to generate the exact following table (don't forget the cell alginment)?
 
@@ -298,7 +298,7 @@ To make a table, use three or more hyphens (---) to create each column’s heade
         | Gene C      | 0.01 |
         ```
 
-!!! tip "Making tables in Markdown..."
+!!! info "Making tables in Markdown..."
 
     Making small tables is simple enough but making larger tables can get painful in markdown. If you need to make tables from your own data, R or Python will have appropriate extensions to help you with that. For other 
     larger tables in markdon the [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables) is a great tool. Make your table using their graphical interface and then copy the generated Markdown- 
@@ -353,7 +353,7 @@ To acheive the desired affect, you can enforce a _hard break_ by inserting a new
 
 The hard break works but not the formatting is now disconnected between the Markdown document and the rendered output. A more subtle way to achieve this sort of paragraph formatting effect is to use what is called _soft break_. A soft break involves inserting two blank spaces with the ++space++ key at the end of each line. A soft break acheives the same effect a a hard break but leaves more of a semblance between the text in the Markdown document and the final rendered document. which may be more desirable in several instances.
 
-!!! question "Exercise"
+!!! question "Using soft breaks"
 
     Here is the last verse from the ChatGP epic poem about the advanatges of Makrdown for literate progamming:
 
