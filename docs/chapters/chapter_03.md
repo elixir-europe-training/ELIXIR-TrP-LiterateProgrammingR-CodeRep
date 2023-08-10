@@ -36,15 +36,13 @@ In **Rstudio** you can do this as follows:
 2. This will open a new **Quarto Document** in RStudio's **source** editor (this where you normally write your R scripts). You can then add your text and markdown annotation in the **body** of the document. The **body** of the document referes to any space below the text between the `---` at the top. This latter section is called the YAML and controls how the document will look when rendered. You can just ignore the YAML for now, we'll talk more about this in the (next lesson)[../Chapter_04]. Note that RStudio will automatically generate some standard text, code and markdown to give you flavour of this literate programming document works. *Optional:* delete everything in the body of the file making sure **not to delete** the YAML.
 3. After adding your text and markdown annotation to the document hit the `render` button to generate an HTML document (default). If you haven't yet saved your document, RStudio will ask you save the document before rendering. Once saved, RStudio will generate an HTML docuement that shows your text but formatted according to any markdown code. The next time you make a cahnge to your Quarto Document and hit **render**, RStudio will automatically save the changes to your Quarto document before rendering.
  
+![type:video](https://youtube.com/embed/oAX9DSPVxX0)
+
 !!! info "Rendering Markdown without a rendering step"
 
 
-    Since 2021 RStudio now has also has a [**visual** markdown editor]([ ](https://posit.co/blog/exploring-rstudio-visual-markdown-editor/) that renders your markdown formatting live as 
-    you type it in the Quarto document, however, I wouldn't recommend this for the exercises below. 
-
-![type:video](https://youtube.com/embed/oAX9DSPVxX0)
-
-
+    Since 2021 RStudio now has also has a [**visual** markdown editor](https://posit.co/blog/exploring-rstudio-visual-markdown-editor/) that renders your markdown formatting live as 
+    you type it in the Quarto document.
 
 ### 3.3.1 Formatting text
 
@@ -203,7 +201,7 @@ The other type of link in basic Markdown is a _reference_ link. In this case the
 
        [link one]: https://www.nature.com/articles/s41562-016-0021
        [another-link]: https://ziemann-lab.net/public/5pillars/practical_guides.html
-       ```
+        ```
 
     === "Rendered output:"
 
