@@ -10,7 +10,7 @@ Greek Mythology icons made by [max.icons](https://www.flaticon.com/authors/maxic
 
 !!! overview ""
     :fontawesome-regular-bookmark: **Description**  
-    A course to introduce the theory, advantages and implementation of Literate Programming practices to enhance the students abilities to produce reproducible code.    
+    A course to introduce the theory, advantages and implementation of Literate Programming practices for R users working in RStudio to enhance the students abilities to produce reproducible code.    
    
     </br>
     
