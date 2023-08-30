@@ -74,23 +74,40 @@ Quarto uses a two-step workflow to render documents. First, the .qmd file is sen
 
 ADD FIGURE
 
-## Let's Get Started!
+# Let's Get Started!
 
-Let's set up our environment and create a basic Quarto document. 
+## Quarto document: a practical overview
+Instead of basic scripts, we use Quarto files in RStudio to make our workflow reproducible. Quarto files can dynamically generate our paper's code and story. A Quarto file's YAML header, Quarto-formatted text, and R code blocks (sometimes termed "code chunks") are its main components. A Quarto document is formed by three main elements: 
 
-### Creating a Basic Quarto Document
+1. The YAML header
+
+2. A Quarto text
+
+3. R code chunks for embedded analysis
+
+Finally, to render the document, we use the engine called _Knitr_
+
+
+ADD FIGURE (with the process described above)
+
+
+Let's set up our environment and start creating a basic Quarto document. 
+
+## Creating a Basic Quarto Document
 
 To begin working with your .qmd file, navigate to the menu bar and choose **File > New File > Quarto Document...** This action will trigger RStudio to open a wizard, which assists in automatically filling your file with helpful content that serves as a reminder of the fundamental functionalities of Quarto.
 
-In the subsequent sections, we will delve deeper into the three main elements of a Quarto document: the markdown text, the code chunks, and the YAML header.
-
-# Anatomy of a Quarto document
-
 ## The header yaml (Metadata)
-The YAMAL metadata or header is processed in many stages of the rendering process and can influence the final document differently. It is placed at the very beginning of the document and is read by each of Pandoc, Quarto and knitr. Along the way, the information it contains can affect the code, content, and the rendering process.
+YAML metadata, or the header, is crucial to Quarto documents. This metadata is your document's backstage pass and influences many rendering phases. It contains crucial information that can shape your document's code, content, and presentation, placed at the beginning and carefully evaluated by Pandoc, Quarto, and knitr.
 
-::: columns
-::: {.column width="32%"}
+Quarto default YAML header includes the following metadata surrounded by three dashes ---:
+- title
+- author
+- format
+- editor
+
+FIGURE showing the Yamal
+
 ``` yaml
 ---
 title: "Document title"
@@ -101,25 +118,9 @@ format: html
 --- 
 ```
 
-``` yaml
----
-title: "Document title"
-author: "Your Name"
-execute:
-  echo: false
-format: pdf
---- 
-```
+You can select one of three default formats as **format**: pdf, html, or word document. Essentially, this allows you to export your qmd file as a different file type. 
 
-``` yaml
----
-title: "Document title"
-author: "Your Name"
-execute:
-  echo: false
-format: revealjs
---- 
-```
+
 ## Code
 ```{r}
 #| output-location: column
