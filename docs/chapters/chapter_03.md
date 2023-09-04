@@ -355,13 +355,3 @@ The hard break works but not the formatting is now disconnected between the Mark
 - Markdown is supported by many of the popular IDEs including RStudio
 - Although basic Markdown has limited functionality, many extensions, often language-specific, exist to enhance Markdown's capability.
 
-
-## 3.5 Further Learning and Resources for Markdown
-
-The above should give you enough Markdown to get started and follow any later lessons. There are a handful of basic markdown elements that are covered in the [Markdown Guide](https://www.markdownguide.org/basic-syntax/) below and there are plenty of extensions as well.  If you want more, here is a very short selection of some resources that might be helpful:
-
-* [Markdown Guide](https://www.markdownguide.org/basic-syntax/) offers a short and handy reference to the basic syntax or grammar of markdown.
-* Want to practise some more markdown? Try this excellent, standalone [Markdown tutorial](https://www.markdowntutorial.com/). Some of the examples on this page are based on these lessons.
-* Several applications for e.g. R and Github use their own extensions of Markdown. These means you not only get the basic Markdown syntax but also some simpler extensions for more complex formatting (HTML and LaTeX can wait). Some of this extended syntax is is documented [here](https://www.markdownguide.org/extended-syntax/).
-* A nifty [cheatsheet](https://www.markdownguide.org/cheat-sheet/) for *basic* markdown can be handy.
-* A guide for the Markdown extension in RStudio there is also a reference [cheatsheet for extended Markdown syntax in R](https://shiny.posit.co/r/articles/build/rm-cheatsheet/) (also known as _Rmarkdown_).
