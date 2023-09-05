@@ -75,10 +75,16 @@ dim(cancer_data)
 colnames(cancer_data)
 ```
 
-You will immediately come up with questions: 
+!!! question "Excercise"
 
-1. How does someone else tell the code from the data?
-2. This piece of code cannot be run as running the prose will return errors. Then what good does it do to me?
+    Can you think of any potential problems with this piece of code?
+
+    ??? success "Solution"
+
+        Here are some potential problems we can think of (you may have similar):
+        
+        1. How does someone else tell the code from the data?
+        2. This piece of code cannot be run as running the prose will return errors. Then what good does it do to me?
 
 ### 2.3.2 Second pass
 It is the worst of both worlds if neither a human nor a machine can understand the lines. Fortunately, standards and syntaxes have been created to make literate programming possible. This is how such a script looks like:
@@ -137,13 +143,21 @@ This hybrid format starts to get confusing, as you may wonder what all those tri
 You will find that we have gone quite far if you compare the first R code snippet and the self-contained file, which we will name **`wisconsin.qmd`**. But fundamental questions remain: Why should you bother? How does literate programming resolve the issues we mentioned?
 
 ### 2.4.1 Reproducibility
-This is one of the biggest selling points of literate programming. As we will see in coming chapters, how the self-contained file is written allows results to be generated *on the fly* when you generate the deliverable. What does this mean?
+This is one of the biggest selling points of literate programming. As we will see in coming chapters, how the self-contained file is written allows results to be generated *on the fly* when you generate the deliverable.
 
-1. You do not need to run **`analysis.R`** first to save `histogram.jpg` and `correlation.png`, before generating the deliverable in `report.tex`. You just make any necessary changes in **`wisconsin.qmd`**.
-2. The same goes for numbers and tables. You do not need to pre-compute say the $t$-statistic, manually input in `report.tex`, and then generate the deliverable. Again, just edit **`wisconsin.qmd`**.
-3. Your collaborator sends you a new set of data with more rows? No problem, the dimensions (`dim(cancer_data)`) and everything else will be updated.
+!!! question "Exercise"
 
-This is what reproducibility is about.
+    What good does generating the results *on the fly* practically do? In other words, how has the workflow changed for the better?
+    
+    ??? success "Solution"
+
+        Here are a few changes that would occur to the workflow:
+
+        1. You do not need to run **`analysis.R`** first to save `histogram.jpg` and `correlation.png`, before generating the deliverable in `report.tex`. You just make any necessary changes in **`wisconsin.qmd`**.
+        2. The same goes for numbers and tables. You do not need to pre-compute say the $t$-statistic, manually input in `report.tex`, and then generate the deliverable. Again, just edit **`wisconsin.qmd`**.
+        3. Your collaborator sends you a new set of data with more rows? No problem, the dimensions (`dim(cancer_data)`) and everything else will be updated.
+
+The answers to the question above are what reproducibility is about.
 
 ### 2.4.2 Version control, and more
 Reproducibility is greatly enhanced if you combine literate programming with version control. Essentially, you track the changes made to **`wisconsin.qmd`** and all the other files (but pherhaps not in the same way word processing systems track changes in word documents), so the safety net of previous versions is always there for you to fall back in case mistakes are made in your analysis. Practically and more importantly, you will not need to duplicate files and name them **`wisconsin-draft.qmd`**, **`wisconsin-draft-02.qmd`**, **`wisconsin-final.qmd`**, **`wisconsin-final-final.qmd`**. You will learn more in the module on [version control](../../../ELIXIR-TrP-VersionControlR-CodeRep/).
