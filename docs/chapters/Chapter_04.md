@@ -1,6 +1,8 @@
 # Aim of the lesson 
 The demand for scientific reports, documents, and articles is increasing, but the process often involves multiple applications and consumes significant time. Quarto, a second-generation markdown-based report framework, offers a solution. It allows researchers to execute code for data formatting, analysis, and visualization, streamlining report generation while writing in a familiar markdown format.
 
+
+
 This Chapter will teach us how to create and customize documents, articles, or reports that combine narrative text and code. We will use the Quarto tool to build our document and generate various output formats, including HTML, PDF, and Presentations. We will combine our understanding of literacy programming and Rmarkdown methods to create thorough reports and articles that follow the FAIR principle. To accomplish this, we use the Quarto tool, which effortlessly blends coding and programming within the text using Rmarkdown syntax.
 
 ## Prerequisites 
@@ -217,9 +219,16 @@ Some things to keep in mind
 The chunk label syntax is always #| label: chunk-label with chunk-label replaced with your own text
 The chunk label has to be unique (i.e. you can’t use the the same name for multiple chunks)
 
+### Bibliography 
+
 # Lets build together a QUarto paper/Document 
 
-## Upload needed packages  
+Maybe we should do this as exercise format 
+
+## 1. Download needed data for the current examples of literate programming document 
+data
+
+## 2. Upload needed packages  
 Before looking at the data:
 
 -   we load the packages required
@@ -247,4 +256,37 @@ knitr::opts_chunk$set(fig.align = "center")
 
 theme_set(theme_bw(12))
 knitr::opts_chunk$set(fig.align = "center")
+
 ```
+
+## 3. Open a Quarto file 
+Hopefully, by now you have Quarto downloaded in your R 
+
+## 4. Make changes to the YAML 
+
+``` yaml
+---
+title: "Example analysis breast cancer data"
+author: "Name of the researcher or team"
+bibliography: references.bib
+date: "`r Sys.Date()`"
+toc: true
+number-sections: true
+highlight-style: pygments
+execute:
+  echo: false
+format:
+  gfm: default
+  html:
+    code-fold: true
+    code-tools: true
+    df-print: paged
+editor: visual
+---
+```
+## 5. Lets put in some text 
+Introduction to the data used and try to link to available resources 
+
+## Introduction
+This is an example analysis of the **Wisconsin breast cancer data** (available [here](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data)) done in R. The first usage of this data was described in @Streetetal1993.
+
