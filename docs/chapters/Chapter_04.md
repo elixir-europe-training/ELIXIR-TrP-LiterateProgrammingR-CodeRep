@@ -132,7 +132,8 @@ In the qmd file, code blocks are marked in gray. On either side of them are thre
 
 You can code in many different languages in RStudio: R, Phyton, Bash. SQL
 
-## Code
+Example of a code: 
+
 ```{r}
 #| output-location: column
 #| label: fig-airquality
@@ -165,26 +166,26 @@ FIGURE showing the bottom to be pressed for render
 # 2. Writing Quarto Documents 
 The RStudio visual editor simplifies formatting. To go into visual mode for a document, activate the visual option at the top-left of the toolbar. This opens a formatting bar where you may style, add links, create tables, and more, similar to Google Docs and other document editors. Switch between source and visual mode at any moment to retain editing location and undo/redo status.
 
-### Adding Headings
+### *Adding Headings*
 For a list of editing shortcut: https://rstudio.github.io/visual-markdown-editing/shortcuts.html
 
 Example (need to fix this)
 # Heading 1
 This is a sentence with some **bold text**, some *italic text* and an [image](image.png).
 
-### Creating Bullet and Numbered Lists
+### *Creating Bullet and Numbered Lists*
 turn text into bullet or numbered lists.
 
-### Adding Images
+### *Adding Images*
+The visual editor allows users to insert images by browsing their location or copying and pasting it to the Qmd document directly. 
 
-
-### Adding Links
+### *Adding Links*
 (need to fix) Click on the link icon and paste the address in the URL field. Simple right? If you prefer, you can also the drop-down insert menu, or even use shortcuts
 
-### Creating tables 
+### *Creating tables* 
 we could do that by inserting a table to a selected part of the documents and by specifying the desired number of rows and columns.
 
-### Adding Formulas
+### *Adding Formulas*
 
 
 ## Upload needed packages  
