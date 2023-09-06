@@ -74,7 +74,7 @@ Quarto uses a two-step workflow to render documents. First, the .qmd file is sen
 
 ADD FIGURE
 
-# Let's Get Started!
+# 1.  Let's Get Started!
 
 ## Quarto document: a practical overview
 Instead of basic scripts, we use Quarto files in RStudio to make our workflow reproducible. Quarto files can dynamically generate our paper's code and story. A Quarto file's YAML header, Quarto-formatted text, and R code blocks (sometimes termed "code chunks") are its main components. A Quarto document is formed by three main elements: 
@@ -125,10 +125,6 @@ Other YAML formatting options include adding bibliography information, customizi
 ## 2. Text 
 This is just markdown-formatted text narrative (more on markdown in Chapter 3). Plain text in Quarto is narrative text in the document. R scripts want plaintext to be code. In Quarto, code must be enclosed in special characters. Formatting symbols like ##, **, and < > are used instead of standard grammar components.
 
-Example (need to fix this)
-# Heading 1
-This is a sentence with some **bold text**, some *italic text* and an [image](image.png).
-
 For how to write the text see Chpater 3 in this tutorial
 
 ## 3. Code
@@ -161,12 +157,35 @@ Give your document a name and pick a folder before rendering it. Name your file 
 FIGURE showing the bottom to be pressed for render 
 
 ## Exercise 
-Use RStudio to create a new default Quarto document
-Add a title and your name as the author
-Change format to html theme to sketchy
-Add toc
-Create two sections, one with fact you want to learn and your favorite thing about R
-Render it with RStudio button, then try with the R package and terminal
+- Use RStudio to create a new default Quarto document
+- Add a title and your name as the author
+- Change format to html 
+- Render the document
+
+# 2. Writing Quarto Documents 
+The RStudio visual editor simplifies formatting. To go into visual mode for a document, activate the visual option at the top-left of the toolbar. This opens a formatting bar where you may style, add links, create tables, and more, similar to Google Docs and other document editors. Switch between source and visual mode at any moment to retain editing location and undo/redo status.
+
+### Adding Headings
+For a list of editing shortcut: https://rstudio.github.io/visual-markdown-editing/shortcuts.html
+
+Example (need to fix this)
+# Heading 1
+This is a sentence with some **bold text**, some *italic text* and an [image](image.png).
+
+### Creating Bullet and Numbered Lists
+turn text into bullet or numbered lists.
+
+### Adding Images
+
+
+### Adding Links
+(need to fix) Click on the link icon and paste the address in the URL field. Simple right? If you prefer, you can also the drop-down insert menu, or even use shortcuts
+
+### Creating tables 
+we could do that by inserting a table to a selected part of the documents and by specifying the desired number of rows and columns.
+
+### Adding Formulas
+
 
 ## Upload needed packages  
 Before looking at the data:
