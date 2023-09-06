@@ -1,6 +1,9 @@
 ## 1.1 What is Literate programming?
 The expression "__Literate programming__" was coined in 1984 by the Mathematician, Computer Scientist and Professor Emeritus at Stanford University [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth).  
-<a title="Alex Handy, CC BY-SA 2.0 &lt;https://creativecommons.org/licenses/by-sa/2.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Donald_Ervin_Knuth.jpg"><img width="512" alt="Donald Ervin Knuth" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Donald_Ervin_Knuth.jpg/512px-Donald_Ervin_Knuth.jpg"></a>   
+<a title="Alex Handy, CC BY-SA 2.0 &lt;https://creativecommons.org/licenses/by-sa/2.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Donald_Ervin_Knuth.jpg">
+ <div style="text-align: center;">
+<img width="512" alt="Donald Ervin Knuth" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Donald_Ervin_Knuth.jpg/512px-Donald_Ervin_Knuth.jpg">
+     </div></a>   
 It involves an explanation of how a program works in a natural language as opposed to the syntax of a formal programming language (Like R & Python).   
 Another contribution made to this field by Knuth is the TeX mathematical typsetting language that can be used to insert production quality mathematical formulae into documents using panin text ASCII characters - it is used in the freely available LaTeX software.   
 
