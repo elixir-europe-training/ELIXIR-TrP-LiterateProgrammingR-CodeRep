@@ -9,11 +9,12 @@ Another contribution made to this field by Knuth is the TeX mathematical typsett
     The quadratic formula is ${-b \pm \sqrt{b^2 - 4ac} \over 2a}$      
 
 ## 1.2 Why do we need Literate programming?
-Have you ever considered how a computer "reads' its instructions? At the silicon level ([Machine code](https://en.wikipedia.org/wiki/Machine_code)) the language is purely binary numbers i.e. 1s and 0s and comprise of extremely mechanistic operations e.g. roll bits to left. This is not very intuitive to humans so when we write computer programs we tend to write them in high-level languages like R & Python which are a very structured, very natural form of English.    
+Have you ever considered how a computer "reads" its instructions? At the silicon level ([Machine code](https://en.wikipedia.org/wiki/Machine_code)) the language is purely binary numbers i.e. 1s and 0s and comprise of extremely mechanistic operations e.g. roll bits to left. This is not very intuitive to humans so when we write computer programs we tend to write them in high-level languages like R & Python which are a very structured, very natural form of English.  
+
 They are written to be read and understood by __Humans__. In fact, other programs (interpreters and compilers are necessary for the computer to actually make sense of our code. Since this form of the code is clearly designed to be read by humans, it is emminently sensible to make the logical goals of the program equally readasble by humans.    
 
 Like any other form of scientific communication (Papers, Posters or Lectures) an anlysis script or program is a narration of a scientific story.
-Use of Literate programming enbles us to annotate the programs code with meaningful insights into the assumptions, considerations and decisions involved in the analyssis of the data. Which in turn leads to more unerstandable and reproducible research.  
+Use of Literate programming enables us to annotate the programs code with meaningful insights into the assumptions, considerations and decisions involved in the analyssis of the data. Which, in turn, leads to more unerstandable and reproducible research.  
 
 ```
     recur_fact <- function(n) {
