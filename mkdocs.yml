@@ -4,8 +4,9 @@ nav:
     - Course Content:
       - "1. The concepts and goals of Literate Programming": chapters/chapter_01.md
       - "2. The Literate Programming Approach: A Primer": chapters/chapter_02.md
-      - "3. An Introduction to Markdown": chapters/chapter_03.md
+      - "3. Writing prose for Literate Programming with Markdown: an Introduction": chapters/chapter_03.md
       - "4. An Introduction to Quarto": chapters/Chapter_04.md
+      - "5. Conclusion and next steps": /chapters/chapter_05.md
       - "References": chapters/references.md
     - "Follow up training": follow_up_training.md
 
