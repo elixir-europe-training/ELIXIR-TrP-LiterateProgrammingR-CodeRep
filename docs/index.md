@@ -2,7 +2,7 @@
 
 ## Authors
 
-[cards class_name="authors" rows = "2" cols="4"(./docs/assets/cards/author_cards.yaml)]
+[cards class_name="authors" rows = "1" cols="4"(./docs/assets/cards/author_cards.yaml)]
 
 Greek Mythology icons made by [max.icons](https://www.flaticon.com/authors/maxicons) from [www.flaticon.com](https://www.flaticon.com)
 
@@ -22,7 +22,7 @@ Greek Mythology icons made by [max.icons](https://www.flaticon.com/authors/maxic
     </br>
     
     :fontawesome-solid-arrow-right: **Learning Outcomes:**  
-    By the end of the course, learners will be able to:  
+    By the end of the course, learners will be able to:    
     &emsp;1. Have an understanding of the principles and goals of Literate Programming (LP) 
     &emsp;2. Practically implement LP in their R programs using Markdown in Quarto/Rstudio      
     
@@ -65,7 +65,7 @@ Please cite as:
 To run this lesson you need to install data from the [Elixir CodeRep R script repository](https://github.com/elixir-europe-training/ELIXIR-TrP-CodeRep-Example-Python) NB This currently points to the __Python___ example script - need Alexia to create one for R and then use link to that here....   
 
 ### Software setup
-To run this course you need to install the following:
+To run this course you need to install the following:  
 * R and Rstudio - pleadse follow the instructions [here](https://posit.co/download/rstudio-desktop/) for your machine.   
 * Quarto - please follow the instructions [here](https://quarto.org/docs/get-started/) for your machine.    
 
