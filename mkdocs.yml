@@ -8,7 +8,6 @@ nav:
       - "4. An Introduction to Quarto": chapters/Chapter_04.md
       - "5. Conclusion and next steps": chapters/chapter_05.md
       - "References": chapters/references.md
-    - "Follow up training": follow_up_training.md
 
 theme:
   name: material
