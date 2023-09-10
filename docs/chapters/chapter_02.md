@@ -170,7 +170,14 @@ The whole system of Quarto and Markdown allows us to generate deliverables in mu
 ### 2.4.4 Testament
 You may already notice the self-referentiality of these materials - yes, they have been written using the literate programming approach. And what is the syntax in which they are written? Markdown. And are they version controlled? Absolutely yes. Once you have understood enough, you can even look at the files for generating these materials. I hope that will convince you to start adopting these practices.
 
-## 2.5 Still confused?
+## 2.5 Summary
+
+* To put it simply, in literate programming, we put the code and the prose that explains the code in the same file.
+* The code and the prose are formatted differently so that computers (and users) can tell them apart.
+* Practising literate programming in this way facilitates reproducibility, and enables other steps in the complete workflow.
+* Markdown and Quarto are two important components in literate programming.
+
+## 2.6 Still confused?
 One major obstacle with learning literate programming, and the rest of this training programme is that the sheer amount of technical terms aka jargons confuses a researcher who codes but is not primarily in the field of computing and statistics. Here is a glossary that contains the terms that you might have come across with. If this looks Greek to you, don't worry, come back to this after you have covered the next two chapters. 
 
 - RStudio: Some poeple equate RStudio (the IDE) with R (the programming language), because they have been using RStudio the whole time to code in R, even though such equivalence is technically inaccurate. They cannot be blamed, however, because RStudio is arguably the best IDE for R, and there is growing support for other languages such as Julia, Python, C++, etc. And yes, you can write Quarto and Markdown documents in RStudio. The company that created RStudio has recently been renamed Posit, as the IDE becomes more agnostic on the programming language.
