@@ -23,7 +23,7 @@ Greek Mythology icons made by [max.icons](https://www.flaticon.com/authors/maxic
     
     :fontawesome-solid-arrow-right: **Learning Outcomes:**  
     By the end of the course, learners will be able to:    
-    &emsp;1. Have an understanding of the principles and goals of Literate Programming (LP) 
+    &emsp;1. Have an understanding of the principles and goals of Literate Programming (LP)  
     &emsp;2. Practically implement LP in their R programs using Markdown in Quarto/Rstudio      
     
     </br>
@@ -66,7 +66,8 @@ To run this lesson you need to install data from the [Elixir CodeRep R script re
 
 ### Software setup
 To run this course you need to install the following:  
-* R and Rstudio - pleadse follow the instructions [here](https://posit.co/download/rstudio-desktop/) for your machine.   
-* Quarto - please follow the instructions [here](https://quarto.org/docs/get-started/) for your machine.    
+
+  * R and Rstudio - please follow the instructions [here](https://posit.co/download/rstudio-desktop/) for your machine.   
+  * Quarto - please follow the instructions [here](https://quarto.org/docs/get-started/) for your machine.    
 
 
