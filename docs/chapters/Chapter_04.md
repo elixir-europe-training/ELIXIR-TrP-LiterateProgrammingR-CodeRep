@@ -10,7 +10,8 @@ Before proceeding with this tutorial, it is recommended to have a basic understa
 
 ### Data used through out this tutotial 📊
 
-Throughout this tutorial, we will be using a sample dataset called "Wisconsin breast cancer data." Please make sure to download this dataset and save it in a location accessible to your R environment. You can download the dataset from [this link](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data). The first usage of this data was described in @Streetetal1993.
+Throughout this tutorial, we will be using a sample dataset "Wisconsin breast cancer data." Please make sure to download this dataset and save it in a location accessible to your R environment. 
+You can download the dataset from [this link](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data). The first usage of this data was described in @Streetetal1993.
 
 
 ## 4.2 What Is Quarto and Its Benefits? 
@@ -23,6 +24,9 @@ Summary:
 - Evaluate native language (R in knitr, Python/Julia in Jupyter)
 - HTML slides with revealjs are pandoc-compatible, so RStudio Visual Editor works with them
 
+```{r}
+knitr::include_graphics("img/Figure1.png")
+```
 Figure A Quarto document in RStudio that combines code and results.
 
 
