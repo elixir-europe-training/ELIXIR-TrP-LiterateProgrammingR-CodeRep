@@ -1,29 +1,16 @@
-# Aim of the lesson 
+## 4.1 Aim of the lesson 
 The demand for scientific reports, documents, and articles is increasing, but the process often involves multiple applications and consumes significant time. Quarto, a second-generation markdown-based report framework, offers a solution. It allows researchers to execute code for data formatting, analysis, and visualization, streamlining report generation while writing in a familiar markdown format.
 
 
 
 This Chapter will teach us how to create and customize documents, articles, or reports that combine narrative text and code. We will use the Quarto tool to build our document and generate various output formats, including HTML, PDF, and Presentations. We will combine our understanding of literacy programming and Rmarkdown methods to create thorough reports and articles that follow the FAIR principle. To accomplish this, we use the Quarto tool, which effortlessly blends coding and programming within the text using Rmarkdown syntax.
 
-## Prerequisites 
-Before proceeding with this tutorial, it is recommended to have a basic understanding of R programming and familiarity with RStudio. Some knowledge of R Markdown syntax would also be beneficial.
+### Prerequisites 
+Before proceeding with this tutorial, it is recommended to have a basic understanding of R programming and familiarity with RStudio. Some knowledge of R Markdown syntax would also be beneficial (see [Chapter 3](https://elixir-europe-training.github.io/ELIXIR-TrP-LiterateProgrammingR-CodeRep/chapters/chapter_03/) if in need of a markdown refresh.
 
-## Prior Knowledge Assumed
-This tutorial assumes that you are familiar with the following concepts:
 
-- Basic R programming
-- RStudio and its interface
-- Markdown syntax and document rendering
-
-## Why Use Quarto? 
-This tutorial introduces Quarto, an **open-source** publishing system based on Pandoc. Quarto is the next generation of RMarkdown, offering support for dynamic and static documents and multiple programming languages. With Quarto, you can effortlessly combine narrative text and code to create various resources like documents, books, presentations, web pages, and more. Quarto is a command line interface (CLI) that renders plain text formats (.qmd, .rmd, .md) OR mixed formats (.ipynb/Jupyter notebook) into static:
-- PDF
-- MS Office (Word, Powerpoint)
-- HTML reports
-- Presentation (Powerpoint, Beamer, revealjs)
-- Books
-- Websites
-- Journal articles
+### 4.2 What is Quarto? 
+[Quarto](https://quarto.org/) is an open-source publishing system powered by Pandoc. It's not just an R package; it's the next-gen RMarkdown, supporting dynamic and static documents in multiple programming languages like Python and Julia. Quarto streamlines the R Markdown ecosystem into a unified system, making it easy to combine text and code for documents, books, presentations, web pages, and more. You can use it via the command line (CLI) to convert plain text formats (.qmd, .rmd, .md) or mixed formats (.ipynb/Jupyter notebook) into PDFs, MS Office files, HTML reports, presentations, books, websites, and journal articles.
 
 Summary:
 - Easier to organize/structure documents and document layout
