@@ -9,7 +9,7 @@ This Chapter will teach us how to create and customize documents, articles, or r
 Before proceeding with this tutorial, it is recommended to have a basic understanding of R programming and familiarity with RStudio. Some knowledge of R Markdown syntax would also be beneficial (see [Chapter 3](https://elixir-europe-training.github.io/ELIXIR-TrP-LiterateProgrammingR-CodeRep/chapters/chapter_03/) if in need of a markdown refresh.
 
 
-### 4.2 What is Quarto? 
+## 4.2 What Is Quarto and Its Benefits? 
 [Quarto](https://quarto.org/) is an open-source publishing system powered by Pandoc. It's not just an R package; it's the next-gen RMarkdown, supporting dynamic and static documents in multiple programming languages like Python and Julia. Quarto streamlines the R Markdown ecosystem into a unified system, making it easy to combine text and code for documents, books, presentations, web pages, and more. You can use it via the command line (CLI) to convert plain text formats (.qmd, .rmd, .md) or mixed formats (.ipynb/Jupyter notebook) into PDFs, MS Office files, HTML reports, presentations, books, websites, and journal articles.
 
 Summary:
@@ -19,17 +19,14 @@ Summary:
 - Evaluate native language (R in knitr, Python/Julia in Jupyter)
 - HTML slides with revealjs are pandoc-compatible, so RStudio Visual Editor works with them
 
-## Additional Resources 📚
+Figure A Quarto document in RStudio that combines code and results.
 
-If you want to explore more about Quarto and its capabilities, consider checking out the following resources:
+## 4.3 Data used through out this tutotial 📊
 
-- [Quarto documentation](https://quarto.org/docs/)
-- [Pandoc](https://pandoc.org/)
-- [R Markdown documentation](https://rmarkdown.rstudio.com/)
-- [RStudio cheatsheets](https://rstudio.com/resources/cheatsheets/)
+Throughout this tutorial, we will be using a sample dataset called "Wisconsin breast cancer data." Please make sure to download this dataset and save it in a location accessible to your R environment. You can download the dataset from [this link](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data). The first usage of this data was described in @Streetetal1993.
 
-# Before Starting
-## Installation Instructions ⚙️
+## 4.4 Before Starting
+### 4.4.0 Installation Instructions ⚙️
 
 - Install latest version of RStudio
 - Install Quarto. Follow the installation instructions on the [Quarto webpages](https://quarto.org/)
@@ -46,24 +43,12 @@ install.packages(c(
 ))
 ```
 
-When creating PDFs from Quarto, we must install LaTeX for that conversion. We will use the Tinytex package to install a lightweight LaTeX distribution on your computer.
-
-Open RStudio, and find the section called “Console”.
-
-```R
-tinytex::install_tinytex()
-tinytex:::install_yihui_pkgs()
-```
-## Example Dataset 📊
-
-Throughout this tutorial, we will be using a sample dataset called "Wisconsin breast cancer data." Please make sure to download this dataset and save it in a location accessible to your R environment. You can download the dataset from [this link](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data). The first usage of this data was described in @Streetetal1993.
+### 4.4.1  Let's Get Started!
 
 # Introduction
 Quarto uses a two-step workflow to render documents. First, the .qmd file is sent to knitr (https://yihui.org/knitr/), which executes the code chunks and generates a markdown (.md) document with code and output. Then, pandoc (https://pandoc.org) processes the markdown file to create the final output file. This flexible process allows for a wide range of output formats. 
 
 ADD FIGURE
-
-# 1.  Let's Get Started!
 
 ## Quarto document: a practical overview
 Instead of basic scripts, we use Quarto files in RStudio to make our workflow reproducible. Quarto files can dynamically generate our paper's code and story. A Quarto file's YAML header, Quarto-formatted text, and R code blocks (sometimes termed "code chunks") are its main components. A Quarto document is formed by three main elements: 
@@ -276,4 +261,10 @@ Introduction to the data used and try to link to available resources
 
 ## Introduction
 This is an example analysis of the **Wisconsin breast cancer data** (available [here](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data)) done in R. The first usage of this data was described in @Streetetal1993.
+
+
+### Additional resources 
+
+
+
 
