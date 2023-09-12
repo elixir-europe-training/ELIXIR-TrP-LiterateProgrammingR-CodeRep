@@ -24,9 +24,8 @@ Summary:
 - Evaluate native language (R in knitr, Python/Julia in Jupyter)
 - HTML slides with revealjs are pandoc-compatible, so RStudio Visual Editor works with them
 
-```{r}
-knitr::include_graphics("img/Figure1.png")
-```
+![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure1.png)
+
 Figure A Quarto document in RStudio that combines code and results.
 
 
@@ -48,7 +47,7 @@ install.packages(c(
 ))
 ```
 
-### 4.4.1 Let's Get Started!
+## 4.5 Let's Get Started!
 
 # Introduction
 Quarto uses a two-step workflow to render documents. First, the .qmd file is sent to knitr (https://yihui.org/knitr/), which executes the code chunks and generates a markdown (.md) document with code and output. Then, pandoc (https://pandoc.org) processes the markdown file to create the final output file. This flexible process allows for a wide range of output formats. 
