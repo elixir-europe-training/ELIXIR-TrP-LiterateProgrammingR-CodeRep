@@ -8,6 +8,10 @@ This Chapter will teach us how to create and customize documents, articles, or r
 ### Prerequisites 
 Before proceeding with this tutorial, it is recommended to have a basic understanding of R programming and familiarity with RStudio. Some knowledge of R Markdown syntax would also be beneficial (see [Chapter 3](https://elixir-europe-training.github.io/ELIXIR-TrP-LiterateProgrammingR-CodeRep/chapters/chapter_03/) if in need of a markdown refresh.
 
+### Data used through out this tutotial 📊
+
+Throughout this tutorial, we will be using a sample dataset called "Wisconsin breast cancer data." Please make sure to download this dataset and save it in a location accessible to your R environment. You can download the dataset from [this link](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data). The first usage of this data was described in @Streetetal1993.
+
 
 ## 4.2 What Is Quarto and Its Benefits? 
 [Quarto](https://quarto.org/) is an open-source publishing system powered by Pandoc. It's not just an R package; it's the next-gen RMarkdown, supporting dynamic and static documents in multiple programming languages like Python and Julia. Quarto streamlines the R Markdown ecosystem into a unified system, making it easy to combine text and code for documents, books, presentations, web pages, and more. You can use it via the command line (CLI) to convert plain text formats (.qmd, .rmd, .md) or mixed formats (.ipynb/Jupyter notebook) into PDFs, MS Office files, HTML reports, presentations, books, websites, and journal articles.
@@ -21,9 +25,6 @@ Summary:
 
 Figure A Quarto document in RStudio that combines code and results.
 
-## 4.3 Data used through out this tutotial 📊
-
-Throughout this tutorial, we will be using a sample dataset called "Wisconsin breast cancer data." Please make sure to download this dataset and save it in a location accessible to your R environment. You can download the dataset from [this link](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data). The first usage of this data was described in @Streetetal1993.
 
 ## 4.4 Before Starting
 ### 4.4.0 Installation Instructions ⚙️
@@ -43,7 +44,7 @@ install.packages(c(
 ))
 ```
 
-### 4.4.1  Let's Get Started!
+### 4.4.1 Let's Get Started!
 
 # Introduction
 Quarto uses a two-step workflow to render documents. First, the .qmd file is sent to knitr (https://yihui.org/knitr/), which executes the code chunks and generates a markdown (.md) document with code and output. Then, pandoc (https://pandoc.org) processes the markdown file to create the final output file. This flexible process allows for a wide range of output formats. 
