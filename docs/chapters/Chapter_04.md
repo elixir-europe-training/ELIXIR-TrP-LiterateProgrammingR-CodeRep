@@ -49,13 +49,13 @@ install.packages(c(
 
 ## 4.5 Let's Get Started!
 
-# Introduction
-Quarto uses a two-step workflow to render documents. First, the .qmd file is sent to knitr (https://yihui.org/knitr/), which executes the code chunks and generates a markdown (.md) document with code and output. Then, pandoc (https://pandoc.org) processes the markdown file to create the final output file. This flexible process allows for a wide range of output formats. 
+### 4.5.1 Introduction
+Quarto uses a two-step workflow to render documents. First, the .qmd file is sent to ![**knitr**](https://yihui.org/knitr/), which executes the code chunks and generates a markdown (.md) document with code and output. Then, ![**pandoc**](https://pandoc.org) processes the markdown file to create the final output file. This flexible process allows for a wide range of output formats. 
 
-ADD FIGURE
+ADD FIGURE - Diagram of quarto workflow
 
-## Quarto document: a practical overview
-Instead of basic scripts, we use Quarto files in RStudio to make our workflow reproducible. Quarto files can dynamically generate our paper's code and story. A Quarto file's YAML header, Quarto-formatted text, and R code blocks (sometimes termed "code chunks") are its main components. A Quarto document is formed by three main elements: 
+### 4.5.2 Quarto document: overview
+Instead of basic scripts, we use Quarto files in RStudio to make our workflow reproducible. Quarto files can dynamically generate our paper's code and story. Its main components are a Quarto file's YAML header, Quarto-formatted text, and R code blocks (sometimes termed "code chunks"). Three main elements form a Quarto document: 
 
 1. The YAML header
 
@@ -68,14 +68,14 @@ Finally, to render the document, we use the engine called _Knitr_
 
 ADD FIGURE (with the process described above)
 
+### 4.5.3  Create a Basic Quarto Document
 
 Let's set up our environment and start creating a basic Quarto document. 
 
-## Creating a Basic Quarto Document
+To begin working with your .qmd file, navigate to the menu bar and choose **File > New File > Quarto Document...**.
+This action will trigger RStudio to open a wizard, which assists in automatically filling your file with helpful content that serves as a reminder of the fundamental functionalities of Quarto.
 
-To begin working with your .qmd file, navigate to the menu bar and choose **File > New File > Quarto Document...** This action will trigger RStudio to open a wizard, which assists in automatically filling your file with helpful content that serves as a reminder of the fundamental functionalities of Quarto.
-
-## 1. The header yaml (Metadata)
+#### 1. The header yaml (Metadata)
 YAML metadata, or the header, is crucial to Quarto documents. This metadata is your document's backstage pass and influences many rendering phases. It contains crucial information that can shape your document's code, content, and presentation, placed at the beginning and carefully evaluated by Pandoc, Quarto, and knitr.
 
 Quarto default YAML header includes the following metadata surrounded by three dashes ---:
