@@ -24,10 +24,6 @@ Summary:
 - Evaluate native language (R in knitr, Python/Julia in Jupyter)
 - HTML slides with revealjs are pandoc-compatible, so RStudio Visual Editor works with them
 
-![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure1.png)
-
-Figure A Quarto document in RStudio that combines code and results.
-
 
 ## 4.4 Before Starting
 ### 4.4.0 Installation Instructions ⚙️
@@ -75,7 +71,7 @@ Let's set up our environment and start creating a basic Quarto document.
 To begin working with your .qmd file, navigate to the menu bar and choose **File > New File > Quarto Document...**.
 This action will trigger RStudio to open a wizard, which assists in automatically filling your file with helpful content that serves as a reminder of the fundamental functionalities of Quarto.
 
-#### 1. The header yaml (Metadata)
+#### - 1. The header yaml (Metadata)
 YAML metadata, or the header, is crucial to Quarto documents. This metadata is your document's backstage pass and influences many rendering phases. It contains crucial information that can shape your document's code, content, and presentation, placed at the beginning and carefully evaluated by Pandoc, Quarto, and knitr.
 
 Quarto default YAML header includes the following metadata surrounded by three dashes ---:
@@ -100,12 +96,12 @@ You can select one of three default formats as **format**: pdf, html, or word do
 
 Other YAML formatting options include adding bibliography information, customizing output, and changing code execution defaults.
 
-## 2. Text 
+#### - 2. Text 
 This is just markdown-formatted text narrative (more on markdown in Chapter 3). Plain text in Quarto is narrative text in the document. R scripts want plaintext to be code. In Quarto, code must be enclosed in special characters. Formatting symbols like ##, **, and < > are used instead of standard grammar components.
 
 For how to write the text see Chpater 3 in this tutorial
 
-## 3. Code
+#### - 3. Code
 In the qmd file, code blocks are marked in gray. On either side of them are three tick marks ('''), and when viewed in source mode, the first three tick marks are followed by curly brackets that contain other code. Beginning of code block denoted by tick marks; information between curly brackets specifies how R should interpret the code for display (more on this in the Knitr syntax series). The R code for things like summaries, analyses, tables, and graphs goes here. If you already have a R script developed, you can simply copy and paste it between the few lines of required formatting to embed it and run it wherever you choose in the document.
 
 You can code in many different languages in RStudio: R, Phyton, Bash. SQL
@@ -113,41 +109,38 @@ You can code in many different languages in RStudio: R, Phyton, Bash. SQL
 Example of a code: 
 
 ```{r}
-#| output-location: column
-#| label: fig-airquality
-#| fig-cap: Temperature and ozone level.
-#| warning: false
-
-library(ggplot2)
-
-ggplot(airquality, aes(Temp, Ozone)) + 
-  geom_point() + 
-  geom_smooth(method = "loess"
-)
+## ----read---------------------------------------------------------------------
+cancer_data <- as_tibble(read.csv("data/breast-cancer-wisconsin.csv"))
+head(cancer_data)
+cancer_data$diagnosis <- as.factor(cancer_data$diagnosis)
+colnames(cancer_data)
+dim(cancer_data)
 ```
 
-FIGURE with a page containing both text and code 
+![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure1.png)
 
-### Rendering Qmd Document
+Figure A Quarto document in RStudio that combines code and results. 
+
+### 4.5.4 Rendering Qmd Document
 Simply enough, rendering is moving material from one medium or file type to another that supports pages or pagination. When you click render, your code will be compiled, verified for faults, and written to the yaml header file type. When you save your modifications, click "Render on Save" to preview your document. It also checks code, so make sure your qmd document is error-free before expecting it to execute and render.
 
 Give your document a name and pick a folder before rendering it. Name your file my_first_qmd.qmd and save it to an accessible file system directory.
 
 FIGURE showing the bottom to be pressed for render 
 
-## Exercise 
+## _Exercise_
 - Use RStudio to create a new default Quarto document
 - Add a title and your name as the author
 - Change format to html 
 - Render the document
 
-# 2. Writing Quarto Documents 
+### 4.5 Writing Quarto Documents 
 The RStudio visual editor simplifies formatting. To go into visual mode for a document, activate the visual option at the top-left of the toolbar. This opens a formatting bar where you may style, add links, create tables, and more, similar to Google Docs and other document editors. Switch between source and visual mode at any moment to retain editing location and undo/redo status.
 
-### *Adding Headings*
+#### *Adding Headings*
 For a list of editing shortcut: https://rstudio.github.io/visual-markdown-editing/shortcuts.html
 
-Example (need to fix this)
+_Example_ (need to fix this)
 # Heading 1
 This is a sentence with some **bold text**, some *italic text* and an [image](image.png).
 
@@ -165,7 +158,7 @@ we could do that by inserting a table to a selected part of the documents and by
 
 ### *Adding Formulas*
 
-# 3. Code in Quarto documents
+## 5 Code in Quarto documents
 Quarto reverses the conventional order of code and text. Unlike R scripts, they need you to comment out the code and enter text first. How can R distinguish code from text without code comments (#)? "Code chunks" are where RStudio comes in. Knitr "knits" the code output and text together before Quarto's rendering mechanism can add markdown formatting to the final result. Second, Quarto shows our document format for code output. Knitr runs plot code in a code chunk, links it to markdown text, and then Quarto renders the whole thing in HTML.
 
 ### What is Knitr? 
