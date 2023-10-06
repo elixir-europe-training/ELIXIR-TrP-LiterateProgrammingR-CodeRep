@@ -65,48 +65,53 @@ Finally, to render the document, we use the engine called _Knitr_
 ADD FIGURE (with the process described above)
 
 ### 4.5.3  Create a Basic Quarto Document
+![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure1.png)
 
-Let's set up our environment and start creating a basic Quarto document. 
+Figure A: A Quarto document in RStudio that combines code and results. 
 
-To begin working with your .qmd file, navigate to the menu bar and choose **File > New File > Quarto Document...**.
-This action will trigger RStudio to open a wizard, which assists in automatically filling your file with helpful content that serves as a reminder of the fundamental functionalities of Quarto.
+To create a basic Quarto document, follow this steps: 
 
-#### 1. The header yaml (Metadata)
-YAML metadata, or the header, is crucial to Quarto documents. This metadata is your document's backstage pass and influences many rendering phases. It contains crucial information that can shape your document's code, content, and presentation, placed at the beginning and carefully evaluated by Pandoc, Quarto, and knitr.
+#### 4.5.3.1 Opening a new Quarto document 
+In R studio, navigate to the menu bar and select  **File > New File > Quarto Document...**.
+This action will prompt RStudio to open a wizard that helps you set up your document with essential content and configurations.
 
-Quarto default YAML header includes the following metadata surrounded by three dashes ---:
-- title
-- author
-- format
-- editor
+####  4.5.3.2 YAML Header (Metadata)
+YAML metadata, or the header, is **crucial** to Quarto documents. This metadata is your document's backstage pass and influences many rendering phases. It contains crucial information that can shape your document's code, content, and presentation, placed at the beginning and carefully evaluated by Pandoc, Quarto, and knitr.
 
-FIGURE showing the Yamal
+- Quarto default YAML header includes the following metadata surrounded by three dashes `---`:
+  - `title`
+  - `author`
+  - `format`
+  - `editor`
 
-``` yaml
+**Example YAML Header:**
+```yaml
 ---
 title: "Document title"
 author: "Your Name"
 execute:
   echo: false
 format: html
---- 
+---
 ```
 
 You can select one of three default formats as **format**: pdf, html, or word document. Essentially, this allows you to export your qmd file as a different file type. 
 
 Other YAML formatting options include adding bibliography information, customizing output, and changing code execution defaults.
 
-#### 2. Text 
-This is just markdown-formatted text narrative (more on markdown in Chapter 3). Plain text in Quarto is narrative text in the document. R scripts want plaintext to be code. In Quarto, code must be enclosed in special characters. Formatting symbols like ##, **, and < > are used instead of standard grammar components.
+####  4.5.3.3 Text
 
-For how to write the text see Chpater 3 in this tutorial
+In a Quarto document, **text** is your narrative content, formatted using Markdown (more details in Chapter 3). Unlike regular text, which is sufficient for humans, **R scripts** require specific formatting to interpret as **code**. In Quarto, code must be enclosed in special characters. Instead of using standard grammar components, you'll use formatting symbols like `**##**`, `**\*\***`, and `**< >**`.
 
-#### 3. Code
-In the qmd file, code blocks are marked in gray. On either side of them are three tick marks ('''), and when viewed in source mode, the first three tick marks are followed by curly brackets that contain other code. Beginning of code block denoted by tick marks; information between curly brackets specifies how R should interpret the code for display (more on this in the Knitr syntax series). The R code for things like summaries, analyses, tables, and graphs goes here. If you already have a R script developed, you can simply copy and paste it between the few lines of required formatting to embed it and run it wherever you choose in the document.
+For a detailed guide on writing text in Markdown, refer to Chapter 3 of this tutorial.
 
-You can code in many different languages in RStudio: R, Phyton, Bash. SQL
+####  4.5.3.4 Code
 
-Example of a code: 
+**Code blocks** in a `.qmd` file are visually distinguished by their gray background. Each code block is enclosed by three tick marks (`**'''**`). In source mode, the first three tick marks are followed by curly brackets that contain additional code. These code blocks define the **R code** for tasks like generating summaries, conducting analyses, creating tables, and generating graphs. If you already have an R script, you can simply **copy and paste** it into the document, ensuring it adheres to the required formatting.
+
+Quarto allows you to code in various languages within RStudio, including **R**, **Python**, **Bash**, and **SQL**.
+
+**Example Code:**
 
 ```{r}
 ## ----read---------------------------------------------------------------------
@@ -117,22 +122,37 @@ colnames(cancer_data)
 dim(cancer_data)
 ```
 
-![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure1.png)
-
-Figure A Quarto document in RStudio that combines code and results. 
-
 ### 4.5.4 Rendering Qmd Document
-Simply enough, rendering is moving material from one medium or file type to another that supports pages or pagination. When you click render, your code will be compiled, verified for faults, and written to the yaml header file type. When you save your modifications, click "Render on Save" to preview your document. It also checks code, so make sure your qmd document is error-free before expecting it to execute and render.
 
-Give your document a name and pick a folder before rendering it. Name your file my_first_qmd.qmd and save it to an accessible file system directory.
+**Rendering** in Quarto is the process of converting your document from one format to another that supports pages or pagination. When you click render, your code will be compiled, verified for faults, and written to the YAML header file type. It also checks code for errors, so ensure your `.qmd` document is free of errors before proceeding.
 
-FIGURE showing the bottom to be pressed for render 
+To render your document:
 
-## _Exercise_
-- Use RStudio to create a new default Quarto document
-- Add a title and your name as the author
-- Change format to html 
-- Render the document
+1. Give your document a **name** and choose a **folder** for rendering.
+
+   - Name your file `my_first_qmd.qmd`.
+   - Save it to an accessible file system directory.
+
+2. Click the **"Render"** button, usually located at the bottom of your interface (see the figure below).
+
+**FIGURE:** [Insert an image or screenshot showing the "Render" button.]
+
+<div class="exercise" style="background-color: #ffffcc; border: 1px solid #cccc00; padding: 10px;">
+
+**Exercise**
+
+1. Use **RStudio** to create a new default Quarto document.
+2. Add a **title** to your document.
+3. Specify your **name as the author**.
+4. Change the **format** to **HTML**.
+5. Finally, **render the document**.
+
+</div>
+
+### Solution
+
+*[Provide screenshots of the solution here]*
+
 
 ## 4.5 Writing Quarto Documents 
 The RStudio visual editor simplifies formatting. To go into visual mode for a document, activate the visual option at the top-left of the toolbar. This opens a formatting bar where you may style, add links, create tables, and more, similar to Google Docs and other document editors. Switch between source and visual mode at any moment to retain editing location and undo/redo status.
