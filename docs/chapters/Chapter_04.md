@@ -273,29 +273,52 @@ Here's what you need to know:
 
 Before starting make sure you have downloaded the data we will use in the document (INSTRUCTION FOR DOWNLOADING THE DATA)
 
-!!! question "Excercise"
+# Let's Build a Quarto Paper/Document
 
-       Create a code chunk where you upload the needed packages 
-       
- ??? success "Solution"
+Before we start, ensure you have downloaded the data we will use in the document (INSTRUCTION FOR DOWNLOADING THE DATA).
 
-        To do : *[Provide screenshots of the solution here]* or describe it 
-            
-        
-        ```{r}
-       #| label: load-packages
-       #| include: false
+<details>
+<summary><strong>Step 0: Create a YAML Header</strong></summary>
+Before we dive into the document's content, let's set up the YAML front matter for your document titled "Breast Cancer Data Analysis." Follow these instructions:
 
-      library(tibble) # Provides a modern, tidy alternative to data frames.
-      library(dplyr)  # data manipulation
-      library(readr)  # reading csv file data 
-      library(ggplot2)# plotting system
-      library(caret)
-      library(ROCR)   # evaluating and visualizing the performance of binary classifiers
-      library(pROC) # r evaluating and visualizing the performance of binary and multi-class classifiers using Receiver Operating Characteristic (ROC) analysis.
-      theme_set(theme_bw(12))
-      knitr::opts_chunk$set(fig.align = "center")
-```
+1. Set the title of the document to "Breast Cancer Data Analysis."
+2. Specify the author as your research team's name.
+3. Use the bibliography file named "references.bib."
+4. Ensure that the document includes the current date.
+5. Enable a table of contents for the document.
+6. Number the sections in the document.
+7. Choose the Pygments highlight style for code.
+8. Hide code echo during code execution.
+9. For HTML output, enable code folding, code tools, and paged data frame printing.
+10. Specify a preference for a visual editor.
+
+Fill in the missing information and structure the YAML front matter according to the provided instructions. Once completed, you'll have a properly configured YAML header for your document, suitable for analysis and presentation.
+</details>
+
+<details>
+<summary><strong>Step 1: Import Required Packages</strong></summary>
+
+In this step, create a code chunk that imports the necessary packages: `tibble`, `dplyr`, `readr`, `ggplot2`, `caret`, `ROCR`, and `pROC`.
+
+<details>
+<summary><strong>Solution: Import Required Packages</strong></summary>
+
+```R
+# Load the required packages
+# Make sure to install them first if you haven't already
+library(tibble)   # Provides a modern, tidy alternative to data frames.
+library(dplyr)    # Data manipulation.
+library(readr)    # Reading CSV file data.
+library(ggplot2)  # Plotting system.
+library(caret)    # Machine learning.
+library(ROCR)     # Evaluating and visualizing the performance of binary classifiers.
+library(pROC)     # Evaluating and visualizing the performance of binary and multi-class classifiers using ROC analysis.
+theme_set(theme_bw(12))
+knitr::opts_chunk$set(fig.align = "center")
+
+
+
+
 
 -   set the theme of the plots using `theme_set()` in package `ggplot2` [@Wickham2016].
 
@@ -314,26 +337,7 @@ Hopefully, by now you have Quarto downloaded in your R
 
 ### 4.6.0 Make changes to the YAML 
 
-``` yaml
----
-title: "Example analysis breast cancer data"
-author: "Name of the researcher or team"
-bibliography: references.bib
-date: "`r Sys.Date()`"
-toc: true
-number-sections: true
-highlight-style: pygments
-execute:
-  echo: false
-format:
-  gfm: default
-  html:
-    code-fold: true
-    code-tools: true
-    df-print: paged
-editor: visual
----
-```
+
 ### 4.6.1 Put in some text 
 Introduction to the data used and try to link to available resources 
 
