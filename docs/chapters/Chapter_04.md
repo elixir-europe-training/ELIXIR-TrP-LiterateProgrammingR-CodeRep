@@ -277,8 +277,7 @@ Before starting make sure you have downloaded the data we will use in the docume
 
 Before we start, ensure you have downloaded the data we will use in the document (INSTRUCTION FOR DOWNLOADING THE DATA).
 
-<details>
-<summary><strong>Step 0: Create a YAML Header</strong></summary>
+## Step 0: Create a YAML Header
 Before we dive into the document's content, let's set up the YAML front matter for your document titled "Breast Cancer Data Analysis." Follow these instructions:
 
 1. Set the title of the document to "Breast Cancer Data Analysis."
@@ -293,15 +292,37 @@ Before we dive into the document's content, let's set up the YAML front matter f
 10. Specify a preference for a visual editor.
 
 Fill in the missing information and structure the YAML front matter according to the provided instructions. Once completed, you'll have a properly configured YAML header for your document, suitable for analysis and presentation.
-</details>
 
 <details>
-<summary><strong>Step 1: Import Required Packages</strong></summary>
+<summary><strong>Solution: YAML Header</strong></summary>
 
+```yaml
+---
+title: "Breast Cancer Data Analysis"
+author: "Your Research Team's Name"
+bibliography: references.bib
+date: "`r Sys.Date()`"
+toc: true
+number-sections: true
+highlight-style: pygments
+execute:
+  echo: false
+format:
+  gfm: default
+  html:
+    code-fold: true
+    code-tools: true
+    df-print: paged
+editor: visual
+---
+```
+</details>
+
+## Step 1: Import Required Packages
 In this step, create a code chunk that imports the necessary packages: `tibble`, `dplyr`, `readr`, `ggplot2`, `caret`, `ROCR`, and `pROC`.
 
 <details>
-<summary><strong>Solution: Import Required Packages</strong></summary>
+<summary><strong>Solution: Import Required Packages (Step 1)</strong></summary>
 
 ```R
 # Load the required packages
@@ -315,6 +336,22 @@ library(ROCR)     # Evaluating and visualizing the performance of binary classif
 library(pROC)     # Evaluating and visualizing the performance of binary and multi-class classifiers using ROC analysis.
 theme_set(theme_bw(12))
 knitr::opts_chunk$set(fig.align = "center")
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
