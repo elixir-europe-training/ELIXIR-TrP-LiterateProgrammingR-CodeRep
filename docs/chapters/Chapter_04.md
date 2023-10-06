@@ -125,21 +125,13 @@ To render your document:
 
 **FIGURE:** [Insert an image or screenshot showing the "Render" button.]
 
-<div class="exercise" style="background-color: #ffffcc; border: 1px solid #cccc00; padding: 10px;">
-
-**Exercise**
-
-1. Use **RStudio** to create a new default Quarto document.
-2. Add a **title** to your document.
-3. Specify your **name as the author**.
-4. Change the **format** to **HTML**.
-5. Finally, **render the document**.
-
-</div>
-
 !!! question "Excercise"
 
-    Can you think of any potential problems with this piece of code?
+   1. Use **RStudio** to create a new default Quarto document.
+   2. Add a **title** to your document.
+   3. Specify your **name as the author**.
+   4. Change the **format** to **HTML**.
+   5. Finally, **render the document**.
 
     ??? success "Solution"
 
