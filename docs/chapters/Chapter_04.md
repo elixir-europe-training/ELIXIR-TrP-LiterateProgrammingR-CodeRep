@@ -137,6 +137,17 @@ To render your document:
 
 </div>
 
+!!! question "Excercise"
+
+    Can you think of any potential problems with this piece of code?
+
+    ??? success "Solution"
+
+        Here are some potential problems we can think of (you may have similar):
+        
+        1. How does someone else tell the code from the data?
+        2. This piece of code cannot be run as running the prose will return errors. Then what good does it do to me?
+
 ### Solution
 
 *[Provide screenshots of the solution here]*
