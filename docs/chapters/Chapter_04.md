@@ -126,25 +126,18 @@ To render your document:
 **FIGURE:** [Insert an image or screenshot showing the "Render" button.]
 
 !!! question "Excercise"
-
-   1. Use **RStudio** to create a new default Quarto document.
-   2. Add a **title** to your document.
-   3. Specify your **name as the author**.
-   4. Change the **format** to **HTML**.
-   5. Finally, **render the document**.
+       
+       Let's produce your own document 
+       1. Use **RStudio** to create a new default Quarto document.
+       1. Add a **title** to your document
+       2. Specify your **name as the author**.
+       3. Change the **format** to **HTML**
+       4. **render the document**.
 
     ??? success "Solution"
 
-        Here are some potential problems we can think of (you may have similar):
+        To do : *[Provide screenshots of the solution here]* or describe it 
         
-        1. How does someone else tell the code from the data?
-        2. This piece of code cannot be run as running the prose will return errors. Then what good does it do to me?
-
-### Solution
-
-*[Provide screenshots of the solution here]*
-
-
 ## 4.5 Writing Quarto Documents
 
 ### RStudio Visual Editor: Simplified Formatting
@@ -274,32 +267,36 @@ Here's what you need to know:
 
 ### Bibliography 
 
-# Lets build together a QUarto paper/Document 
 
-Maybe we should do this as exercise format 
 
-## 1. Download needed data for the current examples of literate programming document 
-data
+# Lets build together a Quarto paper/Document 
 
-## 2. Upload needed packages  
-Before looking at the data:
+Before starting make sure you have downloaded the data we will use in the document (INSTRUCTION FOR DOWNLOADING THE DATA)
 
--   we load the packages required
+!!! question "Excercise"
 
-```{r}
-#| label: load-packages
-#| include: false
+       Create a code chunk where you upload the needed packages 
+       
+ ??? success "Solution"
 
-library(tibble) # Provides a modern, tidy alternative to data frames.
-library(dplyr)  # data manipulation
-library(readr)  # reading csv file data 
-library(ggplot2)# plotting system
-library(caret)
-library(ROCR)   # evaluating and visualizing the performance of binary classifiers
-library(pROC) # r evaluating and visualizing the performance of binary and multi-class classifiers using Receiver Operating Characteristic (ROC) analysis.
-theme_set(theme_bw(12))
-knitr::opts_chunk$set(fig.align = "center")
+        To do : *[Provide screenshots of the solution here]* or describe it 
+            
+        
+        ```{r}
+       #| label: load-packages
+       #| include: false
+
+      library(tibble) # Provides a modern, tidy alternative to data frames.
+      library(dplyr)  # data manipulation
+      library(readr)  # reading csv file data 
+      library(ggplot2)# plotting system
+      library(caret)
+      library(ROCR)   # evaluating and visualizing the performance of binary classifiers
+      library(pROC) # r evaluating and visualizing the performance of binary and multi-class classifiers using Receiver Operating Characteristic (ROC) analysis.
+      theme_set(theme_bw(12))
+      knitr::opts_chunk$set(fig.align = "center")
 ```
+
 -   set the theme of the plots using `theme_set()` in package `ggplot2` [@Wickham2016].
 
 
