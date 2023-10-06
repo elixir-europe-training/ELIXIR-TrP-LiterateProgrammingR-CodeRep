@@ -1,115 +1,64 @@
-## 4.1 Aim of the lesson 
-The demand for scientific reports, documents, and articles is increasing, but the process often involves multiple applications and consumes significant time. Quarto, a second-generation markdown-based report framework, offers a solution. It allows researchers to execute code for data formatting, analysis, and visualization, streamlining report generation while writing in a familiar markdown format.
+## 4.1 What's Our Goal? 🎯
 
+**Objective:** This lesson's mission is to make your life easier by introducing Quarto, a modern markdown-based report framework. We'll show you how Quarto streamlines the creation of scientific reports, documents, and articles by combining code execution for data formatting, analysis, and visualization with simple markdown.
 
+## 4.2 What is Quarto, and Why Does It Matter? 📖
 
-This Chapter will teach us how to create and customize documents, articles, or reports that combine narrative text and code. We will use the Quarto tool to build our document and generate various output formats, including HTML, PDF, and Presentations. We will combine our understanding of literacy programming and Rmarkdown methods to create thorough reports and articles that follow the FAIR principle. To accomplish this, we use the Quarto tool, which effortlessly blends coding and programming within the text using Rmarkdown syntax.
+[Quarto](https://quarto.org/) isn't just another R package; it's the future of RMarkdown. It's an open-source publishing system, powered by Pandoc, that's designed to work with multiple programming languages like Python and Julia. Quarto simplifies the entire R Markdown ecosystem, allowing you to effortlessly mix text and code for various purposes, including documents, books, presentations, web pages, and more.
 
-### Prerequisites 
-Before proceeding with this tutorial, it is recommended to have a basic understanding of R programming and familiarity with RStudio. Some knowledge of R Markdown syntax would also be beneficial (see [Chapter 3](https://elixir-europe-training.github.io/ELIXIR-TrP-LiterateProgrammingR-CodeRep/chapters/chapter_03/) if in need of a markdown refresh.
+**Key Benefits of Quarto:**
+- Streamlined document organization and layout.
+- Seamless integration across different formats.
+- Enhanced support for multiple programming languages within a single project.
+- Native language execution (e.g., R in knitr, Python/Julia in Jupyter).
+- Compatibility with RStudio Visual Editor for creating HTML slides.
 
-### Data used through out this tutotial 📊
+## 4.4 Before We Begin 🛠️
 
-Throughout this tutorial, we will be using a sample dataset "Wisconsin breast cancer data." Please make sure to download this dataset and save it in a location accessible to your R environment. 
-You can download the dataset from [this link](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data). The first usage of this data was described in @Streetetal1993.
-
-
-## 4.2 What Is Quarto and Its Benefits? 
-[Quarto](https://quarto.org/) is an open-source publishing system powered by Pandoc. It's not just an R package; it's the next-gen RMarkdown, supporting dynamic and static documents in multiple programming languages like Python and Julia. Quarto streamlines the R Markdown ecosystem into a unified system, making it easy to combine text and code for documents, books, presentations, web pages, and more. You can use it via the command line (CLI) to convert plain text formats (.qmd, .rmd, .md) or mixed formats (.ipynb/Jupyter notebook) into PDFs, MS Office files, HTML reports, presentations, books, websites, and journal articles.
-
-Summary:
-- Easier to organize/structure documents and document layout
-- Features largely cross-format
-- Better ability to integrate multiple languages in a PROJECT
-- Evaluate native language (R in knitr, Python/Julia in Jupyter)
-- HTML slides with revealjs are pandoc-compatible, so RStudio Visual Editor works with them
-
-
-## 4.4 Before Starting
 ### 4.4.0 Installation Instructions ⚙️
 
-- Install latest version of RStudio
-- Install Quarto. Follow the installation instructions on the [Quarto webpages](https://quarto.org/)
-- After installing Quarto, open the terminal in RStudio and Install/Update the following 📦:
+Before diving in, let's ensure you have the necessary tools at your fingertips:
+
+1. **RStudio:** Make sure you have the latest version of RStudio installed.
+
+2. **Quarto:** Follow the installation instructions on the [Quarto website](https://quarto.org/).
+
+3. Once Quarto is installed, open RStudio's terminal and install/update the following R packages using this command:
 
 ```R
 # Run in R
 install.packages(c(
-  "tinytex",       # for PDF rendering
-  "rmarkdown",     # rendering everything
-  "tidyverse",     # data-wrangling
-  "knitr",         # table printing
-  "kableExtra"    # table printing
+  "tinytex",       # Needed for PDF rendering
+  "rmarkdown",     # Essential for rendering
+  "tidyverse",     # Useful for data wrangling
+  "knitr",         # Required for table printing
+  "kableExtra"     # Enhances table printing
 ))
 ```
 
-## 4.5 Let's Get Started!
+## 4.5 Let's Dive In! 🌊
 
-### 4.5.1 Introduction
-Quarto uses a two-step workflow to render documents. First, the .qmd file is sent to ![**knitr**](https://yihui.org/knitr/), which executes the code chunks and generates a markdown (.md) document with code and output. Then, ![**pandoc**](https://pandoc.org) processes the markdown file to create the final output file. This flexible process allows for a wide range of output formats. 
+### 4.5.1 The Quarto Workflow
 
-ADD FIGURE - Diagram of quarto workflow
+Quarto operates on a two-step process to create documents. Here's how it works:
 
-### 4.5.2 Quarto document: overview
-Instead of basic scripts, we use Quarto files in RStudio to make our workflow reproducible. Quarto files can dynamically generate our paper's code and story. Its main components are a Quarto file's YAML header, Quarto-formatted text, and R code blocks (sometimes termed "code chunks"). Three main elements form a Quarto document: 
+1. **Code Execution**: Your `.qmd` file is handed over to ![**knitr**](https://yihui.org/knitr/), which takes care of executing code chunks and generating a markdown (.md) document. This markdown file includes both code and its output.
 
-1. The YAML header
+2. **Final Rendering**: Next, ![**pandoc**](https://pandoc.org) steps in to process the markdown file, ultimately producing the final output. The beauty of this process is its flexibility—it supports a wide range of output formats.
 
-2. A Quarto text
+*[Include a visual diagram of the Quarto workflow here]*
 
-3. R code chunks for embedded analysis
+### 4.5.2 Understanding the Quarto Document
 
-Finally, to render the document, we use the engine called _Knitr_
+Instead of relying on plain scripts, we use Quarto files in RStudio to bring reproducibility into our workflow. Quarto files have the power to dynamically generate code and narratives for our documents. The key components of a Quarto document are:
 
+1. **The YAML Header**: This acts as your document's backstage pass, influencing various rendering phases. It holds essential information that shapes your document's code, content, and presentation. The YAML header is placed at the beginning of your document and is carefully evaluated by Pandoc, Quarto, and knitr.
 
-ADD FIGURE (with the process described above)
+2. **Quarto-formatted Text**: Text in a Quarto document follows Markdown formatting rules. While regular text is fine for humans, **R scripts** need specific formatting to be interpreted as **code**. Quarto requires code to be enclosed in special characters and formatting symbols like `**##**`, `**\*\***`, and `**< >**` instead of standard grammar components.
 
-### 4.5.3  Create a Basic Quarto Document
-![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure1.png)
+3. **R Code Chunks**: Code blocks in a `.qmd` file are visually distinct with their gray background. Each code block is enclosed by three tick marks (`**'''**`). In source mode, the first three tick marks are followed by curly brackets containing additional code. These code blocks define the **R code** for tasks like generating summaries, conducting analyses, creating tables, and generating graphs. If you already have an R script, you can simply **copy and paste** it into the document, ensuring it adheres to the required formatting.
 
-Figure A: A Quarto document in RStudio that combines code and results. 
-
-To create a basic Quarto document, follow this steps: 
-
-#### 4.5.3.1 Opening a new Quarto document 
-In R studio, navigate to the menu bar and select  **File > New File > Quarto Document...**.
-This action will prompt RStudio to open a wizard that helps you set up your document with essential content and configurations.
-
-####  4.5.3.2 YAML Header (Metadata)
-YAML metadata, or the header, is **crucial** to Quarto documents. This metadata is your document's backstage pass and influences many rendering phases. It contains crucial information that can shape your document's code, content, and presentation, placed at the beginning and carefully evaluated by Pandoc, Quarto, and knitr.
-
-- Quarto default YAML header includes the following metadata surrounded by three dashes `---`:
-  - `title`
-  - `author`
-  - `format`
-  - `editor`
-
-**Example YAML Header:**
-```yaml
----
-title: "Document title"
-author: "Your Name"
-execute:
-  echo: false
-format: html
----
-```
-
-You can select one of three default formats as **format**: pdf, html, or word document. Essentially, this allows you to export your qmd file as a different file type. 
-
-Other YAML formatting options include adding bibliography information, customizing output, and changing code execution defaults.
-
-####  4.5.3.3 Text
-
-In a Quarto document, **text** is your narrative content, formatted using Markdown (more details in Chapter 3). Unlike regular text, which is sufficient for humans, **R scripts** require specific formatting to interpret as **code**. In Quarto, code must be enclosed in special characters. Instead of using standard grammar components, you'll use formatting symbols like `**##**`, `**\*\***`, and `**< >**`.
-
-For a detailed guide on writing text in Markdown, refer to Chapter 3 of this tutorial.
-
-####  4.5.3.4 Code
-
-**Code blocks** in a `.qmd` file are visually distinguished by their gray background. Each code block is enclosed by three tick marks (`**'''**`). In source mode, the first three tick marks are followed by curly brackets that contain additional code. These code blocks define the **R code** for tasks like generating summaries, conducting analyses, creating tables, and generating graphs. If you already have an R script, you can simply **copy and paste** it into the document, ensuring it adheres to the required formatting.
-
-Quarto allows you to code in various languages within RStudio, including **R**, **Python**, **Bash**, and **SQL**.
+Quarto provides flexibility in coding by allowing you to use various languages within RStudio, including **R**, **Python**, **Bash**, and **SQL**.
 
 **Example Code:**
 
@@ -121,6 +70,45 @@ cancer_data$diagnosis <- as.factor(cancer_data$diagnosis)
 colnames(cancer_data)
 dim(cancer_data)
 ```
+
+### 4.5.3 Creating Your First Quarto Document
+
+![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure1.png)
+
+*Figure A: A Quarto document in RStudio that combines code and results.*
+
+Let's get started by creating a basic Quarto document:
+
+#### 4.5.3.1 Starting a New Quarto Document 
+
+In RStudio, follow these steps to begin:
+
+1. Navigate to the menu bar and select **File > New File > Quarto Document...**.
+2. RStudio will open a wizard to help you set up your document with essential content and configurations.
+
+#### 4.5.3.2 YAML Header (Metadata)
+
+The **YAML metadata**, or header, is absolutely essential in Quarto documents. This metadata acts as your document's backstage pass, influencing many rendering phases. It contains crucial information that shapes your document's code, content, and presentation. Placed at the beginning, the YAML header is carefully evaluated by Pandoc, Quarto, and knitr.
+
+A default Quarto YAML header includes the following metadata surrounded by three dashes `---`:
+
+- `title`
+- `author`
+- `format`
+- `editor`
+
+Here's an example YAML header:
+
+```yaml
+---
+title: "Document title"
+author: "Your Name"
+execute:
+  echo: false
+format: html
+---
+```
+
 
 ### 4.5.4 Rendering Qmd Document
 
@@ -154,61 +142,132 @@ To render your document:
 *[Provide screenshots of the solution here]*
 
 
-## 4.5 Writing Quarto Documents 
-The RStudio visual editor simplifies formatting. To go into visual mode for a document, activate the visual option at the top-left of the toolbar. This opens a formatting bar where you may style, add links, create tables, and more, similar to Google Docs and other document editors. Switch between source and visual mode at any moment to retain editing location and undo/redo status.
+## 4.5 Writing Quarto Documents
 
-### Write text 
-#### *Adding Headings*
-For a list of editing shortcut: https://rstudio.github.io/visual-markdown-editing/shortcuts.html
+### RStudio Visual Editor: Simplified Formatting
 
-_Example_ (need to fix this)
+The RStudio visual editor simplifies formatting, making it easier to create Quarto documents. To access the visual editor for your document, follow these steps:
+
+1. **Activate Visual Mode**: Click the visual option at the top-left of the toolbar.
+
+   This opens a formatting bar that resembles popular document editors like Google Docs.
+
+2. **Switch Between Modes**: You can switch between source and visual modes at any time. This feature lets you retain your editing location and undo/redo your changes.
+
+### *Writing text*
+
+##### Adding Headings
+
+To create headings, you can use a shortcut. For a list of editing shortcuts, refer to [this link](https://rstudio.github.io/visual-markdown-editing/shortcuts.html).
+
+_Example:_
+```markdown
 # Heading 1
-This is a sentence with some **bold text**, some *italic text* and an [image](image.png).
+This is a sentence with some **bold text**, some *italic text*, and an ![image](image.png).
+```
 
 ### *Creating Bullet and Numbered Lists*
-turn text into bullet or numbered lists.
 
+In Quarto, you can easily transform plain text into organized lists. Here's how:
+
+**Bullet Lists:**
+- To create a bullet list, simply start each item with an asterisk (*), a plus (+), or a hyphen (-), followed by a space.
+
+ Example:
+   ```markdown
+   - Item 1
+   - Item 2
+   - Item 3
+```
+  Example:
+   ```markdown
+1. First item
+2. Second item
+3. Third item
+```
 ### *Adding Images*
-The visual editor allows users to insert images by browsing their location or copying and pasting it to the Qmd document directly. 
+You can enhance your Quarto documents by adding images. The visual editor simplifies this process:
 
+**Browse and Insert**: Click on the image icon in the formatting bar, browse your computer to find the image file, and insert it into your Qmd document.
+Example
+```
+![Alt Text](image.png)
+```
 ### *Adding Links*
-(need to fix) Click on the link icon and paste the address in the URL field. Simple right? If you prefer, you can also the drop-down insert menu, or even use shortcuts
+In Quarto, adding links is straightforward:
+
+1. **Link Icon**: Click on the link icon in the formatting bar.
+2. **Paste URL**: Paste the web address (URL) in the URL field.
+
+Example:
+```markdown
+[Link Text](https://www.example.com)
+```
 
 ### *Creating tables* 
-we could do that by inserting a table to a selected part of the documents and by specifying the desired number of rows and columns.
+Quarto makes it easy to include tables in your documents:
+
+1. **Insert Table**: To add a table, select the location in your document where you want the table to appear.
+2. **Specify Rows and Columns**: Define the number of rows and columns you need for your table.
+
+Example:
+```markdown
+| Header 1 | Header 2 |
+|----------|----------|
+| Data 1   | Data 2   |
+| Data 3   | Data 4   |
+```
 
 ### *Adding Formulas*
+For mathematical content, you can incorporate formulas into your Quarto documents using LaTeX syntax. LaTeX is a widely-used typesetting system for scientific documents.
 
-## 5 Code in Quarto documents
-Quarto reverses the conventional order of code and text. Unlike R scripts, they need you to comment out the code and enter text first. How can R distinguish code from text without code comments (#)? "Code chunks" are where RStudio comes in. Knitr "knits" the code output and text together before Quarto's rendering mechanism can add markdown formatting to the final result. Second, Quarto shows our document format for code output. Knitr runs plot code in a code chunk, links it to markdown text, and then Quarto renders the whole thing in HTML.
+
+```markdown
+$\frac{n!}{k!(n-k)!} = \binom{n}{k}$
+```
+
+
+## 5 Code in Quarto Documents 
+
+Quarto does things a bit differently than standard code writing. Instead of starting with code, you begin by adding text. But how does Quarto know what's code and what's not, without using comments like #?
+
+That's where **"Code Chunks"** come in handy. Think of them as the bridge between your words and the code's magic. Here's how it all works:
 
 ### What is Knitr? 
-The "dynamic" portion of Quarto reports is generated by Knitr, an engine inside RStudio. It is a program that lets you embed R code into the document you generate with Quarto, whether it in HTML, Word, PDF, or LaTex format. Literate Programming is used to increase the reproducibility of studies. 
 
-### Write code *Using Code Chunks*
+Knitr is a special tool inside RStudio that powers the dynamic part of Quarto reports. It allows you to smoothly mix R code into your Quarto documents, whether they end up as HTML, Word, PDF, or LaTeX files. Knitr is essential for a concept called **Literate Programming**, which helps make your work reproducible.
 
-#### Add a code Chunk 
-- the Insert > Code Chunk menu option in the editor toolbar
-- by typing the code chunk delimiters {r} and ```. *If you are in “editor” mode you will need to remember to end the code chunk with ending backticks as well ```.
-- the keyboard shortcut - Ctrl + Alt + I (Windows) - Cmd + Option + I (Mac)
+### Writing Code with Code Chunks 📝
 
-ADD FIGURES or pics showing how to add a R code chunk 
+#### Adding a Code Chunk
 
-Common code chunk options:
-- **include** = (logical) whether to include the chunk output in the output document (defaults to TRUE).
-- **eval** = (logical or numeric) TRUE/FALSE to evaluate (or not) or a numeric value like c(1,3) (only evaluate expressions 1 and 3).
-- **echo** = (logical or numeric - following the same rules as above) whether to display source code or not.
-- **results** = (logical or character) text output of the code can be hidden (hide or FALSE), or delineated in a certain way (default ‘markup’).
-- **warning** = (logical) whether to display the warnings in the output (default TRUE). FALSE will output warnings to the console only.
-- **message** = (logical) whether or not to display messages that appear when running the code (default TRUE).
+You have a few ways to insert a code chunk into your Quarto document:
 
-Label Your Code Chunk
-Before we fix the way our code looks when it's run, let's take a moment to give our code chunk a name. Even though it's not necessary to run your code, it's a good idea to give each piece of code a name. This is because a label is a unique number that lets you use your qmd files in more advanced ways (like cross-referencing) in the future.
+- Use the **Insert > Code Chunk** option in the editor's toolbar.
+- Manually type the code chunk's special markers: `{r}` and triple backticks (\```).
+  *If you're in "editor" mode, remember to close the code chunk with triple backticks as well (\```).*
+- Or just press the keyboard shortcut: Ctrl + Alt + I (Windows) or Cmd + Option + I (Mac).
 
-Some things to keep in mind
+📷 [Include a figure or screenshot showing how to add an R code chunk here]
 
-The chunk label syntax is always #| label: chunk-label with chunk-label replaced with your own text
-The chunk label has to be unique (i.e. you can’t use the the same name for multiple chunks)
+Here are some common settings for code chunks:
+
+- **include**: A yes/no choice to put the chunk's result in your document (it's usually yes).
+- **eval**: A yes/no choice to run the code or not (yes is common), or you can specify which lines to run.
+- **echo**: A yes/no choice to display the code (often yes).
+- **results**: A yes/no choice to show the code's results in your document (yes is typical).
+- **warning**: A yes/no choice to display warnings (often yes).
+- **message**: A yes/no choice to show messages when running the code (often yes).
+
+#### Label Your Code Chunk
+
+Before we make our code look pretty when it runs, let's give it a name. This step isn't required for running code, but it helps if you want to do fancy things with your Qmd files later, like cross-referencing.
+
+Here's what you need to know:
+
+- The label format is simple: `#| label: chunk-label`.
+- Each chunk must have a unique label.
+
 
 ### Bibliography 
 
