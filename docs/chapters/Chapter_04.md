@@ -1,10 +1,10 @@
 ## 4.1 What's Our Goal? 🎯
 
-**Objective:** This lesson's mission is to make your life easier by introducing Quarto, a modern markdown-based report framework. We'll show you how Quarto streamlines the creation of scientific reports, documents, and articles by combining code execution for data formatting, analysis, and visualization with simple markdown.
+**Objective:** The goal of this course is to simplify your life by introducing Quarto, a new markdown-based report structure. We'll show how Quarto speeds up the production of scientific reports, publications, and articles by integrating code execution for data structuring, analysis, and visualization with simple markdown.
 
 ## 4.2 What is Quarto, and Why Does It Matter? 📖
 
-[Quarto](https://quarto.org/) isn't just another R package; it's the future of RMarkdown. It's an open-source publishing system, powered by Pandoc, that's designed to work with multiple programming languages like Python and Julia. Quarto simplifies the entire R Markdown ecosystem, allowing you to effortlessly mix text and code for various purposes, including documents, books, presentations, web pages, and more.
+[Quarto](https://quarto.org/) isn't just another R package; it's the future of RMarkdown. It's a Pandoc-powered open-source publishing system that's designed to work with a variety of computer languages, including Python and Julia. Quarto simplifies the entire R Markdown ecosystem, allowing you to easily combine text and code for a variety of uses such as documents, books, presentations, web pages, and more.
 
 **Key Benefits of Quarto:**
 - Streamlined document organization and layout.
@@ -338,51 +338,94 @@ theme_set(theme_bw(12))
 knitr::opts_chunk$set(fig.align = "center")
 
 ```
+</details>
+
+## Step 2: Insert text and code 
+Objective: Integrate the provided text and code into your Quarto document.
+
+Instructions:
+
+1. Incorporate the given text and code snippets into the body of your Quarto document.
+2. As you insert key points or emphasize specific terms, utilize Bold, Italic, or any other relevant styles to enhance readability and highlight importance.
 
 
+**Text**: "Now we read the data, available as a local csv file in the relative path (`breast-cancer-wisconsin/`) below. We use various functions to have a glimpse of its structure and dimensions. We also change the `diagnosis` variable to a factor."
+
+**Code**: 
+cancer_data <- as_tibble(read.csv("data/breast-cancer-wisconsin.csv"))
+head(cancer_data)
+cancer_data$diagnosis <- as.factor(cancer_data$diagnosis)
+colnames(cancer_data)
+dim(cancer_data)
+
+**Text**
+"Echoing the dimensions printed in the output above, this data frame has `r nrow(cancer_data)` rows and `r ncol(cancer_data)` columns. Except for the first two columns, the remaining columns are features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass. They describe characteristics of the cell nuclei present in the image."
+
+We use the following code to remove columns with missing values (`NA`), and have a glimpse of the remaining columns again.
+
+**Code**
+cancer_data <- cancer_data |> select(where(~ all(!is.na(.x))))
+head(cancer_data)
+
+<details>
+<summary><strong>Solution: Insert text and code (Step 2)</strong></summary>
+
+Now we read the data, available as a local csv file in the relative path (`breast-cancer-wisconsin/`) below. We use various functions to have a glimpse of its structure and dimensions. We also change the `diagnosis` variable to a factor.
+
+```{r read}
+cancer_data <- as_tibble(read.csv("data/breast-cancer-wisconsin.csv"))
+head(cancer_data)
+cancer_data$diagnosis <- as.factor(cancer_data$diagnosis)
+colnames(cancer_data)
+dim(cancer_data)
+```
+Echoing the dimensions printed in the output above, this data frame has `r nrow(cancer_data)` rows and `r ncol(cancer_data)` columns. Except for the first two columns, the remaining columns are features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass. They describe the characteristics of the cell nuclei present in the image.
+
+We use the following code to remove columns with missing values (`NA`), and have a glimpse of the remaining columns again.
+```{r remove_na}
+cancer_data <- cancer_data |> select(where(~ all(!is.na(.x))))
+head(cancer_data)
+```
+</details>
+
+ADD SCREENSHOT ON HOW IT LOOK 
 
 
+## Step 3: Visualizations in Quarto documents 
+TEXT OF THE EXCERCISE
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--   set the theme of the plots using `theme_set()` in package `ggplot2` [@Wickham2016].
-
-
-```{r}
-#| label: load-packages
-#| include: false
-
-theme_set(theme_bw(12))
-knitr::opts_chunk$set(fig.align = "center")
-
+<details>
+<summary><strong>Solution: Insert text and code (Step 2)</strong></summary>
+  
+## Basic summaries
+Using the column `diagnosis` in the data, we count that there are `r sum(cancer_data$diagnosis == "M")` Malignant tumours and `r sum(cancer_data$diagnosis == "B")` Benign tumours. We can also plot these counts:
+```{r plot-counts, fig.cap = "Counts of data according to tumour status", fig.align = "center", out.width = "70%", fig.asp = 0.65, message = FALSE}
+plot_count(cancer_data)
 ```
 
-## 4.6 Lets work on the Quarto file 
-Hopefully, by now you have Quarto downloaded in your R 
+# Visualisations and tests of three features
+To understand the data better, it is useful to look at, for each tumour status, the distribution of individual features / variables. As an illustration, we shall look at three of them.
 
-### 4.6.0 Make changes to the YAML 
+## Histogram & density
+We first visualise such distributions using histograms and density plots in Figure \@ref(fig:plot-hist). As the same kind of plot is required, a function is written for convenience.
+
+```{r plot-hist, fig.show = "hold", fig.cap = "Histogram and density of three features according to tumour status", fig.align = "center", out.width = "70%", fig.asp = 0.65, message = FALSE}
+plot_hist_den(
+  cancer_data, var = area_worst, label = "Area worst", filename = "hist_area.png"
+)
+plot_hist_den(
+  cancer_data, var = fractal_dimension_mean, label = "Fractal dimension mean",
+  filename = "hist_frac.png"
+)
+plot_hist_den(
+  cancer_data, var = radius_se, label = "Radius se", filename = "hist_radius.png"
+)
+```
+</details>
 
 
-### 4.6.1 Put in some text 
-Introduction to the data used and try to link to available resources 
-
-## Introduction
-This is an example analysis of the **Wisconsin breast cancer data** (available [here](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data)) done in R. The first usage of this data was described in @Streetetal1993.
 
 
-### Additional resources 
 
 
 
