@@ -7,13 +7,20 @@
 [Quarto](https://quarto.org/) isn't just another R package; it's the future of RMarkdown. It's a Pandoc-powered open-source publishing system that's designed to work with a variety of computer languages, including Python and Julia. Quarto simplifies the entire R Markdown ecosystem, allowing you to easily combine text and code for a variety of uses such as documents, books, presentations, web pages, and more.
 
 **Key Benefits of Quarto:**
-- Streamlined document organization and layout.
-- Seamless integration across different formats.
-- Enhanced support for multiple programming languages within a single project.
-- Native language execution (e.g., R in knitr, Python/Julia in Jupyter).
-- Compatibility with RStudio Visual Editor for creating HTML slides.
+- Offers a refined structure for document organization and layout
+- Facilitates seamless coordination across various formats
+- Enhanced capabilities for integrating multiple programming languages within a single project, such as R in knitr and Python/Julia in Jupyter
+- Works effortlessly with RStudio Visual Editor, making the creation of HTML slides easy
+
+In addition, it enables users to:
+Write reproducible research reports, presentations, or scientific articles
+- Design personal or project websites
+- Craft tutorials, textbooks, and other online educational resources
+
+If you want to see some real examples of Quarto documents have a look at the [Quarto gallery](https://quarto.org/docs/gallery/)
 
 ## 4.4 Before We Begin 🛠️
+In this session, we'll learn how to use Quarto with R. But remember, Quarto isn't limited to [R](https://quarto.org/docs/computations/r.html) — it also works with Python, Julia, and Observable JS!
 
 ### 4.4.0 Installation Instructions ⚙️
 
@@ -21,7 +28,7 @@ Before diving in, let's ensure you have the necessary tools at your fingertips:
 
 1. **RStudio:** Make sure you have the latest version of RStudio installed.
 
-2. **Quarto:** Follow the installation instructions on the [Quarto website](https://quarto.org/).
+2. **Quarto:** Follow the installation instructions on the [Quarto website](https://quarto.org/) (for more information cheak out the online documentation [Quarto guide]([https://quarto.org/](https://quarto.org/docs/guide/))
 
 3. Once Quarto is installed, open RStudio's terminal and install/update the following R packages using this command:
 
@@ -337,7 +344,7 @@ knitr::opts_chunk$set(fig.align = "center")
 
 ```
 **Figure 3**: how the Quarto HTML importing document looks
-![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure_CodRep/CodeRep2.png)
+![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure_CodRep/CoderRep2.png)
 </details>
 
 ## Step 2: Insert text and code 
