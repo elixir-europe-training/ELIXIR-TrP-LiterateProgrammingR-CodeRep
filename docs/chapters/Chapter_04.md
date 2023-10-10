@@ -1,6 +1,6 @@
 ## 4.1 What's Our Goal? 🎯
 
-**Objective:** The goal of this course is to simplify your life by introducing Quarto, a new markdown-based report structure. We'll show how Quarto speeds up the production of scientific reports, publications, and articles by integrating code execution for data structuring, analysis, and visualization with simple markdown.
+The goal of this course is to simplify your life by introducing Quarto, a new markdown-based report structure. We'll show how Quarto speeds up the production of scientific reports, publications, and articles by integrating code execution for data structuring, analysis, and visualization with simple markdown.
 
 ## 4.2 What is Quarto, and Why Does It Matter? 📖
 
@@ -24,13 +24,19 @@ In this session, we'll learn how to use Quarto with R. But remember, Quarto isn'
 
 ### 4.4.0 Installation Instructions ⚙️
 
-Before diving in, let's ensure you have the necessary tools at your fingertips:
+Before diving in, let's ensure you have the necessary tools:
 
 1. **RStudio:** Make sure you have the latest version of RStudio installed.
 
 2. **Quarto:** Follow the installation instructions on the [Quarto website](https://quarto.org/) (for more information cheak out the online documentation [Quarto guide]([https://quarto.org/](https://quarto.org/docs/guide/))
+   
+3. Setting up **Tinytext**
+Launch RStudio and access the Terminal: Go to Tools, then select Terminal and click on New Terminal.
+Once in the Terminal, enter the provided code to install tinytex, a streamlined TeX variant for Quarto PDF generation.
 
-3. Once Quarto is installed, open RStudio's terminal and install/update the following R packages using this command:
+OR TYPE IN THE TERMINAL quarto install tinytex
+
+5. Open RStudio and make sure that the following packages are updated. You can use the following command line:
 
 ```R
 # Run in R
