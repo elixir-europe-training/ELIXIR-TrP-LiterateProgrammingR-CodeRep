@@ -268,14 +268,9 @@ Here's what you need to know:
 ### Bibliography 
 
 
-
-# Lets build together a Quarto paper/Document 
-
-Before starting make sure you have downloaded the data we will use in the document (INSTRUCTION FOR DOWNLOADING THE DATA)
-
 # Let's Build a Quarto Paper/Document
 
-Before we start, ensure you have downloaded the data we will use in the document (INSTRUCTION FOR DOWNLOADING THE DATA).
+Before we start, ensure you have downloaded [the data]([https://www.example.com](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data)).
 
 ## Step 0: Create a YAML Header
 Before we dive into the document's content, let's set up the YAML front matter for your document titled "Breast Cancer Data Analysis." Follow these instructions:
@@ -316,6 +311,7 @@ format:
 editor: visual
 ---
 ```
+![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure1.png)
 </details>
 
 ## Step 1: Import Required Packages
@@ -421,8 +417,54 @@ plot_hist_den(
   cancer_data, var = radius_se, label = "Radius se", filename = "hist_radius.png"
 )
 ```
+
+## Boxplots
+Another way of visualising the distribution of the three variables above, grouped by the tumuor status, is the box plots in Figure \@ref(fig:plot-boxplot):
+
+```{r plot-boxplot, fig.cap = "Boxplot of three features according to tumour status", fig.show = "hold", fig.pos = "!h", fig.align = "center", out.width = "70%", fig.asp = 0.65, message = FALSE}
+plot_boxplot(
+  cancer_data, var = area_worst, label = "Area worst", filename = "boxplot_area.png"
+)
+plot_boxplot(
+  cancer_data, var = fractal_dimension_mean, label = "Fractal dimension mean",
+  filename = "boxplot_frac.png"
+)
+plot_boxplot(
+  cancer_data, var = radius_se, label = "Radius se", filename = "boxplot_radius.png"
+)
+```
 </details>
 
+## Step 4: Reporting tables 
+
+<details>
+<summary><strong>Solution: Insert text and code (Step 2)</strong></summary>
+
+Statistical tests
+
+We can perform two-sample *t*-test to find out if there is a significant difference in the distribution of a feature according to the tumour status.
+```{r ttest, results = "hold"}
+area_worst_B <- cancer_data$area_worst[cancer_data$diagnosis == "B"]
+area_worst_M <- cancer_data$area_worst[cancer_data$diagnosis == "M"]
+ttest0 <- t.test(area_worst_B, area_worst_M, var.equal = TRUE)
+options(scipen = 3, digits = 3)
+```
+
+The $t$-statistic is `r ttest0$statistic` and the $p$-value is `r ttest0$p.value`. We can write a function to carry out the test more systematically:
+```{r ttest_functional}
+ttest1 <- ttest_var(cancer_data, var = area_worst)
+ttest2 <- ttest_var(cancer_data, var = fractal_dimension_mean)
+ttest3 <- ttest_var(cancer_data, var = radius_se)
+```
+
+The results are in the following table:
+
+| Variable | $t$-statistic | $p$-value |
+|----------|---------------|-----------|
+|Area worst|`r ttest1$statistic`| `r ttest1$p.value`|
+|Fractal dimension mean|`r ttest2$statistic`| `r ttest2$p.value`|
+|Radius se|`r ttest3$statistic`| `r ttest3$p.value`|
+</details>
 
 
 
