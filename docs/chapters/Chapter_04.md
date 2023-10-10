@@ -311,7 +311,9 @@ format:
 editor: visual
 ---
 ```
-![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure1.png)
+
+**Figure 2**: how the Quarto HTML document head looks
+![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure_CodRep/CodeRep1.png)
 </details>
 
 ## Step 1: Import Required Packages
@@ -334,6 +336,8 @@ theme_set(theme_bw(12))
 knitr::opts_chunk$set(fig.align = "center")
 
 ```
+**Figure 3**: how the Quarto HTML importing document looks
+![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure_CodRep/CodeRep2.png)
 </details>
 
 ## Step 2: Insert text and code 
