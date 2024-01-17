@@ -1,3 +1,9 @@
+Learning Outcomes:
+
+* Understand that markdown is a text formatting language
+* Understand why markdown is useful for literate programming
+* Learn basic of markdown that can be applied for literate programming
+
 ## 3.1 What is Markdown?
 
 Markdown is a simple markup language created by [John Gruber in 2004](https://daringfireball.net/projects/markdown/). As a markup language, Markdown, allows you to format plain text to enhance presentation and readability of your text.  From a technical perspective, Markdown is two things: (i) a syntax or grammar for formatting plain text files and; (2) a software tool that converts plain text files to [HTML](https://en.wikipedia.org/wiki/HTML). As a software Markdown is free and platform independent, meaning it can br run any device using any operating system.
@@ -21,7 +27,7 @@ Markdown's growing popularity as the document formatting language of choice in l
 
 !!! info "Basic Markdown _vs._ Markdown Extensions"
 
-    Markdown's simplicity comes at a cost: there are only a limited amount of formatting effects available to you in **basic** or **native** Markdown. However, many applications supporting Markdown e.g. Jupyter Notebooks, R/RStudio,  
+    Markdown's simplicity comes at a cost: there are only a limited amount of formatting effects available to you in **basic** or **vanilla** Markdown. However, many applications supporting Markdown e.g. Jupyter Notebooks, R/RStudio,  
     GitHub etc. provide thier own [**extensions** of Markdown syntax](https://www.markdownguide.org/extended-syntax/) which let you do more complex formatting with the simplicity of Markdown-like syntax. Additionally,
     if your needs ever grow, worry not, tools like [pandoc](https://pandoc.org/) allow you to mix more flexible formatting languages such as LaTeX and/or HTML with Markdown allowing you to format your text to 
     your heart's desire.
@@ -284,9 +290,10 @@ To make a table, use three or more hyphens (---) to create each column’s heade
 
 !!! info "Making tables in Markdown..."
 
-    Making small tables is simple enough but making larger tables can get painful in markdown. If you need to make tables from your own data, R or Python will have appropriate extensions to help you with that. For other 
-    larger tables in markdon the [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables) is a great tool. Make your table using their graphical interface and then copy the generated Markdown- 
-    formatted text into your file.
+    Making small tables is simple enough but making larger tables can get painful in markdown. For larger tables in markdon the [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables) is a great   
+    tool. Make your table using their graphical interface and then copy the generated Markdown- 
+    formatted text into your file. In RStudio you can use the [**visual** editor](https://posit.co/blog/exploring-rstudio-visual-markdown-editor/) to do the [same](https://rstudio.github.io/visual-markdown- 
+    editing/content.html#:~:text=You%20can%20insert%20a%20table,delete%20command%20will%20behave%20accordingly.), so you don't even have to leave the warm confines of RStudio.
 
 ### 3.3.6 Paragraphs
 
