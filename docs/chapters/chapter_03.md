@@ -1,4 +1,4 @@
-Learning Outcomes:
+**Learning Outcomes**:
 
 * Understand that markdown is a text formatting language
 * Understand why markdown is useful for literate programming
