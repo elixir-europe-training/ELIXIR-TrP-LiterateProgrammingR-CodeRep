@@ -68,6 +68,7 @@ To run this lesson you need to install data from the [Elixir CodeRep R script re
 To run this course you need to install the following:  
 
   * R and Rstudio - please follow the instructions [here](https://posit.co/download/rstudio-desktop/) for your machine.   
-  * Quarto - please follow the instructions [here](https://quarto.org/docs/get-started/) for your machine.    
+  * Quarto - please follow the instructions [here](https://quarto.org/docs/get-started/) for your machine.
+  * TinyTex (R package) - required if you want to use LaTex and/or render PDFs. This is an R package, more info and installation instructions [here](https://yihui.org/tinytex/)
 
 
