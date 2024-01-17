@@ -1,3 +1,9 @@
+Learning Outcomes:
+
+* Understand that markdown is a text formatting language
+* Understand why markdown is useful for literate programming
+* Learn basic of markdown that can be applied for literate programming
+
 ## 3.1 What is Markdown?
 
 Markdown is a simple markup language created by [John Gruber in 2004](https://daringfireball.net/projects/markdown/). As a markup language, Markdown, allows you to format plain text to enhance presentation and readability of your text.  From a technical perspective, Markdown is two things: (i) a syntax or grammar for formatting plain text files and; (2) a software tool that converts plain text files to [HTML](https://en.wikipedia.org/wiki/HTML). As a software Markdown is free and platform independent, meaning it can br run any device using any operating system.
