@@ -1,10 +1,12 @@
 ## 4.1 What's Our Goal? 🎯
 
-The goal of this course is to simplify your life by introducing Quarto, a new markdown-based report structure. We'll show how Quarto speeds up the production of scientific reports, publications, and articles by integrating code execution for data structuring, analysis, and visualization with simple markdown.
+Welcome to the last chapter of this tutorial. 
+
+In this chapter, we present you with a tool that can assist you in your work. Quarto integrates markdown writing with code execution for data formatting, analysis, and visualization—all in one place helping speed up the production of scientific reports, publications, and articles.
 
 ## 4.2 What is Quarto, and Why Does It Matter? 📖
 
-[Quarto](https://quarto.org/) isn't just another R package; it's the future of RMarkdown. It's a Pandoc-powered open-source publishing system that's designed to work with a variety of computer languages, including Python and Julia. Quarto simplifies the entire R Markdown ecosystem, allowing you to easily combine text and code for a variety of uses such as documents, books, presentations, web pages, and more.
+[Quarto](https://quarto.org/) is the next generation of R Markdown from Posit. It's a Pandoc-powered open-source publishing system that's designed to work with a variety of computer languages, including Python, R, and Julia. Quarto simplifies the entire R Markdown ecosystem, allowing you to publish documents, books, presentations, web pages, and more in the format you want (for example HTML, PDF, MS Word, ePub). 
 
 **Key Benefits of Quarto:**
 - Offers a refined structure for document organization and layout
