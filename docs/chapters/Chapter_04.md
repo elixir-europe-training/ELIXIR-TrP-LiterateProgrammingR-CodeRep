@@ -85,28 +85,19 @@ To start creating your own Quarto document in RStudio:
 1. Go to **File > New File > Quarto Document...**.
 2. Follow the prompts in the wizard to configure your document, choosing from a variety of templates and settings to suit your project's needs.
 
-#### 4.5.3.2 YAML Header (Metadata)
+#### 4.5.3.1 YAML Header (Metadata)
 
-The **YAML metadata**, or header, is absolutely essential in Quarto documents. This metadata acts as your document's backstage pass, influencing many rendering phases. It contains crucial information that shapes your document's code, content, and presentation. Placed at the beginning, the YAML header is carefully evaluated by Pandoc, Quarto, and knitr.
+The **YAML metadata** in a Quarto document is crucial for defining the document's metadata, which influences its rendering. This metadata includes details like the document's title, author, desired output format, and other rendering options. It's encapsulated by three dashes (`--- `) at the top of the document.
 
-A default Quarto YAML header includes the following metadata surrounded by three dashes `---`:
-
-- `title`
-- `author`
-- `format`
-- `editor`
-
-Here's an example YAML header:
-
-```yaml
+Example YAML Header:
 ---
-title: "Document title"
-author: "Your Name"
+title: "Insightful Analysis"
+author: "Jane Doe"
 execute:
   echo: false
 format: html
 ---
-```
+This header sets up the document with a title, an author, specifies that code echoes should be suppressed (echo: false), and designates HTML as the output format.
 
 
 ### 4.5.4 Rendering Qmd Document
