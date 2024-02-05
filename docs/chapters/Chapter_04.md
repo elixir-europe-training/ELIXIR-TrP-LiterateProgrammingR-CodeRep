@@ -90,6 +90,8 @@ To start creating your own Quarto document in RStudio:
 The **YAML metadata** in a Quarto document is crucial for defining the document's metadata, which influences its rendering. This metadata includes details like the document's title, author, desired output format, and other rendering options. It's encapsulated by three dashes (`--- `) at the top of the document.
 
 Example YAML Header:
+
+```{yamal}
 ---
 title: "Insightful Analysis"
 author: "Jane Doe"
@@ -97,6 +99,8 @@ execute:
   echo: false
 format: html
 ---
+```
+
 This header sets up the document with a title, an author, specifies that code echoes should be suppressed (echo: false), and designates HTML as the output format.
 
 
