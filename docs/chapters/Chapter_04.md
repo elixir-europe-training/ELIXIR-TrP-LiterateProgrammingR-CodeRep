@@ -52,7 +52,7 @@ install.packages(c(
 ### 4.5.1 The Quarto Workflow
 Quarto simplifies document creation through a two-step process:
 
-1. **Code Execution**: Your Quarto document (`.qmd`) is first processed by ![**knitr**](https://yihui.org/knitr/), which executes the code chunks embedded within the document, producing an intermediate Markdown (.md) file that includes both the original code and its output.
+1. **Code Execution**: Your Quarto document (`.qmd`) is first processed by ![**knitr**](https://yihui.org/knitr/), which executes the code chunks embedded within the document, producing an intermediate Markdown (`.md`) file that includes both the original code and its output.
 2. **Final Rendering**:  The Markdown file is then handed over to ![**pandoc**](https://pandoc.org), which converts it into the final document in the desired output format. This process is highly flexible, supporting a wide array of formats including HTML, PDF, and Word documents.
 
 *[Include a visual diagram of the Quarto workflow here]*
@@ -69,28 +69,21 @@ Quarto's flexibility extends to supporting multiple programming languages within
 **Example Code:**
 
 ```{r}
-## ----read---------------------------------------------------------------------
-cancer_data <- as_tibble(read.csv("data/breast-cancer-wisconsin.csv"))
+# ----read-data----
+cancer_data <- read.csv("data/breast-cancer-wisconsin.csv")
 head(cancer_data)
 cancer_data$diagnosis <- as.factor(cancer_data$diagnosis)
-colnames(cancer_data)
-dim(cancer_data)
 ```
 
 ### 4.5.3 Creating Your First Quarto Document
 
 ![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure1.png)
 
-*Figure A: A Quarto document in RStudio that combines code and results.*
+*Figure A: An example of a Quarto document in RStudio, showcasing integrated code and results.*
 
-Let's get started by creating a basic Quarto document:
-
-#### 4.5.3.1 Starting a New Quarto Document 
-
-In RStudio, follow these steps to begin:
-
-1. Navigate to the menu bar and select **File > New File > Quarto Document...**.
-2. RStudio will open a wizard to help you set up your document with essential content and configurations.
+To start creating your own Quarto document in RStudio:
+1. Go to **File > New File > Quarto Document...**.
+2. Follow the prompts in the wizard to configure your document, choosing from a variety of templates and settings to suit your project's needs.
 
 #### 4.5.3.2 YAML Header (Metadata)
 
