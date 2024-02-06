@@ -104,8 +104,6 @@ format: html
 This header sets up the document with a title, an author, specifies that code echoes should be suppressed (echo: false), and designates HTML as the output format.
 
 
-### 4.5.4 Rendering Qmd Document
-
 ### 4.5.4 Rendering a Qmd Document
 
 **Rendering** a `.qmd` (Quarto Markdown) document transforms it into a different format like HTML, PDF, or Word. This process compiles your code and applies settings from the document's YAML header. Before rendering, ensure your document is error-free.
@@ -118,21 +116,30 @@ This header sets up the document with a title, an author, specifies that code ec
 
 **FIGURE:** ![Insert a screenshot of the "Render" button here.]
 
-!!! question "Exercise"
+<details>
+<summary><strong>Exercise:</strong> Produce your own Quarto document</summary>
+<br>
 
-    Produce your own Quarto document:
-    
-    1. Create a new Quarto document in your editor (e.g., RStudio).
-    2. Add a title and your name as the author in the YAML header.
-    3. Set the output format to HTML.
-    4. Render the document.
+1. Create a new Quarto document in your editor (e.g., RStudio).
+2. Add a title and your name as the author in the YAML header.
+3. Set the output format to HTML.
+4. Render the document.
 
-??? success "Solution"
+</details>
 
-    1. **Create Document**: In RStudio, use `File > New File > Quarto Document`.
-    2. **Edit YAML Header**: Add `title: "Your Title"` and `author: "Your Name"`.
-    3. **Set Output**: Ensure the YAML includes `format: html`.
-    4. **Render**: Click the "Render" button to produce your HTML document.
+<details>
+<summary><strong>Solution:</strong></summary>
+<br>
+
+1. **Create Document**: In RStudio, use `File > New File > Quarto Document`.
+2. **Edit YAML Header**: Add `title: "Your Title"` and `author: "Your Name"`.
+3. **Set Output**: Ensure the YAML includes `format: html`.
+4. **Render**: Click the "Render" button to produce your HTML document.
+
+*Insert screenshots demonstrating each step for clarity.*
+
+</details>
+
 
 *Insert screenshots demonstrating each step for clarity.*
 
