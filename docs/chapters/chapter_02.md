@@ -1,5 +1,10 @@
 ## 2.1 Introduction
-This chapter is a gentle introduction to the literate programming approach, and a preview of the components that will be covered in the next few chapters. By the end of this chapter, it is hoped that you will find this approach useful and understand its basics.
+This chapter is a gentle introduction to the literate programming approach, with the following **learning outcomes**: 
+
+* Understand why the old, manual approach of analysis and reporting does not facilitate reproducibility
+* Learn the key concepts of literate programming
+* Appreciate the usefulness of literate programming
+* Familiarise with (the names of) the components covered in the next few chapters
 
 ## 2.2 The Old Workflow
 To begin with, let me ask you a couple of questions:
