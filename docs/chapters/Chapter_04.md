@@ -193,17 +193,26 @@ _Example:_
   - Subitem 2.2
 - Item 3
 ```
-Numbered Lists
-For sequences or ordered content, use numbered lists. Begin each line with a number, followed by a period and a space. Quarto automatically handles the numbering for you.
 
-Example:
-   ```markdown
-1. First item
-2. Second item
-   1. Subitem 2.1
-   2. Subitem 2.2
-3. Third item
+### Numbered Lists
+
+For sequences or steps, numbered lists are the go-to. Begin each line with a number, followed by a period and a space. Quarto automatically takes care of the numbering for you, ensuring your list is orderly and sequential.
+
+```markdown
+1. First step
+2. Second step
+   1. Substep a
+   2. Substep b
+3. Third step
 ```
+### Adding Images
+
+Images significantly enhance the visual appeal and clarity of documents. To insert an image in Quarto, use the following syntax:
+
+```markdown
+![Alt text for the image](path/to/image.png "Optional title")
+```
+
 ### *Adding Images*
 You can enhance your Quarto documents by adding images. The visual editor simplifies this process:
 
