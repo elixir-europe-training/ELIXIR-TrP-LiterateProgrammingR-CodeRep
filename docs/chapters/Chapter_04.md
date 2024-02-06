@@ -117,19 +117,20 @@ This header sets up the document with a title, an author, specifies that code ec
 **FIGURE:** ![Insert a screenshot of the "Render" button here.]
 
 <details>
-<summary><strong>Exercise:</strong> Produce your own Quarto document</summary>
-<br>
+<summary><strong>📝 Exercise: Produce your own Quarto document</strong></summary>
+<p>
 
 1. Create a new Quarto document in your editor (e.g., RStudio).
 2. Add a title and your name as the author in the YAML header.
 3. Set the output format to HTML.
 4. Render the document.
 
+</p>
 </details>
 
 <details>
-<summary><strong>Solution:</strong></summary>
-<br>
+<summary><strong>✅ Solution:</strong></summary>
+<p>
 
 1. **Create Document**: In RStudio, use `File > New File > Quarto Document`.
 2. **Edit YAML Header**: Add `title: "Your Title"` and `author: "Your Name"`.
@@ -138,6 +139,7 @@ This header sets up the document with a title, an author, specifies that code ec
 
 *Insert screenshots demonstrating each step for clarity.*
 
+</p>
 </details>
 
 
