@@ -212,16 +212,7 @@ Images significantly enhance the visual appeal and clarity of documents. To inse
 ```markdown
 ![Alt text for the image](path/to/image.png "Optional title")
 ```
-
-### *Adding Images*
-You can enhance your Quarto documents by adding images. The visual editor simplifies this process:
-
 **Browse and Insert**: Click on the image icon in the formatting bar, browse your computer to find the image file, and insert it into your Qmd document.
-Example
-```
-![Alt Text](image.png)
-```
-This markup instructs Quarto to display an image located at `path/to/image.png`, with "Alt text for the image" serving as alternative text for accessibility purposes, and an "Optional title" that appears when hovering over the image.
 
 ### Adding Links
 
@@ -234,22 +225,27 @@ Links are essential for directing your readers to external references or for pro
 The text within square brackets `[ ]` is what your readers will see as clickable text, and the URL within parentheses `( )` is where the link will take them upon clicking. An "Optional title" can also be included within quotes after the URL, which will appear as a tooltip during a mouse hover over the link.
 
 ### Creating Tables
-
-Tables efficiently organize and present data and information in a structured format. In Quarto, you can create tables using Markdown's straightforward syntax:
+Tables in Quarto are created using Markdown syntax. It's a simple way to organize your data visually. Here's how you do it:
 
 ```markdown
 | Header 1 | Header 2 | Header 3 |
 |----------|----------|----------|
-| Row 1 Col 1 | Row 1 Col 2 | Row 1 Col 3 |
-| Row 2 Col 1 | Row 2 Col 2 | Row 2 Col 3 |
-| Row 3 Col 1 | Row 3 Col 2 | Row 3 Col 3 |
-
+| Row 1    | Data     | Data     |
+| Row 2    | Data     | Data     |
 ```
+This syntax easily organizes your data into a table with three columns. Use `|` to delineate each column and `-` to separate the header from the rows.
 
-### *Adding Formulas*
-For mathematical content, you can incorporate formulas into your Quarto documents using LaTeX syntax. LaTeX is a widely-used typesetting system for scientific documents.
+### Adding Formulas
 
+Quarto integrates LaTeX support, enabling the addition of mathematical formulas directly within your documents, both inline within text and as standalone block elements.
 
+#### Inline Formulas
+
+For formulas that should appear within your text, use single dollar signs `$...$` to enclose the LaTeX code:
+
+```markdown
+An example of an inline formula is the equation for energy, $E=mc^2$.
+```
 ```markdown
 $\frac{n!}{k!(n-k)!} = \binom{n}{k}$
 ```
