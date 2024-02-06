@@ -106,29 +106,35 @@ This header sets up the document with a title, an author, specifies that code ec
 
 ### 4.5.4 Rendering Qmd Document
 
-**Rendering** in Quarto is the process of converting your document from one format to another that supports pages or pagination. When you click render, your code will be compiled, verified for faults, and written to the YAML header file type. It also checks code for errors, so ensure your `.qmd` document is free of errors before proceeding.
+### 4.5.4 Rendering a Qmd Document
 
-To render your document:
+**Rendering** a `.qmd` (Quarto Markdown) document transforms it into a different format like HTML, PDF, or Word. This process compiles your code and applies settings from the document's YAML header. Before rendering, ensure your document is error-free.
 
-1. Give your document a **name** and choose a **folder** for rendering.
+**Steps to Render Your Document:**
 
-   - Name your file `my_first_qmd.qmd`.
-   - Save it to an accessible file system directory.
+1. **Save Your Document**: Name it `my_first_qmd.qmd` and save it in an accessible location.
 
-2. Click the **"Render"** button, usually located at the bottom of your interface (see the figure below).
+2. **Render**: Locate and click the **"Render"** button in your Quarto editor. This button is often found at the top or bottom of the editor interface.
 
-**FIGURE:** [Insert an image or screenshot showing the "Render" button.]
+**FIGURE:** ![Insert a screenshot of the "Render" button here.]
 
-!!! question "Excercise"
-       
-       Let's produce your own document 
-       1. Use **RStudio** to create a new default Quarto document.
-       1. Add a **title** to your document
-       2. Specify your **name as the author**.
-       3. Change the **format** to **HTML**
-       4. **render the document**.
+!!! question "Exercise"
 
-    ??? success "Solution"
+    Produce your own Quarto document:
+    
+    1. Create a new Quarto document in your editor (e.g., RStudio).
+    2. Add a title and your name as the author in the YAML header.
+    3. Set the output format to HTML.
+    4. Render the document.
+
+??? success "Solution"
+
+    1. **Create Document**: In RStudio, use `File > New File > Quarto Document`.
+    2. **Edit YAML Header**: Add `title: "Your Title"` and `author: "Your Name"`.
+    3. **Set Output**: Ensure the YAML includes `format: html`.
+    4. **Render**: Click the "Render" button to produce your HTML document.
+
+*Insert screenshots demonstrating each step for clarity.*
 
         To do : *[Provide screenshots of the solution here]* or describe it 
         
