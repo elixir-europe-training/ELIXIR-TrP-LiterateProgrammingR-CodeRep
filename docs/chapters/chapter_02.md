@@ -1,5 +1,10 @@
 ## 2.1 Introduction
-This chapter is a gentle introduction to the literate programming approach, and a preview of the components that will be covered in the next few chapters. By the end of this chapter, it is hoped that you will find this approach useful and understand its basics.
+This chapter is a gentle introduction to the literate programming approach, with the following **learning outcomes**: 
+
+* Understand why the old, manual approach of analysis and reporting does not facilitate reproducibility
+* Learn the key concepts of literate programming
+* Appreciate the usefulness of literate programming
+* Familiarise with (the names of) the components covered in the next few chapters
 
 ## 2.2 The Old Workflow
 To begin with, let me ask you a couple of questions:
@@ -176,6 +181,13 @@ You may already notice the self-referentiality of these materials - yes, they ha
 * The code and the prose are formatted differently so that computers (and users) can tell them apart.
 * Practising literate programming in this way facilitates reproducibility, and enables other steps in the complete workflow.
 * Markdown and Quarto are two important components in literate programming.
+* The literate programming workflow is summarised below:
+
+<figure>
+<img src="../../assets/images/workflow.png" width="600"  alt="Workflow of literate programming"/>
+<figcaption> Figure 2.1 The workflow of literate programming. The steps will be covered in detail in the next two chapters. </figcaption>
+</figure>
+
 
 ## 2.6 Still confused?
 One major obstacle with learning literate programming, and the rest of this training programme is that the sheer amount of technical terms aka jargons confuses a researcher who codes but is not primarily in the field of computing and statistics. Here is a glossary that contains the terms that you might have come across with. If this looks Greek to you, don't worry, come back to this after you have covered the next two chapters. 
