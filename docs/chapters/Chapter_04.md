@@ -165,7 +165,9 @@ RStudio allows you to toggle between Source and Visual modes effortlessly, enabl
 
 #### Adding Headings
 
-Headings structure your document and guide your readers through sections. In the Visual Editor, headings can be added directly refer to [this link](https://rstudio.github.io/visual-markdown-editing/shortcuts.html) or through Markdown syntax.
+Headings structure your document and guide your readers through sections. In the Visual Editor, headings can be added directly or through Markdown syntax.
+
+For keyboard shortcuts to add headings and other formatting, refer to the RStudio editing shortcuts (add link).
 
 _Example:_
 
@@ -174,23 +176,32 @@ _Example:_
 This is a sentence with some **bold text**, some *italic text*, and an ![image](image.png).
 ```
 
-### *Creating Bullet and Numbered Lists*
+### Creating Bullet and Numbered Lists
 
-In Quarto, you can easily transform plain text into organized lists. Here's how:
+Lists are essential for organizing information in a readable format. Quarto supports both bullet and numbered lists, allowing you to structure your content effectively.
 
-**Bullet Lists:**
-- To create a bullet list, simply start each item with an asterisk (*), a plus (+), or a hyphen (-), followed by a space.
+#### Bullet Lists
 
- Example:
-   ```markdown
-   - Item 1
-   - Item 2
-   - Item 3
+To create a bullet list, start each item with a `-`, `*`, or `+`, followed by a space. This simple syntax transforms plain text into an organized list.
+
+_Example:_
+
+```markdown
+- Item 1
+- Item 2
+  - Subitem 2.1
+  - Subitem 2.2
+- Item 3
 ```
-  Example:
+Numbered Lists
+For sequences or ordered content, use numbered lists. Begin each line with a number, followed by a period and a space. Quarto automatically handles the numbering for you.
+
+Example:
    ```markdown
 1. First item
 2. Second item
+   1. Subitem 2.1
+   2. Subitem 2.2
 3. Third item
 ```
 ### *Adding Images*
