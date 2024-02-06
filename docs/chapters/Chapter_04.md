@@ -221,29 +221,29 @@ Example
 ```
 ![Alt Text](image.png)
 ```
-### *Adding Links*
-In Quarto, adding links is straightforward:
+This markup instructs Quarto to display an image located at `path/to/image.png`, with "Alt text for the image" serving as alternative text for accessibility purposes, and an "Optional title" that appears when hovering over the image.
 
-1. **Link Icon**: Click on the link icon in the formatting bar.
-2. **Paste URL**: Paste the web address (URL) in the URL field.
+### Adding Links
 
-Example:
+Links are essential for directing your readers to external references or for providing further reading materials. Adding links in Quarto is straightforward with the following Markdown syntax:
+
 ```markdown
-[Link Text](https://www.example.com)
+[Link text here](https://www.example.com "Optional title")
 ```
 
-### *Creating tables* 
-Quarto makes it easy to include tables in your documents:
+The text within square brackets `[ ]` is what your readers will see as clickable text, and the URL within parentheses `( )` is where the link will take them upon clicking. An "Optional title" can also be included within quotes after the URL, which will appear as a tooltip during a mouse hover over the link.
 
-1. **Insert Table**: To add a table, select the location in your document where you want the table to appear.
-2. **Specify Rows and Columns**: Define the number of rows and columns you need for your table.
+### Creating Tables
 
-Example:
+Tables efficiently organize and present data and information in a structured format. In Quarto, you can create tables using Markdown's straightforward syntax:
+
 ```markdown
-| Header 1 | Header 2 |
-|----------|----------|
-| Data 1   | Data 2   |
-| Data 3   | Data 4   |
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Row 1 Col 1 | Row 1 Col 2 | Row 1 Col 3 |
+| Row 2 Col 1 | Row 2 Col 2 | Row 2 Col 3 |
+| Row 3 Col 1 | Row 3 Col 2 | Row 3 Col 3 |
+
 ```
 
 ### *Adding Formulas*
