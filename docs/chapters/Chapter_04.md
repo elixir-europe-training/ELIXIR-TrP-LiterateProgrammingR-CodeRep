@@ -449,9 +449,11 @@ format:
 editor: visual
 ---
 ```
-
+   
 **Figure 2**: Example of how the Quarto HTML document head looks.
 ![Quarto HTML Document Head](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure_CodRep/CodeRep1.png)
+
+</details>
 
 ### Step 1: Import Required Packages
 
@@ -480,6 +482,7 @@ knitr::opts_chunk$set(fig.align = "center")
 <details>
 <summary><strong>Solution</strong></summary>
 <p>
+   
 **Figure 3**: Example of importing packages in Quarto.
 ![Importing Packages in Quarto](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure_CodRep/CoderRep2.png)
 
