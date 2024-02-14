@@ -493,54 +493,49 @@ knitr::opts_chunk$set(fig.align = "center")
 
 ### Step 2: Insert Text and Code
 
-Now, let's dive into integrating both text and code into your Quarto document to begin our analysis on the Breast Cancer Wisconsin dataset.
+Integrating text and code into your Quarto document is crucial for creating a dynamic document that not only presents data analysis but also explains the context and significance of the findings.
 
-**Objective**: Seamlessly blend textual explanations with R code to analyze the dataset.
+<details>
+<summary><strong>Material: Reading Data and Initial Analysis</strong></summary>
+
+Text: "Now we read the data, which is available as a CSV file in the relative path breast-cancer-wisconsin/. Using various R functions, we'll have a glimpse of its structure and dimensions. We also convert the diagnosis variable to a factor, facilitating further analysis."
+
+Code: 
+```{r}
+cancer_data <- as_tibble(read.csv("data/breast-cancer-wisconsin.csv"))
+head(cancer_data)
+cancer_data$diagnosis <- as.factor(cancer_data$diagnosis)
+colnames(cancer_data)
+dim(cancer_data)
+```
+Text: "Reflecting on the dimensions displayed above, this data frame consists of r nrow(cancer_data) rows and r ncol(cancer_data) columns. Except for the first two columns, the remaining columns are features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass, describing characteristics of the cell nuclei present in the image."
+
+Follow-Up Code:
+```{r}
+cancer_data <- cancer_data |> select(where(~ all(!is.na(.x))))
+head(cancer_data)
+```
+After removing columns with missing values, our dataset is now more streamlined for analysis. This preprocessing step is crucial for ensuring the accuracy of our subsequent analyses.
+
+</details>
+
+**Task**: Add the provided texts and corresponding code snippets into your Quarto document, utilizing Markdown formatting to emphasize key points or terms.
 
 **Instructions**:
 
 1. Add the provided text and corresponding R code snippets into the body of your Quarto document.
 2. Emphasize key points or terms using Markdown formatting (e.g., **bold**, *italic*).
 
-**Text**: "Now we read the data, which is available as a CSV file in the relative path `breast-cancer-wisconsin/`. Using various R functions, we'll have a glimpse of its structure and dimensions. We also convert the `diagnosis` variable to a factor, facilitating further analysis."
+### Step 3: Visualizations in Quarto Documents
+Creating visualizations is key to exploring and presenting data effectively. Quarto integrates seamlessly with ggplot2, allowing for complex visualizations to be included directly within your document.
 
-**Code**:
-```r
-cancer_data <- as_tibble(read.csv("data/breast-cancer-wisconsin.csv"))
-head(cancer_data)
-cancer_data$diagnosis <- as.factor(cancer_data$diagnosis)
-colnames(cancer_data)
-dim(cancer_data)
+Exercise: Generate a Scatter Plot
+Objective: Create a scatter plot to explore the relationship between mean_radius and mean_texture of tumor cells, distinguishing between benign and malignant diagnoses.
 
-**Text**:
-"Reflecting on the dimensions displayed above, this data frame consists of `r nrow(cancer_data)` rows and `r ncol(cancer_data)` columns. Except for the first two columns, the remaining columns are features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass, describing characteristics of the cell nuclei present in the image."
-
-**Follow-Up Code**:
-```r
-cancer_data <- cancer_data |> select(where(~ all(!is.na(.x))))
-head(cancer_data)
-```
-After removing columns with missing values, our dataset is now more streamlined for analysis. This preprocessing step is crucial for ensuring the accuracy of our subsequent analyses.
-
-## Data Exploration and Analysis
-
-### Exercise: Visualizing Data
-
-**Objective**: Your task is to generate a scatter plot that examines the relationship between `mean_radius` and `mean_texture` of tumor cells. This visualization should help us understand if there's a visual pattern that distinguishes benign from malignant tumors based on these two features.
-
-**Instructions**:
-
-1. Utilize the `ggplot2` package to create a scatter plot.
-2. The plot should have `mean_radius` on the x-axis and `mean_texture` on the y-axis.
-3. Color-code the points based on the `diagnosis` to distinguish between benign and malignant tumors.
-
-**Your Task**:
-```r
-# Write your ggplot2 code here to create the scatter plot
-
-
-**Code**:
-```r
+<details>
+<summary><strong>Material: Scatter Plot Creation</strong></summary>
+Code:
+```{r}
 library(ggplot2)
 ggplot(cancer_data, aes(x = mean_radius, y = mean_texture, color = diagnosis)) +
   geom_point() +
@@ -548,83 +543,34 @@ ggplot(cancer_data, aes(x = mean_radius, y = mean_texture, color = diagnosis)) +
   labs(title = "Scatter Plot of Mean Radius vs. Mean Texture",
        x = "Mean Radius",
        y = "Mean Texture")
-We use the following code to remove columns with missing values (`NA`), and have a glimpse of the remaining columns again.
-
-**Code**
-cancer_data <- cancer_data |> select(where(~ all(!is.na(.x))))
-head(cancer_data)
-
-<details>
-<summary><strong>Solution: Insert text and code (Step 2)</strong></summary>
-
-Now we read the data, available as a local csv file in the relative path (`breast-cancer-wisconsin/`) below. We use various functions to have a glimpse of its structure and dimensions. We also change the `diagnosis` variable to a factor.
-
-```{r read}
-cancer_data <- as_tibble(read.csv("data/breast-cancer-wisconsin.csv"))
-head(cancer_data)
-cancer_data$diagnosis <- as.factor(cancer_data$diagnosis)
-colnames(cancer_data)
-dim(cancer_data)
-```
-Echoing the dimensions printed in the output above, this data frame has `r nrow(cancer_data)` rows and `r ncol(cancer_data)` columns. Except for the first two columns, the remaining columns are features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass. They describe the characteristics of the cell nuclei present in the image.
-
-We use the following code to remove columns with missing values (`NA`), and have a glimpse of the remaining columns again.
-```{r remove_na}
-cancer_data <- cancer_data |> select(where(~ all(!is.na(.x))))
-head(cancer_data)
 ```
 </details>
+
+**Task**: Use the provided code to add a scatter plot to your Quarto document. Experiment with different ggplot2 options to customize the plot's appearance.
+
+### Step 4: Reporting Tables in Quarto Documents
+Quarto can dynamically generate and display tables from R code, making it easy to present data analyses in a structured format.
+
+Exercise: Create a Summary Table
+Objective: Generate a table summarizing the count of malignant and benign tumors within the dataset.
+
+<details>
+<summary><strong>Material: Summary Table Creation</strong></summary>
+Text: "Using the diagnosis column in the data, we find that there are a certain number of Malignant and Benign tumors."
+
+Code for Summary Table:
+```{r}
+summary_counts <- cancer_data %>%
+  group_by(diagnosis) %>%
+  summarise(Count = n())
+
+knitr::kable(summary_counts, caption = "Counts of Tumors by Diagnosis")
+```
+</details>
+Task: Incorporate the provided text and code into your document to create a summary table of tumor counts by diagnosis. Explore different options with knitr::kable() to format your table.
 
 ADD SCREENSHOT ON HOW IT LOOK 
 
-
-## Step 3: Visualizations in Quarto documents 
-TEXT OF THE EXCERCISE
-
-<details>
-<summary><strong>Solution: Insert text and code (Step 2)</strong></summary>
-  
-## Basic summaries
-Using the column `diagnosis` in the data, we count that there are `r sum(cancer_data$diagnosis == "M")` Malignant tumours and `r sum(cancer_data$diagnosis == "B")` Benign tumours. We can also plot these counts:
-```{r plot-counts, fig.cap = "Counts of data according to tumour status", fig.align = "center", out.width = "70%", fig.asp = 0.65, message = FALSE}
-plot_count(cancer_data)
-```
-
-# Visualisations and tests of three features
-To understand the data better, it is useful to look at, for each tumour status, the distribution of individual features / variables. As an illustration, we shall look at three of them.
-
-## Histogram & density
-We first visualise such distributions using histograms and density plots in Figure \@ref(fig:plot-hist). As the same kind of plot is required, a function is written for convenience.
-
-```{r plot-hist, fig.show = "hold", fig.cap = "Histogram and density of three features according to tumour status", fig.align = "center", out.width = "70%", fig.asp = 0.65, message = FALSE}
-plot_hist_den(
-  cancer_data, var = area_worst, label = "Area worst", filename = "hist_area.png"
-)
-plot_hist_den(
-  cancer_data, var = fractal_dimension_mean, label = "Fractal dimension mean",
-  filename = "hist_frac.png"
-)
-plot_hist_den(
-  cancer_data, var = radius_se, label = "Radius se", filename = "hist_radius.png"
-)
-```
-
-## Boxplots
-Another way of visualising the distribution of the three variables above, grouped by the tumuor status, is the box plots in Figure \@ref(fig:plot-boxplot):
-
-```{r plot-boxplot, fig.cap = "Boxplot of three features according to tumour status", fig.show = "hold", fig.pos = "!h", fig.align = "center", out.width = "70%", fig.asp = 0.65, message = FALSE}
-plot_boxplot(
-  cancer_data, var = area_worst, label = "Area worst", filename = "boxplot_area.png"
-)
-plot_boxplot(
-  cancer_data, var = fractal_dimension_mean, label = "Fractal dimension mean",
-  filename = "boxplot_frac.png"
-)
-plot_boxplot(
-  cancer_data, var = radius_se, label = "Radius se", filename = "boxplot_radius.png"
-)
-```
-</details>
 
 ## Step 4: Reporting tables 
 
