@@ -605,7 +605,9 @@ The results are in the following table:
 
 
 
-
+TO DO:
+1. fix further this part of the exercise, in content but also appearance
+2. add the entire render document at the very end 
 
 
 
