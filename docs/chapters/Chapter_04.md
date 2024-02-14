@@ -18,10 +18,10 @@ In addition, it enables users to:
 
 Explore the [Quarto gallery](https://quarto.org/docs/gallery/) to see its capabilities. 
 
-## 4.3 Before We Begin 🛠️
+## 4.3 Before We Begin 
 In this part of the tutorial, we'll focus on using Quarto with R. But remember, Quarto isn't limited to [R](https://quarto.org/docs/computations/r.html) — it also works with Python, Julia, and Observable JS!
 
-### 4.4.0 Installation Guide ⚙️
+### Installation Guide 
 Before we start, it's essential to set up our environment. Here's what you need:
 
 1. **RStudio Installation**: Ensure you have the latest version of RStudio. This will provide the best compatibility with Quarto.
@@ -47,9 +47,9 @@ install.packages(c(
 ))
 ```
 
-## 4.4 Let's Dive In! 🌊
+## 4.4 Let's Dive In! 
 
-### 4.5.1 The Quarto Workflow
+### The Quarto Workflow
 Quarto simplifies document creation through a two-step process:
 
 1. **Code Execution**: Your Quarto document (`.qmd`) is first processed by ![**knitr**](https://yihui.org/knitr/), which executes the code chunks embedded within the document, producing an intermediate Markdown (`.md`) file that includes both the original code and its output.
@@ -57,7 +57,7 @@ Quarto simplifies document creation through a two-step process:
 
 *[Include a visual diagram of the Quarto workflow here]*
 
-### 4.5.2 Understanding the Quarto Document
+### Understanding the Quarto Document
 Quarto documents bring together code, results, and narrative in a single file, enhancing reproducibility and clarity. Here are the key components:
 
 1. **The YAML Header**: At the start of your document, the YAML header specifies important settings for document rendering, such as title, author, output formats, and more. This metadata is crucial for controlling the appearance and behavior of your final document.
@@ -75,7 +75,7 @@ head(cancer_data)
 cancer_data$diagnosis <- as.factor(cancer_data$diagnosis)
 ```
 
-### 4.5.3 Creating Your First Quarto Document
+### Creating Your First Quarto Document
 
 ![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure1.png)
 
@@ -85,7 +85,7 @@ To start creating your own Quarto document in RStudio:
 1. Go to **File > New File > Quarto Document...**.
 2. Follow the prompts in the wizard to configure your document, choosing from a variety of templates and settings to suit your project's needs.
 
-#### 4.5.3.1 YAML Header (Metadata)
+#### YAML Header (Metadata)
 
 The **YAML metadata** in a Quarto document is crucial for defining the document's metadata, which influences its rendering. This metadata includes details like the document's title, author, desired output format, and other rendering options. It's encapsulated by three dashes (`--- `) at the top of the document.
 
@@ -104,7 +104,7 @@ format: html
 This header sets up the document with a title, an author, specifies that code echoes should be suppressed (echo: false), and designates HTML as the output format.
 
 
-### 4.5.4 Rendering a Qmd Document
+#### Rendering a Qmd Document
 
 **Rendering** a `.qmd` (Quarto Markdown) document transforms it into a different format like HTML, PDF, or Word. This process compiles your code and applies settings from the document's YAML header. Before rendering, ensure your document is error-free.
 
@@ -251,7 +251,7 @@ $\frac{n!}{k!(n-k)!} = \binom{n}{k}$
 ```
 
 
-## 4.6. Code in Quarto Documents 
+## 4.6 Code in Quarto Documents 
 
 Quarto introduces a unique approach to integrating code within your documents. Unlike traditional code writing that starts directly with code blocks, Quarto emphasizes starting with your narrative - your text. This raises an interesting question: **how does Quarto differentiate between narrative text and code without resorting to traditional comment indicators like `#`?**
 
@@ -405,7 +405,7 @@ When you render your Quarto document, the system will process the citations and 
 For further details on managing citations within Quarto using the visual editor, refer to the official [Quarto documentation on citations](https://quarto.org/docs/visual-editor/technical.html#citations). 
 
 
-# 4.7. Let's Build a Quarto Paper/Document
+## 4.7 Let's Build a Quarto Paper/Document
 
 ## Practical Exercises
 
