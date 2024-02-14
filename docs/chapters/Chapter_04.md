@@ -251,7 +251,7 @@ $\frac{n!}{k!(n-k)!} = \binom{n}{k}$
 ```
 
 
-## 5. Code in Quarto Documents 
+## 4.6. Code in Quarto Documents 
 
 Quarto introduces a unique approach to integrating code within your documents. Unlike traditional code writing that starts directly with code blocks, Quarto emphasizes starting with your narrative - your text. This raises an interesting question: **how does Quarto differentiate between narrative text and code without resorting to traditional comment indicators like `#`?**
 
@@ -404,25 +404,28 @@ When you render your Quarto document, the system will process the citations and 
 
 For further details on managing citations within Quarto using the visual editor, refer to the official [Quarto documentation on citations](https://quarto.org/docs/visual-editor/technical.html#citations). 
 
-# Let's Build a Quarto Paper/Document
 
-Before we start, ensure you have downloaded [the data]([https://www.example.com](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data)).
+# 4.7. Let's Build a Quarto Paper/Document
 
-## Step 0: Create a YAML Header
-Before we dive into the document's content, let's set up the YAML front matter for your document titled "Breast Cancer Data Analysis." Follow these instructions:
+## Practical Exercises
 
-1. Set the title of the document to "Breast Cancer Data Analysis."
+In this section, we'll dive into hands-on exercises to apply what we've learned about Quarto and R. Ensure you're ready to follow along by downloading the necessary data from [Kaggle: Breast Cancer Wisconsin Data](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data).
+
+### Step 0: Create a YAML Header
+
+**Objective**: Set up the YAML header for your document titled "Breast Cancer Data Analysis".
+
+**Instructions**:
+1. Title the document "Breast Cancer Data Analysis."
 2. Specify the author as your research team's name.
-3. Use the bibliography file named "references.bib."
-4. Ensure that the document includes the current date.
-5. Enable a table of contents for the document.
-6. Number the sections in the document.
-7. Choose the Pygments highlight style for code.
-8. Hide code echo during code execution.
+3. Include a bibliography file named "references.bib."
+4. Make sure the document includes the current date.
+5. Enable a table of contents.
+6. Number the sections.
+7. Use the Pygments highlight style for code.
+8. Hide code echo during execution.
 9. For HTML output, enable code folding, code tools, and paged data frame printing.
-10. Specify a preference for a visual editor.
-
-Fill in the missing information and structure the YAML front matter according to the provided instructions. Once completed, you'll have a properly configured YAML header for your document, suitable for analysis and presentation.
+10. Indicate a preference for the visual editor.
 
 <details>
 <summary><strong>Solution: YAML Header</strong></summary>
@@ -439,14 +442,12 @@ highlight-style: pygments
 execute:
   echo: false
 format:
-  gfm: default
   html:
     code-fold: true
     code-tools: true
     df-print: paged
 editor: visual
 ---
-```
 
 **Figure 2**: how the Quarto HTML document head looks
 ![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure_CodRep/CodeRep1.png)
