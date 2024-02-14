@@ -429,9 +429,9 @@ In this section, we'll dive into hands-on exercises to apply what we've learned 
 
 <details>
 <summary><strong>Solution: YAML Header</strong></summary>
-
+<p>  
+   
 ```yaml
----
 title: "Breast Cancer Data Analysis"
 author: "Your Research Team's Name"
 bibliography: references.bib
@@ -447,12 +447,12 @@ format:
     code-tools: true
     df-print: paged
 editor: visual
----
 ```
    
 **Figure 2**: Example of how the Quarto HTML document head looks.
 ![Quarto HTML Document Head](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure_CodRep/CodeRep1.png)
 
+</p>
 </details>
 
 ### Step 1: Import Required Packages
@@ -463,8 +463,9 @@ In this step, we'll ensure that all necessary R packages are loaded for our anal
 
 <details>
 <summary><strong>Exercise: Import Required Packages (Step 1)</strong></summary>
-<p>   
-```r
+<p>  
+   
+```{r}
 # Load the required packages
 library(tibble)   # For data frames.
 library(dplyr)    # For data manipulation.
