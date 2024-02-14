@@ -460,10 +460,8 @@ In this step, we'll ensure that all necessary R packages are loaded for our anal
 **Task**: Incorporate the provided code into your Quarto document to load the necessary R packages for our analysis.
 
 <details>
-<summary><strong>Exercise</strong></summary>
-   <p>
-Import Required Packages (Step 1)
-      
+<summary><strong>Exercise: Import Required Packages (Step 1)</strong></summary>
+<p>   
 ```r
 # Load the required packages
 library(tibble)   # For data frames.
@@ -481,11 +479,12 @@ knitr::opts_chunk$set(fig.align = "center")
 
 <details>
 <summary><strong>Solution</strong></summary>
-   <p>
+<p>
 **Figure 3**: Example of importing packages in Quarto.
 ![Importing Packages in Quarto](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure_CodRep/CoderRep2.png)
-</details>
 
+</p>
+</details>
 
 
 ### Step 2: Insert Text and Code
