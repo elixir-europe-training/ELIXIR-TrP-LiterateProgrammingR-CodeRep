@@ -298,7 +298,7 @@ Each of these options can be used by adding them to the first line of your code 
 #| echo: false, eval: true
 cancer_data <- cancer_data |> select(where(~ all(!is.na(.x))))
 head(cancer_data)
-```r
+```
 This will execute the code without displaying the code chunk itself in the final document but will show the output.
 
 ### Naming Your Code Chunk
@@ -309,7 +309,7 @@ While optional, naming your code chunks can greatly enhance the manageability an
 #| label: my-chunk-name
 cancer_data <- cancer_data |> select(where(~ all(!is.na(.x))))
 head(cancer_data)
----
+```
 
 To label a chunk, use the syntax `#| label: chunk-label`, ensuring each label is unique within your document. Naming a chunk allows you to reference its output elsewhere in your document, making your work more organized and navigable.
 
@@ -448,56 +448,103 @@ format:
     df-print: paged
 editor: visual
 ---
+```
 
-**Figure 2**: how the Quarto HTML document head looks
-![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure_CodRep/CodeRep1.png)
-</details>
+**Figure 2**: Example of how the Quarto HTML document head looks.
+![Quarto HTML Document Head](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure_CodRep/CodeRep1.png)
 
-## Step 1: Import Required Packages
-In this step, create a code chunk that imports the necessary packages: `tibble`, `dplyr`, `readr`, `ggplot2`, `caret`, `ROCR`, and `pROC`.
+### Step 1: Import Required Packages
+
+In this step, we'll ensure that all necessary R packages are loaded for our analysis. These packages provide functions for data manipulation, visualization, and analysis.
+
+**Task**: Incorporate the provided code into your Quarto document to load the necessary R packages for our analysis.
 
 <details>
-<summary><strong>Solution: Import Required Packages (Step 1)</strong></summary>
-
-```R
+<summary><strong>Exercise</strong></summary>
+   <p>
+Import Required Packages (Step 1)
+      
+```r
 # Load the required packages
-# Make sure to install them first if you haven't already
-library(tibble)   # Provides a modern, tidy alternative to data frames.
-library(dplyr)    # Data manipulation.
-library(readr)    # Reading CSV file data.
-library(ggplot2)  # Plotting system.
-library(caret)    # Machine learning.
-library(ROCR)     # Evaluating and visualizing the performance of binary classifiers.
-library(pROC)     # Evaluating and visualizing the performance of binary and multi-class classifiers using ROC analysis.
-theme_set(theme_bw(12))
+library(tibble)   # For data frames.
+library(dplyr)    # For data manipulation.
+library(readr)    # For reading CSV files.
+library(ggplot2)  # For data visualization.
+library(caret)    # For machine learning.
+library(ROCR)     # For ROC curves.
+library(pROC)     # For AUC and ROC analysis.
+theme_set(theme_bw(12))  # Set a theme for ggplot2.
 knitr::opts_chunk$set(fig.align = "center")
-
 ```
-**Figure 3**: how the Quarto HTML importing document looks
-![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure_CodRep/CoderRep2.png)
+</p>
 </details>
 
-## Step 2: Insert text and code 
-Objective: Integrate the provided text and code into your Quarto document.
+<details>
+<summary><strong>Solution</strong></summary>
+   <p>
+**Figure 3**: Example of importing packages in Quarto.
+![Importing Packages in Quarto](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure_CodRep/CoderRep2.png)
+</details>
 
-Instructions:
-
-1. Incorporate the given text and code snippets into the body of your Quarto document.
-2. As you insert key points or emphasize specific terms, utilize Bold, Italic, or any other relevant styles to enhance readability and highlight importance.
 
 
-**Text**: "Now we read the data, available as a local csv file in the relative path (`breast-cancer-wisconsin/`) below. We use various functions to have a glimpse of its structure and dimensions. We also change the `diagnosis` variable to a factor."
+### Step 2: Insert Text and Code
 
-**Code**: 
+Now, let's dive into integrating both text and code into your Quarto document to begin our analysis on the Breast Cancer Wisconsin dataset.
+
+**Objective**: Seamlessly blend textual explanations with R code to analyze the dataset.
+
+**Instructions**:
+
+1. Add the provided text and corresponding R code snippets into the body of your Quarto document.
+2. Emphasize key points or terms using Markdown formatting (e.g., **bold**, *italic*).
+
+**Text**: "Now we read the data, which is available as a CSV file in the relative path `breast-cancer-wisconsin/`. Using various R functions, we'll have a glimpse of its structure and dimensions. We also convert the `diagnosis` variable to a factor, facilitating further analysis."
+
+**Code**:
+```r
 cancer_data <- as_tibble(read.csv("data/breast-cancer-wisconsin.csv"))
 head(cancer_data)
 cancer_data$diagnosis <- as.factor(cancer_data$diagnosis)
 colnames(cancer_data)
 dim(cancer_data)
 
-**Text**
-"Echoing the dimensions printed in the output above, this data frame has `r nrow(cancer_data)` rows and `r ncol(cancer_data)` columns. Except for the first two columns, the remaining columns are features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass. They describe characteristics of the cell nuclei present in the image."
+**Text**:
+"Reflecting on the dimensions displayed above, this data frame consists of `r nrow(cancer_data)` rows and `r ncol(cancer_data)` columns. Except for the first two columns, the remaining columns are features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass, describing characteristics of the cell nuclei present in the image."
 
+**Follow-Up Code**:
+```r
+cancer_data <- cancer_data |> select(where(~ all(!is.na(.x))))
+head(cancer_data)
+```
+After removing columns with missing values, our dataset is now more streamlined for analysis. This preprocessing step is crucial for ensuring the accuracy of our subsequent analyses.
+
+## Data Exploration and Analysis
+
+### Exercise: Visualizing Data
+
+**Objective**: Your task is to generate a scatter plot that examines the relationship between `mean_radius` and `mean_texture` of tumor cells. This visualization should help us understand if there's a visual pattern that distinguishes benign from malignant tumors based on these two features.
+
+**Instructions**:
+
+1. Utilize the `ggplot2` package to create a scatter plot.
+2. The plot should have `mean_radius` on the x-axis and `mean_texture` on the y-axis.
+3. Color-code the points based on the `diagnosis` to distinguish between benign and malignant tumors.
+
+**Your Task**:
+```r
+# Write your ggplot2 code here to create the scatter plot
+
+
+**Code**:
+```r
+library(ggplot2)
+ggplot(cancer_data, aes(x = mean_radius, y = mean_texture, color = diagnosis)) +
+  geom_point() +
+  theme_minimal() +
+  labs(title = "Scatter Plot of Mean Radius vs. Mean Texture",
+       x = "Mean Radius",
+       y = "Mean Texture")
 We use the following code to remove columns with missing values (`NA`), and have a glimpse of the remaining columns again.
 
 **Code**
