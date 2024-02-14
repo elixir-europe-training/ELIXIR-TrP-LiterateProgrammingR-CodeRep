@@ -5,18 +5,18 @@ Welcome to Quarto!
 By the end of this chapter, you'll have a solid understanding of Quarto and how to use it to create reproducible, visually appealing scientific reports, presentations, and publications.
 
 ## 4.2 What is Quarto, and Why Does It Matter? 📖
-Quarto (link quarto) is not just an evolution of R Markdown; it's a tool designed by Posit to meet the demands of data scientists, researchers, and educators. This open-source publishing system, powered by Pandoc, transcends traditional barriers by supporting multiple programming languages like R, Python, and Julia, and offering a variety of output formats including HTML, PDF, MS Word, and ePub.
+Quarto isn't just a new version of R Markdown; it's a powerful tool made by Posit for data scientists, researchers, and anyone sharing knowledge. Built on Pandoc, this free tool works with many programming languages like R, Python, and Julia, and lets you create documents in formats such as HTML, PDF, and Word.
 
-**Key benefits of Quarto:**
-- Multi-language support: Facilitates seamless integration of R, Python, Julia, and Observable JS, catering to interdisciplinary projects.
+**Why Quarto is great:**
+- Works with many languages: Facilitates seamless integration of R, Python, Julia, and Observable JS, catering to interdisciplinary projects.
 - Versatility in Output Formats: From academic PDFs to web pages and presentations, Quarto adapts your work for any audience.
 - Guaranteed Reproducibility: Ensures your research can be easily verified, fostering a culture of transparency and reliability.
 
-In addition, it enables users to:
-- Design personal or project websites
-- Craft tutorials, textbooks, and other online educational resources
+Quarto also lets you:
+- Make websites: Share your projects online.
+- Create learning materials: Build tutorials or textbooks for online learning.
 
-Explore the [Quarto gallery](https://quarto.org/docs/gallery/) to see its capabilities. 
+Check out the [Quarto gallery](https://quarto.org/docs/gallery/) to see its capabilities. 
 
 ## 4.3 Before We Begin 
 In this part of the tutorial, we'll focus on using Quarto with R. But remember, Quarto isn't limited to [R](https://quarto.org/docs/computations/r.html) — it also works with Python, Julia, and Observable JS!
