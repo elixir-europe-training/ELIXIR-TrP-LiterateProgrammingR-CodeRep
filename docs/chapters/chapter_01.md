@@ -62,6 +62,11 @@ There will be a practical implementation of literate programming where we will t
         are pretty important (Especially with respec t to reproducibility). As you proceed through the course, please assess what 
         we teach you with respect to the features mentioned in this question.    
 
+## 1.4 How do we get there from here?    
+The next sessions of this course will equip you with core knowledge of **Markdown** (and more specifically **RMarkdown** and fam,iliarise you with some software tools to enable you to go from code like this:    
+
+to a document like this:     
+
 
    
 
