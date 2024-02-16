@@ -64,10 +64,10 @@ There will be a practical implementation of literate programming where we will t
 
 ## 1.4 How do we get there from here?    
 The next sessions of this course will equip you with core knowledge of **Markdown** (and more specifically **RMarkdown** and fam,iliarise you with some software tools to enable you to go from code like this:    
-![Commented program](./../assets/images/wisconsin_listing.png){: style="width:2.7559055118110236in;height:1.8371686351706036in"}
+![Commented program](./../assets/images/wisconsin_listing.png){: style="width:7.5in;height:6in"}
 
-to a document like this:     
-![Markdown Document](./../assets/images/wisconsin_md.png){: style="width:2.7559055118110236in;height:1.8371686351706036in"}
+<centre> to a document like this:     <centre>     
+![Markdown Document](./../assets/images/wisconsin_md.png){: style="width:7.5in;height:6in"}
 
 
    
