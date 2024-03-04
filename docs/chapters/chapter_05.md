@@ -11,7 +11,7 @@ It is time to back to our original script (#81: do we need to introduce this ear
 to transform the original script into an LP HTML or PDF document (Fig. 5.1).
 
 <figure>
-<img src="../../assets/images/RtoQmdtoPDF.png" width="500"  alt="Image comparing LaTex vs. Markdown sytnax"/>
+<img src="../../assets/images/RtoQmdtoPDF.png" width="600"  alt="Image showing path from .R to .Rmd to .pdf"/>
 <figcaption> Figure 5.1 Going from the script (Winconsin.R) to a Qmd (or Rmd) file that can be knitted into a LP PDF or similar LP document. </figcaption>
 </figure>
 
