@@ -18,7 +18,8 @@ to transform the original script into an LP HTML or PDF document (Fig. 5.1).
 
 To complete this rounding off activity, you need to:  
 1. Obtain the [Wisconsin.R](https://github.com/clement-lee/coderep/blob/master/wisconsin.R) script, copy the script into a new empty script in your RStudio environment
-2. Convert the script into a .Qmd or .Rmd document, complete with explanatory narrative and appropriate code chunks for plain code and plots
-3. Knit your final .Qmd or .Rmd file to a PDF (or HTML) document and marvel and your wonderful LP-ified verison os the Wisconsin.R script 
+2. Convert the script into a .Qmd or .Rmd document, complete with explanatory narrative and appropriate code chunks for code and plots
+3. Knit your final .Qmd or .Rmd file to a PDF (or HTML) document and marvel and your wonderful LP-ified verison os the Wisconsin.R script
+    
 
-There are no right or wrong answers here but certain solutions will definitely be better than others. if you get stuck or need inspiration check out one possible solution [here](https://github.com/clement-lee/coderep/blob/master/wisconsin.Rmd)
+There are no right or wrong answers here but certain solutions will definitely be better than others. if you get stuck or need inspiration check out one possible solution [here](https://github.com/clement-lee/coderep/blob/master/wisconsin.Rmd).
