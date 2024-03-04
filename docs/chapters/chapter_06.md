@@ -1,4 +1,4 @@
-## 5.1 Concluding Remarks
+## 6.1 Concluding Remarks
 
 Great job in making it to the end of this module! Along the way we hope you haved:
 
@@ -10,7 +10,7 @@ As with most technical skills, mastery requires practice, practice and more prac
 For those who want a deeper dive or learn more about a specifc aspect of this course, below is a selection our favourite links on learning Literate Programming, Markdown, and LP with RStudio/Quarto.
 Additionally, this course is the first part in a multi-series programme on implementing code reproducibility for research. Links and brief descriptions of further course in the series can be found further below.
 
-## 5.2 Further Resources on Literate Programming with RStudio/Quarto
+## 6.2 Further Resources on Literate Programming with RStudio/Quarto
 
 Below are some of our favourite links, ranging from from comprehensive references to short tutorials.
 
@@ -24,7 +24,7 @@ Below are some of our favourite links, ranging from from comprehensive reference
 | Code chunk options    | Full list of options (lines that start with \#\|) you can use for Quarto documents, again with syntax modifications  | <https://yihui.org/knitr/options/>                   	|
 |                     	|                                                                                                        	|                                                        	|                                                                         	|                                                        	|
 
-## 5.3 Next Steps in Code Reproducibility
+## 6.3 Next Steps in Code Reproducibility
 
 * Version control : <https://elixir-europe-training.github.io/ELIXIR-TrP-VersionControlR-CodeRep/>
 * Documentation: <https://elixir-europe-training.github.io/ELIXIR-TrP-DocumentationR-CodeRep/>
@@ -33,7 +33,7 @@ Below are some of our favourite links, ranging from from comprehensive reference
 * Containers: <https://elixir-europe-training.github.io/ELIXIR-TrP-ContainersR-CodeRep/>
 
 
-## 5.4 Contributing to this course
+## 6.4 Contributing to this course
 
 This course has been developed *via* a colloboration of researchers, teachers and students.  Found a typo? Something missing? Have a suggestion? We welcome further contributions and suggestions from everyone.
 If you would like to contribtue to course development, have a suggestion or just want more information, go [here](https://elixir-europe-training.github.io/CodeReproducibility/). 
