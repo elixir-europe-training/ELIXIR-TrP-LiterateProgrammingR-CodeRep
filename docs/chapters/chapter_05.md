@@ -1,39 +1,24 @@
-## 5.1 Concluding Remarks
+## 5.1 Putting it all together
 
-Great job in making it to the end of this module! Along the way we hope you haved:
+Now that you have been introduced to:
 
-1. Developed an appreciation for the need and principles of Literate Programming (LP) in research
-2. Acquired some new skills in Markdown and conducting LP using R/RStudio and Quarto
-
-As with most technical skills, mastery requires practice, practice and more practice. We hope the lessons here have prepared you to adopt an LP approach for your next project!
-
-For those who want a deeper dive or learn more about a specifc aspect of this course, below is a selection our favourite links on learning Literate Programming, Markdown, and LP with RStudio/Quarto.
-Additionally, this course is the first part in a multi-series programme on implementing code reproducibility for research. Links and brief descriptions of further course in the series can be found further below.
-
-## 5.2 Further Resources on Literate Programming with RStudio/Quarto
-
-Below are some of our favourite links, ranging from from comprehensive references to short tutorials.
-
-| **Content**         	| **Description**                                                                                        	| **Link**                                               	|
-|---------------------	|--------------------------------------------------------------------------------------------------------	|--------------------------------------------------------	|
-| Markdown Essentials 	| This **Markdown Guide** offers a short and handy reference to the basic syntax or grammar of markdown. 	| <https://www.markdownguide.org/basic-syntax/>           |
-| Markdown Practice   	| Want to practise some more markdown? Try this excellent, standalone Markdown tutorial.                 	| <https://www.markdowntutorial.com/>                     |
-| Markdown Cheatsheet 	| Because sometimes, a concise cheatsheet is all you need...                                             	| <https://www.markdownguide.org/cheat-sheet/>            |
-| RMarkdown Cheatsheet 	| A handy cheatsheet for the R extension for Markdown (**RMarkdown**)                                    	| <https://shiny.posit.co/r/articles/build/rm-cheatsheet/>|
-| RMarkdown Cookbook   	| Complete guide for RMarkdown that can be extended to Quarto documents with slight syntax modifications 	| <https://bookdown.org/yihui/rmarkdown-cookbook/>  	|
-| Code chunk options    | Full list of options (lines that start with \#\|) you can use for Quarto documents, again with syntax modifications  | <https://yihui.org/knitr/options/>                   	|
-|                     	|                                                                                                        	|                                                        	|                                                                         	|                                                        	|
-
-## 5.3 Next Steps in Code Reproducibility
-
-* Version control : <https://elixir-europe-training.github.io/ELIXIR-TrP-VersionControlR-CodeRep/>
-* Documentation: <https://elixir-europe-training.github.io/ELIXIR-TrP-DocumentationR-CodeRep/>
-* Testing: <https://elixir-europe-training.github.io/ELIXIR-TrP-TestingR-CodeRep/>
-* CI/CD: <https://elixir-europe-training.github.io/ELIXIR-TrP-CICD-R-CodeRep/>
-* Containers: <https://elixir-europe-training.github.io/ELIXIR-TrP-ContainersR-CodeRep/>
+1. The importance of literate programming (LP)
+2. Using markdown to narrate your code
+3. Using Quarto to knit your code and narrative into a single LP document
 
 
-## 5.4 Contributing to this course
+It is time to back to our original script (#81: do we need to introduce this earlier?) and rework it into a full fledged literate programming document by applying our knowledge of markdown and quarto
+to transform the original script into an LP HTML or PDF document (Fig. 5.1).
 
-This course has been developed *via* a colloboration of researchers, teachers and students.  Found a typo? Something missing? Have a suggestion? We welcome further contributions and suggestions from everyone.
-If you would like to contribtue to course development, have a suggestion or just want more information, go [here](https://elixir-europe-training.github.io/CodeReproducibility/). 
+<figure>
+<img src="../../assets/images/RtoQmdtoPDF.png" width="500"  alt="Image comparing LaTex vs. Markdown sytnax"/>
+<figcaption> Figure 5.1 Going from the script (Winconsin.R) to a Qmd (or Rmd) file that can be knitted into a LP PDF or similar LP document. </figcaption>
+</figure>
+
+
+To complete this rounding off activity, you need to:
+1. Obtain the [Wisconsin.R](https://github.com/clement-lee/coderep/blob/master/wisconsin.R) script, copy the script into a new empty script in your RStudio environment
+2. Convert the script into a .Qmd or .Rmd document, complete with explanatory narrative and appropriate code chunks for plain code and plots.
+3. Knit your final .Qmd or .Rmd file to a PDF (or HTML) document and marvel and your wonderful LP-ified verison os the Wisconsin.R script
+
+There are no right or wrong answers here but certain solutions will definitely be better than others. if you get stuck or need inspiration check out one possible solution [here](https://github.com/clement-lee/coderep/blob/master/wisconsin.Rmd)
