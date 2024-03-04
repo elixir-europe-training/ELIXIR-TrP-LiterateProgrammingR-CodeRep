@@ -1,0 +1,13 @@
+## 5.1 Putting it all together
+
+Now that you have been introduced to:
+
+1. The importance of literate programming (LP)
+2. Using markdown to narrate your code
+3. Using Quarto to knit your code and narrative into a single LP document
+
+
+It is time to back to our original script (#81: do we need to introduce this earlier?) and rework it into a full fledged literate programming document by applying our knowledge of markdown and quarto
+to transform the original script into an LP HTML or PDF document (Fig. 5.1).
+
+
