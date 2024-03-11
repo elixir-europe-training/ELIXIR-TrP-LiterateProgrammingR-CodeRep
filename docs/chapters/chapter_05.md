@@ -11,8 +11,8 @@ It is time for a more comprehensive rounding-off exercise to bring it all togeth
 
 !!! question "Exercise"
 
-    Return to our original example of [non-LP script](https://github.com/clement-lee/coderep/blob/master/wisconsin.R)  (#81: do we need to introduce this in chapter?) and rework it into a full fledged literate programming document by applying uour knowledge of markdown and quarto
-to transform the original script into an LP HTML or PDF document (Fig. 5.1).
+    Return to our original example of [non-LP script](https://github.com/clement-lee/coderep/blob/master/wisconsin.R)  (#81: do we need to introduce this in chapter?) and rework it into a full fledged literate programming 
+    document by applying uour knowledge of markdown and quarto to transform the original script into an LP HTML or PDF document (Fig. 5.1).
 
     Specifically:
     
