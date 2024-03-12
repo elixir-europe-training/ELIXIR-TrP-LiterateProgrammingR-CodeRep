@@ -52,8 +52,8 @@ install.packages(c(
 ### The Quarto Workflow
 Quarto simplifies document creation through a two-step process:
 
-1. **Code Execution**: Your Quarto document (`.qmd`) is first processed by ![**knitr**](https://yihui.org/knitr/), which executes the code chunks embedded within the document, producing an intermediate Markdown (`.md`) file that includes both the original code and its output.
-2. **Final Rendering**:  The Markdown file is then handed over to ![**pandoc**](https://pandoc.org), which converts it into the final document in the desired output format. This process is highly flexible, supporting a wide array of formats including HTML, PDF, and Word documents.
+1. **Code Execution**: Your Quarto document (`.qmd`) is first processed by [**knitr**](https://yihui.org/knitr/), which executes the code chunks embedded within the document, producing an intermediate Markdown (`.md`) file that includes both the original code and its output.
+2. **Final Rendering**:  The Markdown file is then handed over to [**pandoc**](https://pandoc.org), which converts it into the final document in the desired output format. This process is highly flexible, supporting a wide array of formats including HTML, PDF, and Word documents.
 
 *[Include a visual diagram of the Quarto workflow here]*
 
@@ -77,7 +77,7 @@ cancer_data$diagnosis <- as.factor(cancer_data$diagnosis)
 
 ### Creating Your First Quarto Document
 
-![Screenshot of my chart](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure1.png)
+![Screenshot of my chart](../assets/images/Figure1.png)
 
 *Figure A: An example of a Quarto document in RStudio, showcasing integrated code and results.*
 
@@ -120,9 +120,9 @@ This header sets up the document with a title, an author, specifies that code ec
 <summary><strong>📝 Exercise: Produce your own Quarto document</strong></summary>
 <p>
 
-1. Create a new Quarto document in your editor (e.g., RStudio).
-2. Add a title and your name as the author in the YAML header.
-3. Set the output format to HTML.
+1. Create a new Quarto document in your editor (e.g., RStudio).  
+2. Add a title and your name as the author in the YAML header.  
+3. Set the output format to HTML.  
 4. Render the document.
 
 </p>
@@ -132,9 +132,9 @@ This header sets up the document with a title, an author, specifies that code ec
 <summary><strong>✅ Solution:</strong></summary>
 <p>
 
-1. **Create Document**: In RStudio, use `File > New File > Quarto Document`.
-2. **Edit YAML Header**: Add `title: "Your Title"` and `author: "Your Name"`.
-3. **Set Output**: Ensure the YAML includes `format: html`.
+1. **Create Document**: In RStudio, use `File > New File > Quarto Document`.  
+2. **Edit YAML Header**: Add `title: "Your Title"` and `author: "Your Name"`.  
+3. **Set Output**: Ensure the YAML includes `format: html`.  
 4. **Render**: Click the "Render" button to produce your HTML document.
 
 *Insert screenshots demonstrating each step for clarity.*
@@ -449,8 +449,8 @@ format:
 editor: visual
 ```
    
-**Figure 2**: Example of how the Quarto HTML document head looks.
-![Quarto HTML Document Head](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure_CodRep/CodeRep1.png)
+**Figure 2**: Example of how the Quarto HTML document head looks.  
+![Quarto HTML Document Head](./Figure_CodRep/CodeRep1.png)
 
 </p>
 </details>
@@ -484,8 +484,8 @@ knitr::opts_chunk$set(fig.align = "center")
 <summary><strong>Solution</strong></summary>
 <p>
    
-**Figure 3**: Example of importing packages in Quarto.
-![Importing Packages in Quarto](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/chapters/Figure_CodRep/CoderRep2.png)
+**Figure 3**: Example of importing packages in Quarto.  
+![Importing Packages in Quarto](./Figure_CodRep/CoderRep2.png)
 
 </p>
 </details>
@@ -577,7 +577,7 @@ ADD SCREENSHOT ON HOW IT LOOK
 <details>
 <summary><strong>Solution: Insert text and code (Step 2)</strong></summary>
 
-Statistical tests
+Statistical tests  
 
 We can perform two-sample *t*-test to find out if there is a significant difference in the distribution of a feature according to the tumour status.
 ```{r ttest, results = "hold"}
@@ -606,6 +606,7 @@ The results are in the following table:
 
 
 TO DO:
+
 1. fix further this part of the exercise, in content but also appearance
 2. add the entire render document at the very end 
 
