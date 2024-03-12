@@ -57,7 +57,7 @@ Now, it is common that the analysis changes direction as you go along, and/or th
 If you feel dissatisfied with this workflow, you will benefit from this training programme. You will be able to adopt a more efficient workflow that not only generates a deliverable with reproducible results, but also keeps track of the versions of the files so there won't be anything like `presentation-final-final-02.pdf`.
 
 ## 2.3 Literate Programming
-Practically, literate programming (almost) means merging the **.R** and .tex files in the old workflow. Let's start with a snippet of a non-literate-programming R script (you can access the full script [here](../scripts/analysis.R)):
+Practically, literate programming (almost) means merging the **.R** and .tex files in the old workflow. Let's start with a snippet of a non-literate-programming R script (you can access the full script [here](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/scripts/analysis.R)):
 
 ```
 cancer_data <- read.csv("data/breast-cancer-wisconsin.csv") # load the data

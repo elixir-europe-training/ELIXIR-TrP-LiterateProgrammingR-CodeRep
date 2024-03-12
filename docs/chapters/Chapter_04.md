@@ -82,7 +82,8 @@ cancer_data$diagnosis <- as.factor(cancer_data$diagnosis)
 *Figure A: An example of a Quarto document in RStudio, showcasing integrated code and results.*
 
 To start creating your own Quarto document in RStudio:
-1. Go to **File > New File > Quarto Document...**.
+
+1. Go to **File > New File > Quarto Document...**.  
 2. Follow the prompts in the wizard to configure your document, choosing from a variety of templates and settings to suit your project's needs.
 
 #### YAML Header (Metadata)
@@ -116,31 +117,19 @@ This header sets up the document with a title, an author, specifies that code ec
 
 **FIGURE:** ![Insert a screenshot of the "Render" button here.]
 
-<details>
-<summary><strong>📝 Exercise: Produce your own Quarto document</strong></summary>
-<p>
+!!! question "Excercise: Produce your own Quarto document"
 
-1. Create a new Quarto document in your editor (e.g., RStudio).  
-2. Add a title and your name as the author in the YAML header.  
-3. Set the output format to HTML.  
-4. Render the document.
+    1. Create a new Quarto document in your editor (e.g., RStudio).  
+    2. Add a title and your name as the author in the YAML header.  
+    3. Set the output format to HTML.  
+    4. Render the document.
 
-</p>
-</details>
+    ??? success "Solution"
 
-<details>
-<summary><strong>✅ Solution:</strong></summary>
-<p>
-
-1. **Create Document**: In RStudio, use `File > New File > Quarto Document`.  
-2. **Edit YAML Header**: Add `title: "Your Title"` and `author: "Your Name"`.  
-3. **Set Output**: Ensure the YAML includes `format: html`.  
-4. **Render**: Click the "Render" button to produce your HTML document.
-
-*Insert screenshots demonstrating each step for clarity.*
-
-</p>
-</details>
+        1. **Create Document**: In RStudio, use `File > New File > Quarto Document`.  
+        2. **Edit YAML Header**: Add `title: "Your Title"` and `author: "Your Name"`.  
+        3. **Set Output**: Ensure the YAML includes `format: html`.  
+        4. **Render**: Click the "Render" button to produce your HTML document.Here are some potential problems we can think of (you may have similar):
 
 
 *Insert screenshots demonstrating each step for clarity.*
@@ -416,15 +405,16 @@ In this section, we'll dive into hands-on exercises to apply what we've learned 
 **Objective**: Set up the YAML header for your document titled "Breast Cancer Data Analysis".
 
 **Instructions**:
-1. Title the document "Breast Cancer Data Analysis."
-2. Specify the author as your research team's name.
-3. Include a bibliography file named "references.bib."
-4. Make sure the document includes the current date.
-5. Enable a table of contents.
-6. Number the sections.
-7. Use the Pygments highlight style for code.
-8. Hide code echo during execution.
-9. For HTML output, enable code folding, code tools, and paged data frame printing.
+
+1. Title the document "Breast Cancer Data Analysis."  
+2. Specify the author as your research team's name.  
+3. Include a bibliography file named "references.bib."  
+4. Make sure the document includes the current date.  
+5. Enable a table of contents.  
+6. Number the sections.  
+7. Use the Pygments highlight style for code.  
+8. Hide code echo during execution.  
+9. For HTML output, enable code folding, code tools, and paged data frame printing.  
 10. Indicate a preference for the visual editor.
 
 <details>
@@ -450,6 +440,7 @@ editor: visual
 ```
    
 **Figure 2**: Example of how the Quarto HTML document head looks.  
+
 ![Quarto HTML Document Head](./Figure_CodRep/CodeRep1.png)
 
 </p>
