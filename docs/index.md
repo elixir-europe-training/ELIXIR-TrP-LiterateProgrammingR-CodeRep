@@ -4,8 +4,6 @@
 
 [cards class_name="authors" rows = "1" cols="4"(./docs/assets/cards/author_cards.yaml)]
 
-Greek Mythology icons made by [max.icons](https://www.flaticon.com/authors/maxicons) from [www.flaticon.com](https://www.flaticon.com)
-
 ## Lesson overview
 
 !!! overview ""
