@@ -1,0 +1,949 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "LearningResource",
+    "@id": "https://elixir-europe-training.github.io/ELIXIR-TrP-LessonTemplate-MkDocs/",
+    "http://purl.org/dc/terms/conformsTo": {
+        "@type": "CreativeWork",
+        "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE"
+    },
+    "description": "Template for ELIXIR lessons",
+    "keywords": "FAIR, OPEN, Bioinformatics, Teaching",
+    "name": "ELIXIR Training Lesson template",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "educationLevel": "beginner",
+    "competencyRequired": "none",
+    "teaches": "nothing yet to teach"
+}
+</script>
+
+    
+      
+        <title>2. The Literate Programming Approach: A Primer - Literate Programming in R</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lato";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/neoteroi-mkdocs.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#21-introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+Lesson Release V1.0.
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Literate Programming in R" class="md-header__button md-logo" aria-label="Literate Programming in R" data-md-component="logo">
+      
+  <img src="../../assets/images/white-orange-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Literate Programming in R
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. The Literate Programming Approach: A Primer
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Literate Programming in R" class="md-nav__button md-logo" aria-label="Literate Programming in R" data-md-component="logo">
+      
+  <img src="../../assets/images/white-orange-logo.png" alt="logo">
+
+    </a>
+    Literate Programming in R
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Course Content
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Course Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. The concepts and goals of Literate Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2. The Literate Programming Approach: A Primer
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2. The Literate Programming Approach: A Primer
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-the-old-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 The Old Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 The Old Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-example-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.1 Example structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-example-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.2 Example workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-changing-the-data-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.3 Changing the data / analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-literate-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Literate Programming
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Literate Programming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-first-pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.1 First pass
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-second-pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.2 Second pass
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-self-contained-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.3 Self-contained file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#234-the-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.4 The components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-unleashing-the-powers-of-quarto-and-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Unleashing the Powers of Quarto and Markdown
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 Unleashing the Powers of Quarto and Markdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-reproducibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.1 Reproducibility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242-version-control-and-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.2 Version control, and more
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243-same-script-multiple-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.3 Same script, multiple formats
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#244-testament" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.4 Testament
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-still-confused" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 Still confused?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Writing prose for Literate Programming with Markdown: an Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter_04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. An Introduction to Quarto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Putting it all together
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Conclusion and next steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>2. The Literate Programming Approach: A Primer</h1>
+
+<div><h2 id="21-introduction">2.1 Introduction</h2>
+<p>This chapter is a gentle introduction to the literate programming approach, with the following <strong>learning outcomes</strong>: </p>
+<ul>
+<li>Understand why the old, manual approach of analysis and reporting does not facilitate reproducibility</li>
+<li>Learn the key concepts of literate programming</li>
+<li>Appreciate the usefulness of literate programming</li>
+<li>Familiarise with (the names of) the components covered in the next few chapters</li>
+</ul>
+<h2 id="22-the-old-workflow">2.2 The Old Workflow</h2>
+<p>To begin with, let me ask you a couple of questions:</p>
+<ol>
+<li>How do you usually organise your scripts and files when you conduct research?</li>
+<li>What is your workflow of creating a deliverable (report, presentation slides, etc.) from these scripts?</li>
+</ol>
+<h3 id="221-example-structure">2.2.1 Example structure</h3>
+<p>You may have the following files in a folder:</p>
+<div class="highlight"><pre><span></span><code>#&gt; |--- data
+#&gt; |    |--- breast-cancer-wisconsin.csv
+#&gt; |
+#&gt; |--- analysis.R
+#&gt; |--- histogram.jpg
+#&gt; |--- correlation.png
+#&gt; |--- report.tex
+#&gt; |--- report.log
+#&gt; |--- references.bib
+</code></pre></div>
+<p>They can be put into the following groups:</p>
+<ol>
+<li>data (.csv)</li>
+<li>programming scripts (<strong>.R</strong>)</li>
+<li>image files (.png, .jpg, etc.)</li>
+<li>plain text files (.tex)</li>
+<li>auxiliary files (.bib, .log, subfolders)</li>
+</ol>
+<p>While you may not have come across with files with extension .tex, you are likely to have worked with .txt files, which are also plain text files without any text formatting.</p>
+<h3 id="222-example-workflow">2.2.2 Example workflow</h3>
+<p>These steps are usually followed:</p>
+<ol>
+<li>run the programming scripts in an Integrated Development Environment (IDE),</li>
+<li>save the required plots to the image files,</li>
+<li>edit the plain text files (writing the explanatory text and inserting numbers and tables manually), and</li>
+<li>generate the report or the slides you want.</li>
+</ol>
+<p>If you are working with others, you may be collaborating through a tool such as <a href="https://www.overleaf.com/">Overleaf</a>, and this means an extra step of uploading the files before the final step. Done and dusted.</p>
+<h3 id="223-changing-the-data-analysis">2.2.3 Changing the data / analysis</h3>
+<p>Now, it is common that the analysis changes direction as you go along, and/or that the data is updated. What do you do when that happens? You re-run the scripts, save the image files, (optionally) upload them, and generate the deliverable again. And this is usually done multiple times and in an iterative fashion. One or more of the following scenarios eventually happens:</p>
+<ol>
+<li>You have changed the analysis and edited the programming scripts on your computer, but have not updated the results (plots, numbers, tables) in the plain text files. When you revisit the deliverable after some time, the results reported do not match what you get from running the scripts.</li>
+<li>You have decided to change the analysis to a previous direction, but because the scripts have been updated, you cannot revert exactly to what you want.</li>
+<li>To avoid the above scenario, you create a new set of programming scripts every time you change the analysis. Eventually it becomes difficult to find the right version (again).</li>
+</ol>
+<p>If you feel dissatisfied with this workflow, you will benefit from this training programme. You will be able to adopt a more efficient workflow that not only generates a deliverable with reproducible results, but also keeps track of the versions of the files so there won’t be anything like <code>presentation-final-final-02.pdf</code>.</p>
+<h2 id="23-literate-programming">2.3 Literate Programming</h2>
+<p>Practically, literate programming (almost) means merging the <strong>.R</strong> and .tex files in the old workflow. Let’s start with a snippet of a non-literate-programming R script (you can access the full script <a href="https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/scripts/analysis.R">here</a>):</p>
+<div class="highlight"><pre><span></span><code>cancer_data &lt;- read.csv("data/breast-cancer-wisconsin.csv") # load the data
+head(cancer_data) # print the first few lines
+dim(cancer_data) # the dimensions
+colnames(cancer_data) # column names
+</code></pre></div>
+<p>It is an acceptable practice to comment the code so others, including your future self, will understand the analysis. However, the comments make the code more difficult to read as the analysis expands, and it is better to have the code and the text that explains the analysis (called the prose hereafter) in separate sections, but still in the same file. This <em>is</em> the essence of literate programming.</p>
+<h3 id="231-first-pass">2.3.1 First pass</h3>
+<p>Let’s try to separate the code and prose in the same file in the most naive way, without thinking about what format it is yet:</p>
+<div class="highlight"><pre><span></span><code>We first load the Wisconsin breast cancer data:
+cancer_data &lt;- read.csv("data/breast-cancer-wisconsin.csv")
+Then we print the first few lines, the dimensions and the column names:
+head(cancer_data)
+dim(cancer_data)
+colnames(cancer_data)
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Excercise</p>
+<p>Can you think of any potential problems with this piece of code?</p>
+<details class="success">
+<summary>Solution</summary>
+<p>Here are some potential problems we can think of (you may have similar):</p>
+<ol>
+<li>How does someone else tell the code from the data?</li>
+<li>This piece of code cannot be run as running the prose will return errors. Then what good does it do to me?</li>
+</ol>
+</details>
+</div>
+<h3 id="232-second-pass">2.3.2 Second pass</h3>
+<p>It is the worst of both worlds if neither a human nor a machine can understand the lines. Fortunately, standards and syntaxes have been created to make literate programming possible. This is how such a script looks like:</p>
+<div class="highlight"><pre><span></span><code>We first load the Wisconsin breast cancer data: 
+
+```{r}
+cancer_data &lt;- read.csv("data/breast-cancer-wisconsin.csv")
+```
+
+Then we print the first few lines, the dimensions and the column names:
+
+```{r}
+head(cancer_data)
+dim(cancer_data)
+colnames(cancer_data)
+```
+</code></pre></div>
+<p>Notice the extra lines that begin with triple backticks, which separate the prose from the code. We shall call any R code, together with the preceding line (triple backticks and <code>{r}</code>) and succeeding line (triple backticks) a <em>code chunk</em>. Code chunks will be an important concept throughout.</p>
+<h3 id="233-self-contained-file">2.3.3 Self-contained file</h3>
+<p>What you have seen above is just a snippet. A self-contained file will look like this:
+</p><div class="highlight"><pre><span></span><code>---
+title: "Analysis of Wisconson Breast Cancer Data"
+date: "2023-06-06"
+author: "CodeRep Literate Programming Team"
+output: pdf_document
+---
+
+We first load the Wisconsin breast cancer data: 
+
+```{r}
+cancer_data &lt;- read.csv("data/breast-cancer-wisconsin.csv")
+```
+
+Then we print the first few lines, the dimensions and the column names:
+
+```{r}
+head(cancer_data)
+dim(cancer_data)
+colnames(cancer_data)
+```
+</code></pre></div>
+<h3 id="234-the-components">2.3.4 The components</h3>
+<p>This hybrid format starts to get confusing, as you may wonder what all those triple dashes, triple backticks, lines at the top etc. do. This is a good point to preview the next few chapters:</p>
+<ol>
+<li>The syntax of the file, barring the code chunks, is in Markdown, which will be introduced in <a href="../chapter_03">next chapter</a>. If you have used LaTeX to write documents, Markdown is a similar (yet simpler) typesetting system. As we will see, it has a gentler learning curve and more functionality to offer.</li>
+<li>At the top, between the two lines of triple dashes, those few lines are what we called YAML. If you look it up on <a href="https://en.wikipedia.org/wiki/YAML">Wikipedia</a>, you might not find the definition of YAML very useful. However, it is an integral part of Markdown, as it makes the deliverable look how you want it. An equivalent in LaTeX is the preamble before <code>\begin{document}</code>.</li>
+<li>The file format is called Quarto (<a href="../Chapter_04">Chapter 4</a>), which facilitates the interweaving of code chunks and prose. When you save the file, the file extension is <strong>.qmd</strong>. </li>
+</ol>
+<h2 id="24-unleashing-the-powers-of-quarto-and-markdown">2.4 Unleashing the Powers of Quarto and Markdown</h2>
+<p>You will find that we have gone quite far if you compare the first R code snippet and the self-contained file, which we will name <strong><code>wisconsin.qmd</code></strong>. But fundamental questions remain: Why should you bother? How does literate programming resolve the issues we mentioned?</p>
+<h3 id="241-reproducibility">2.4.1 Reproducibility</h3>
+<p>This is one of the biggest selling points of literate programming. As we will see in coming chapters, how the self-contained file is written allows results to be generated <em>on the fly</em> when you generate the deliverable.</p>
+<div class="admonition question">
+<p class="admonition-title">Exercise</p>
+<p>What good does generating the results <em>on the fly</em> practically do? In other words, how has the workflow changed for the better?</p>
+<details class="success">
+<summary>Solution</summary>
+<p>Here are a few changes that would occur to the workflow:</p>
+<ol>
+<li>You do not need to run <strong><code>analysis.R</code></strong> first to save <code>histogram.jpg</code> and <code>correlation.png</code>, before generating the deliverable in <code>report.tex</code>. You just make any necessary changes in <strong><code>wisconsin.qmd</code></strong>.</li>
+<li>The same goes for numbers and tables. You do not need to pre-compute say the <span class="arithmatex">\(t\)</span>-statistic, manually input in <code>report.tex</code>, and then generate the deliverable. Again, just edit <strong><code>wisconsin.qmd</code></strong>.</li>
+<li>Your collaborator sends you a new set of data with more rows? No problem, the dimensions (<code>dim(cancer_data)</code>) and everything else will be updated.</li>
+</ol>
+</details>
+</div>
+<p>The answers to the question above are what reproducibility is about.</p>
+<h3 id="242-version-control-and-more">2.4.2 Version control, and more</h3>
+<p>Reproducibility is greatly enhanced if you combine literate programming with version control. Essentially, you track the changes made to <strong><code>wisconsin.qmd</code></strong> and all the other files (but pherhaps not in the same way word processing systems track changes in word documents), so the safety net of previous versions is always there for you to fall back in case mistakes are made in your analysis. Practically and more importantly, you will not need to duplicate files and name them <strong><code>wisconsin-draft.qmd</code></strong>, <strong><code>wisconsin-draft-02.qmd</code></strong>, <strong><code>wisconsin-final.qmd</code></strong>, <strong><code>wisconsin-final-final.qmd</code></strong>. You will learn more in the module on <a href="../../../ELIXIR-TrP-VersionControlR-CodeRep/">version control</a>.</p>
+<p>There is more that needs to be done to complete reproducibility i.e. your analysis can be full reproduced on someone else’s computer, without the need of ever say “but it worked on my computer yesterday”. This is where <a href="../../../ELIXIR-TrP-DocumentationR-CodeRep/">documentation</a>, <a href="../../../ELIXIR-TrP-TestingR-CodeRep/">software testing</a>, <a href="../../../ELIXIR-TrP-CICD-R-CodeRep/">CI/CD</a>, and <a href="../../../ELIXIR-TrP-ContainersR-CodeRep/">containers</a> come in.</p>
+<h3 id="243-same-script-multiple-formats">2.4.3 Same script, multiple formats</h3>
+<p>The whole system of Quarto and Markdown allows us to generate deliverables in multiple formats. Usually it involves (almost) changing nothing in the <strong>.qmd</strong> file. You have created some slides in pdf and want to convert them to html so that you can host them on your website? There’s no need for conversion, you can generate the html slides directly. You have written a pdf document and need to change it to word document (e.g. for some collaborators who work with word documents exclusively) and html page (e.g. for accessibility reasons)? No problem, just focus on writing the content, Quarto and Markdown will take care of the formats for you, once you specify what you want (this is, as you will learn, where YAML comes in).</p>
+<h3 id="244-testament">2.4.4 Testament</h3>
+<p>You may already notice the self-referentiality of these materials - yes, they have been written using the literate programming approach. And what is the syntax in which they are written? Markdown. And are they version controlled? Absolutely yes. Once you have understood enough, you can even look at the files for generating these materials. I hope that will convince you to start adopting these practices.</p>
+<h2 id="25-summary">2.5 Summary</h2>
+<ul>
+<li>To put it simply, in literate programming, we put the code and the prose that explains the code in the same file.</li>
+<li>The code and the prose are formatted differently so that computers (and users) can tell them apart.</li>
+<li>Practising literate programming in this way facilitates reproducibility, and enables other steps in the complete workflow.</li>
+<li>Markdown and Quarto are two important components in literate programming.</li>
+<li>The literate programming workflow is summarised below:</li>
+</ul>
+<figure>
+<img src="../../assets/images/workflow.png" width="600" alt="Workflow of literate programming">
+<figcaption> Figure 2.1 The workflow of literate programming. The steps will be covered in detail in the next two chapters. </figcaption>
+</figure>
+
+<h2 id="26-still-confused">2.6 Still confused?</h2>
+<p>One major obstacle with learning literate programming, and the rest of this training programme is that the sheer amount of technical terms aka jargons confuses a researcher who codes but is not primarily in the field of computing and statistics. Here is a glossary that contains the terms that you might have come across with. If this looks Greek to you, don’t worry, come back to this after you have covered the next two chapters. </p>
+<ul>
+<li>RStudio: Some poeple equate RStudio (the IDE) with R (the programming language), because they have been using RStudio the whole time to code in R, even though such equivalence is technically inaccurate. They cannot be blamed, however, because RStudio is arguably the best IDE for R, and there is growing support for other languages such as Julia, Python, C++, etc. And yes, you can write Quarto and Markdown documents in RStudio. The company that created RStudio has recently been renamed Posit, as the IDE becomes more agnostic on the programming language.</li>
+<li>Rmarkdown: The predecessor of Quarto, and essentially R + Markdown. There is another slightly inaccurate equivalence between Markdown and Rmarkdown. In short, an Markdown document is also an Rmarkdown document, but the converse is not true.</li>
+<li>pandoc: The description on <a href="https://pandoc.org/">its official page</a> cannot be more precise: it is a universal document converter. This is the magic that creates the deliverable in multiple formats. You do not need to know how to work with pandoc directly, because RStudio takes care of it in the background.</li>
+</ul></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../chapter_01/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. The concepts and goals of Literate Programming">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                1. The concepts and goals of Literate Programming
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../chapter_03/" class="md-footer__link md-footer__link--next" aria-label="Next: 3. Writing prose for Literate Programming with Markdown: an Introduction">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                3. Writing prose for Literate Programming with Markdown: an Introduction
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      By the ELIXIR Training Platform
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

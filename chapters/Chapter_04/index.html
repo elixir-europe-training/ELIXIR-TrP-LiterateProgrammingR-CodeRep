@@ -1,0 +1,1428 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "LearningResource",
+    "@id": "https://elixir-europe-training.github.io/ELIXIR-TrP-LessonTemplate-MkDocs/",
+    "http://purl.org/dc/terms/conformsTo": {
+        "@type": "CreativeWork",
+        "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE"
+    },
+    "description": "Template for ELIXIR lessons",
+    "keywords": "FAIR, OPEN, Bioinformatics, Teaching",
+    "name": "ELIXIR Training Lesson template",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "educationLevel": "beginner",
+    "competencyRequired": "none",
+    "teaches": "nothing yet to teach"
+}
+</script>
+
+    
+      
+        <title>4. An Introduction to Quarto - Literate Programming in R</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lato";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/neoteroi-mkdocs.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#41-whats-our-goal" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+Lesson Release V1.0.
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Literate Programming in R" class="md-header__button md-logo" aria-label="Literate Programming in R" data-md-component="logo">
+      
+  <img src="../../assets/images/white-orange-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Literate Programming in R
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4. An Introduction to Quarto
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Literate Programming in R" class="md-nav__button md-logo" aria-label="Literate Programming in R" data-md-component="logo">
+      
+  <img src="../../assets/images/white-orange-logo.png" alt="logo">
+
+    </a>
+    Literate Programming in R
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Course Content
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Course Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. The concepts and goals of Literate Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. The Literate Programming Approach: A Primer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Writing prose for Literate Programming with Markdown: an Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    4. An Introduction to Quarto
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    4. An Introduction to Quarto
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-whats-our-goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 What&rsquo;s Our Goal? 🎯
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-what-is-quarto-and-why-does-it-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 What is Quarto, and Why Does It Matter? 📖
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-before-we-begin" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Before We Begin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 Before We Begin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation Guide
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-lets-dive-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Let&rsquo;s Dive In!
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 Let’s Dive In!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-quarto-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Quarto Workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-quarto-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding the Quarto Document
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-your-first-quarto-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Your First Quarto Document
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-writing-quarto-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 Writing Quarto Documents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 Writing Quarto Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rstudio-visual-editor-simplified-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      RStudio Visual Editor: Simplified Formatting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing Text
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-bullet-and-numbered-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Bullet and Numbered Lists
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numbered-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numbered Lists
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Links
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Tables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Formulas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-code-in-quarto-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6 Code in Quarto Documents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6 Code in Quarto Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enter-code-chunks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enter Code Chunks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-knitr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Knitr
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crafting-your-narrative-with-code-chunks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crafting Your Narrative with Code Chunks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-your-code-chunk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Naming Your Code Chunk
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits-of-naming-code-chunks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits of Naming Code Chunks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-reference-named-chunks" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Reference Named Chunks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices-for-naming-code-chunks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices for Naming Code Chunks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-naming-and-referencing-code-chunks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of Naming and Referencing Code Chunks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linking-to-named-chunks-in-your-narrative" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linking to Named Chunks in Your Narrative
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-referencing-a-named-chunk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of Referencing a Named Chunk
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integrating-a-bibliography-in-quarto-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integrating a Bibliography in Quarto Documents
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-lets-build-a-quarto-paperdocument" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7 Let&rsquo;s Build a Quarto Paper/Document
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Exercises
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-0-create-a-yaml-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 0: Create a YAML Header
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-import-required-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Import Required Packages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-insert-text-and-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Insert Text and Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-visualizations-in-quarto-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Visualizations in Quarto Documents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-reporting-tables-in-quarto-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Reporting Tables in Quarto Documents
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-reporting-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Reporting tables
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Putting it all together
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Conclusion and next steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>4. An Introduction to Quarto</h1>
+
+<div><h2 id="41-whats-our-goal">4.1 What’s Our Goal? 🎯</h2>
+<p>Welcome to Quarto!</p>
+<p>By the end of this chapter, you’ll have a solid understanding of Quarto and how to use it to create reproducible, visually appealing scientific reports, presentations, and publications.</p>
+<h2 id="42-what-is-quarto-and-why-does-it-matter">4.2 What is Quarto, and Why Does It Matter? 📖</h2>
+<p>Quarto isn’t just a new version of R Markdown; it’s a powerful tool made by Posit for data scientists, researchers, and anyone sharing knowledge. Built on Pandoc, this free tool works with many programming languages like R, Python, and Julia, and lets you create documents in formats such as HTML, PDF, and Word.</p>
+<p><strong>Why Quarto is great:</strong>
+- Works with many languages: Facilitates seamless integration of R, Python, Julia, and Observable JS, catering to interdisciplinary projects.
+- Versatility in Output Formats: From academic PDFs to web pages and presentations, Quarto adapts your work for any audience.
+- Guaranteed Reproducibility: Ensures your research can be easily verified, fostering a culture of transparency and reliability.</p>
+<p>Quarto also lets you:
+- Make websites: Share your projects online.
+- Create learning materials: Build tutorials or textbooks for online learning.</p>
+<p>Check out the <a href="https://quarto.org/docs/gallery/">Quarto gallery</a> to see its capabilities. </p>
+<h2 id="43-before-we-begin">4.3 Before We Begin</h2>
+<p>In this part of the tutorial, we’ll focus on using Quarto with R. But remember, Quarto isn’t limited to <a href="https://quarto.org/docs/computations/r.html">R</a> — it also works with Python, Julia, and Observable JS!</p>
+<h3 id="installation-guide">Installation Guide</h3>
+<p>Before we start, it’s essential to set up our environment. Here’s what you need:</p>
+<ol>
+<li>
+<p><strong>RStudio Installation</strong>: Ensure you have the latest version of RStudio. This will provide the best compatibility with Quarto.</p>
+</li>
+<li>
+<p><strong>Quarto Installation:</strong> Visit the <a href="https://quarto.org/">Quarto website</a> for installation instructions. For a more detailed guide, check out the <a href="[https://quarto.org/](https://quarto.org/docs/guide/)">Quarto guide</a>. Make sure to follow the steps appropriate for your operating system.</p>
+</li>
+<li>
+<p><strong>TinyTeX Setup</strong>
+TinyTeX is a minimal TeX distribution specifically tailored for Quarto, which you’ll need for generating PDFs. Here’s how to install it:
+- Open RStudio, navigate to <em>Tools</em> &gt; <em>Terminal</em> &gt; <em>New Terminal</em>.
+- In the terminal, type <em>quarto install tinytex</em> to start the installation process.</p>
+</li>
+<li>
+<p><strong>Update R Packages</strong>
+To ensure smooth operation with Quarto, update the following R packages by running this command in RStudio:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1"># Run in R</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span>
+<span class="w">  </span><span class="s">"tinytex"</span><span class="p">,</span><span class="w">       </span><span class="c1"># Needed for PDF rendering</span>
+<span class="w">  </span><span class="s">"rmarkdown"</span><span class="p">,</span><span class="w">     </span><span class="c1"># Essential for rendering</span>
+<span class="w">  </span><span class="s">"tidyverse"</span><span class="p">,</span><span class="w">     </span><span class="c1"># Useful for data wrangling</span>
+<span class="w">  </span><span class="s">"knitr"</span><span class="p">,</span><span class="w">         </span><span class="c1"># Required for table printing</span>
+<span class="w">  </span><span class="s">"kableExtra"</span><span class="w">     </span><span class="c1"># Enhances table printing</span>
+<span class="p">))</span>
+</code></pre></div>
+<h2 id="44-lets-dive-in">4.4 Let’s Dive In!</h2>
+<h3 id="the-quarto-workflow">The Quarto Workflow</h3>
+<p>Quarto simplifies document creation through a two-step process:</p>
+<ol>
+<li><strong>Code Execution</strong>: Your Quarto document (<code>.qmd</code>) is first processed by <a href="https://yihui.org/knitr/"><strong>knitr</strong></a>, which executes the code chunks embedded within the document, producing an intermediate Markdown (<code>.md</code>) file that includes both the original code and its output.</li>
+<li><strong>Final Rendering</strong>:  The Markdown file is then handed over to <a href="https://pandoc.org"><strong>pandoc</strong></a>, which converts it into the final document in the desired output format. This process is highly flexible, supporting a wide array of formats including HTML, PDF, and Word documents.</li>
+</ol>
+<p><em>[Include a visual diagram of the Quarto workflow here]</em></p>
+<h3 id="understanding-the-quarto-document">Understanding the Quarto Document</h3>
+<p>Quarto documents bring together code, results, and narrative in a single file, enhancing reproducibility and clarity. Here are the key components:</p>
+<ol>
+<li><strong>The YAML Header</strong>: At the start of your document, the YAML header specifies important settings for document rendering, such as title, author, output formats, and more. This metadata is crucial for controlling the appearance and behavior of your final document.</li>
+<li><strong>Quarto-formatted Text</strong>: Narrative text follows Markdown syntax, allowing for straightforward formatting of headers, lists, links, and more. This makes your document both readable and versatile.</li>
+<li><strong>R Code Chunks</strong>: Enclosed by three backticks (```), code chunks can contain R code (or other supported languages) for executing within your document. These chunks can perform data analysis, visualize results, and more. You can directly copy and paste existing R scripts into these chunks, with Quarto handling the execution and integration of results into the final document.</li>
+</ol>
+<p>Quarto’s flexibility extends to supporting multiple programming languages within the same document, facilitating interdisciplinary collaboration and analysis.</p>
+<p><strong>Example Code:</strong></p>
+<div class="highlight"><pre><span></span><code># ----read-data----
+cancer_data &lt;- read.csv("data/breast-cancer-wisconsin.csv")
+head(cancer_data)
+cancer_data$diagnosis &lt;- as.factor(cancer_data$diagnosis)
+</code></pre></div>
+<h3 id="creating-your-first-quarto-document">Creating Your First Quarto Document</h3>
+<p><img alt="Screenshot of my chart" src="../../assets/images/Figure1.png"></p>
+<p><em>Figure A: An example of a Quarto document in RStudio, showcasing integrated code and results.</em></p>
+<p>To start creating your own Quarto document in RStudio:</p>
+<ol>
+<li>Go to <strong>File &gt; New File &gt; Quarto Document…</strong>.  </li>
+<li>Follow the prompts in the wizard to configure your document, choosing from a variety of templates and settings to suit your project’s needs.</li>
+</ol>
+<h4 id="yaml-header-metadata">YAML Header (Metadata)</h4>
+<p>The <strong>YAML metadata</strong> in a Quarto document is crucial for defining the document’s metadata, which influences its rendering. This metadata includes details like the document’s title, author, desired output format, and other rendering options. It’s encapsulated by three dashes (<code>---</code>) at the top of the document.</p>
+<p>Example YAML Header:</p>
+<div class="highlight"><pre><span></span><code>---
+title: "Insightful Analysis"
+author: "Jane Doe"
+execute:
+  echo: false
+format: html
+---
+</code></pre></div>
+<p>This header sets up the document with a title, an author, specifies that code echoes should be suppressed (echo: false), and designates HTML as the output format.</p>
+<h4 id="rendering-a-qmd-document">Rendering a Qmd Document</h4>
+<p><strong>Rendering</strong> a <code>.qmd</code> (Quarto Markdown) document transforms it into a different format like HTML, PDF, or Word. This process compiles your code and applies settings from the document’s YAML header. Before rendering, ensure your document is error-free.</p>
+<p><strong>Steps to Render Your Document:</strong></p>
+<ol>
+<li>
+<p><strong>Save Your Document</strong>: Name it <code>my_first_qmd.qmd</code> and save it in an accessible location.</p>
+</li>
+<li>
+<p><strong>Render</strong>: Locate and click the <strong>“Render”</strong> button in your Quarto editor. This button is often found at the top or bottom of the editor interface.</p>
+</li>
+</ol>
+<p><strong>FIGURE:</strong> ![Insert a screenshot of the “Render” button here.]</p>
+<div class="admonition question">
+<p class="admonition-title">Excercise: Produce your own Quarto document</p>
+<ol>
+<li>Create a new Quarto document in your editor (e.g., RStudio).  </li>
+<li>Add a title and your name as the author in the YAML header.  </li>
+<li>Set the output format to HTML.  </li>
+<li>Render the document.</li>
+</ol>
+<details class="success">
+<summary>Solution</summary>
+<ol>
+<li><strong>Create Document</strong>: In RStudio, use <code>File &gt; New File &gt; Quarto Document</code>.  </li>
+<li><strong>Edit YAML Header</strong>: Add <code>title: "Your Title"</code> and <code>author: "Your Name"</code>.  </li>
+<li><strong>Set Output</strong>: Ensure the YAML includes <code>format: html</code>.  </li>
+<li><strong>Render</strong>: Click the “Render” button to produce your HTML document.Here are some potential problems we can think of (you may have similar):</li>
+</ol>
+</details>
+</div>
+<p><em>Insert screenshots demonstrating each step for clarity.</em></p>
+<div class="codehilite"><pre><span></span><code>    To do : *[Provide screenshots of the solution here]* or describe it
+</code></pre></div>
+
+<h2 id="45-writing-quarto-documents">4.5 Writing Quarto Documents</h2>
+<h3 id="rstudio-visual-editor-simplified-formatting">RStudio Visual Editor: Simplified Formatting</h3>
+<p>The RStudio Visual Editor offers a user-friendly approach to formatting Quarto documents, featuring a rich text interface similar to popular word processors. This guide will help you navigate the essential features of the Visual Editor to enhance your document creation process.</p>
+<h4 id="activate-visual-mode">Activate Visual Mode</h4>
+<p>To access the Visual Editor, click the “Visual” option at the top-left corner of the toolbar. This action activates a formatting toolbar reminiscent of Google Docs, providing intuitive access to formatting options.</p>
+<h4 id="switch-between-modes">Switch Between Modes</h4>
+<p>RStudio allows you to toggle between Source and Visual modes effortlessly, enabling you to work with the code directly or through the visual interface without losing your place. This flexibility ensures that you can enjoy the best of both worlds—direct code manipulation and simplified visual editing.</p>
+<h3 id="writing-text">Writing Text</h3>
+<h4 id="adding-headings">Adding Headings</h4>
+<p>Headings structure your document and guide your readers through sections. In the Visual Editor, headings can be added directly or through Markdown syntax.</p>
+<p>For keyboard shortcuts to add headings and other formatting, refer to the RStudio editing shortcuts (add link).</p>
+<p><em>Example:</em></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Heading 1</span>
+This is a sentence with some <span class="gs">**bold text**</span>, some <span class="ge">*italic text*</span>, and an ![<span class="nt">image</span>](<span class="na">image.png</span>).
+</code></pre></div>
+<h3 id="creating-bullet-and-numbered-lists">Creating Bullet and Numbered Lists</h3>
+<p>Lists are essential for organizing information in a readable format. Quarto supports both bullet and numbered lists, allowing you to structure your content effectively.</p>
+<h4 id="bullet-lists">Bullet Lists</h4>
+<p>To create a bullet list, start each item with a <code>-</code>, <code>*</code>, or <code>+</code>, followed by a space. This simple syntax transforms plain text into an organized list.</p>
+<p><em>Example:</em></p>
+<div class="highlight"><pre><span></span><code><span class="k">-</span><span class="w"> </span>Item 1
+<span class="k">-</span><span class="w"> </span>Item 2
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>Subitem 2.1
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>Subitem 2.2
+<span class="k">-</span><span class="w"> </span>Item 3
+</code></pre></div>
+<h3 id="numbered-lists">Numbered Lists</h3>
+<p>For sequences or steps, numbered lists are the go-to. Begin each line with a number, followed by a period and a space. Quarto automatically takes care of the numbering for you, ensuring your list is orderly and sequential.</p>
+<div class="highlight"><pre><span></span><code><span class="k">1.</span> First step
+<span class="k">2.</span> Second step
+<span class="w">   </span><span class="k">1.</span> Substep a
+<span class="w">   </span><span class="k">2.</span> Substep b
+<span class="k">3.</span> Third step
+</code></pre></div>
+<h3 id="adding-images">Adding Images</h3>
+<p>Images significantly enhance the visual appeal and clarity of documents. To insert an image in Quarto, use the following syntax:</p>
+<p></p><div class="highlight"><pre><span></span><code>![<span class="nt">Alt text for the image</span>](<span class="na">path/to/image.png "Optional title"</span>)
+</code></pre></div>
+<strong>Browse and Insert</strong>: Click on the image icon in the formatting bar, browse your computer to find the image file, and insert it into your Qmd document.
+<h3 id="adding-links">Adding Links</h3>
+<p>Links are essential for directing your readers to external references or for providing further reading materials. Adding links in Quarto is straightforward with the following Markdown syntax:</p>
+<div class="highlight"><pre><span></span><code>[<span class="nt">Link text here</span>](<span class="na">https://www.example.com "Optional title"</span>)
+</code></pre></div>
+<p>The text within square brackets <code>[ ]</code> is what your readers will see as clickable text, and the URL within parentheses <code>( )</code> is where the link will take them upon clicking. An “Optional title” can also be included within quotes after the URL, which will appear as a tooltip during a mouse hover over the link.</p>
+<h3 id="creating-tables">Creating Tables</h3>
+<p>Tables in Quarto are created using Markdown syntax. It’s a simple way to organize your data visually. Here’s how you do it:</p>
+<p></p><div class="highlight"><pre><span></span><code>| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Row 1    | Data     | Data     |
+| Row 2    | Data     | Data     |
+</code></pre></div>
+This syntax easily organizes your data into a table with three columns. Use <code>|</code> to delineate each column and <code>-</code> to separate the header from the rows.
+<h3 id="adding-formulas">Adding Formulas</h3>
+<p>Quarto integrates LaTeX support, enabling the addition of mathematical formulas directly within your documents, both inline within text and as standalone block elements.</p>
+<h4 id="inline-formulas">Inline Formulas</h4>
+<p>For formulas that should appear within your text, use single dollar signs <code>$...$</code> to enclose the LaTeX code:</p>
+<p></p><div class="highlight"><pre><span></span><code>An example of an inline formula is the equation for energy, $E=mc^2$.
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$\frac{n!}{k!(n-k)!} = \binom{n}{k}$
+</code></pre></div>
+<h2 id="46-code-in-quarto-documents">4.6 Code in Quarto Documents</h2>
+<p>Quarto introduces a unique approach to integrating code within your documents. Unlike traditional code writing that starts directly with code blocks, Quarto emphasizes starting with your narrative - your text. This raises an interesting question: <strong>how does Quarto differentiate between narrative text and code without resorting to traditional comment indicators like <code>#</code>?</strong></p>
+<h3 id="enter-code-chunks">Enter Code Chunks</h3>
+<p>Code chunks are Quarto’s solution to seamlessly weave your narrative with the power of code. Think of code chunks as magical gateways that allow your words to interact with code, creating a dynamic and interactive document. Here’s a closer look at how this works:</p>
+<h3 id="understanding-knitr">Understanding Knitr</h3>
+<p><strong>Knitr</strong> is the engine under the hood of RStudio that brings to life the dynamic features of Quarto documents. It facilitates the inclusion of R code within your Quarto documents, enabling output in various formats such as HTML, Word, PDF, or LaTeX. This tool is pivotal in the practice of <strong>Literate Programming</strong>, making your analytical work reproducible and transparent.</p>
+<h3 id="crafting-your-narrative-with-code-chunks">Crafting Your Narrative with Code Chunks</h3>
+<h4 id="how-to-insert-a-code-chunk">How to Insert a Code Chunk</h4>
+<p>Inserting a code chunk into your Quarto document can be done in several ways, ensuring flexibility in how you compose your document:</p>
+<ul>
+<li>Use the <strong>Insert &gt; Code Chunk</strong> option from the RStudio editor’s toolbar for a graphical interface approach.</li>
+<li>Manually type in the code chunk delimiters: <code>{r}</code> followed by triple backticks (```) to begin, and triple backticks (```) to end the chunk.</li>
+<li>Remember, if you’re manually typing, ensure you close the chunk with triple backticks.</li>
+<li>Utilize a quick keyboard shortcut for efficiency: <code>Ctrl + Alt + I</code> on Windows or <code>Cmd + Option + I</code> on Mac.</li>
+</ul>
+<p></p><div class="highlight"><pre><span></span><code># This is an example of a code chunk
+cancer_data &lt;- cancer_data |&gt; select(where(~ all(!is.na(.x))))
+head(cancer_data)
+</code></pre></div>
+📷 [Include a figure or screenshot showing how to add an R code chunk here]
+<h4 id="configuring-code-chunk-options">Configuring Code Chunk Options</h4>
+<p>Quarto provides several options to customize how code chunks behave in your document:</p>
+<ul>
+<li><code>include</code>: Should the output be included in the document? Typically set to yes.</li>
+<li><code>eval</code>: Should the code be executed? Default is yes, but you can specify particular lines if needed.</li>
+<li><code>echo</code>: Do you want to display the code itself in the document? Usually yes.</li>
+<li><code>results</code>: Determines if the code’s output should be displayed. Generally yes.</li>
+<li><code>warning</code>: Choose whether to show any warnings generated by the code. Often set to yes.</li>
+<li><code>message</code>: Decide if messages produced during code execution should be visible. Commonly yes.</li>
+</ul>
+<p>Each of these options can be used by adding them to the first line of your code chunk, within the curly braces. Here’s an example:</p>
+<p></p><div class="highlight"><pre><span></span><code><span class="c1">#| echo: false, eval: true</span>
+<span class="n">cancer_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cancer_data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nf">select</span><span class="p">(</span><span class="nf">where</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="nf">all</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">.x</span><span class="p">))))</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">cancer_data</span><span class="p">)</span>
+</code></pre></div>
+This will execute the code without displaying the code chunk itself in the final document but will show the output.
+<h3 id="naming-your-code-chunk">Naming Your Code Chunk</h3>
+<p>While optional, naming your code chunks can greatly enhance the manageability and referenceability of your document, especially for complex projects:</p>
+<div class="highlight"><pre><span></span><code><span class="gh">#| label: my-chunk-name</span>
+cancer_data &lt;- cancer_data |&gt; select(where(~ all(!is.na(.x))))
+head(cancer_data)
+</code></pre></div>
+<p>To label a chunk, use the syntax <code>#| label: chunk-label</code>, ensuring each label is unique within your document. Naming a chunk allows you to reference its output elsewhere in your document, making your work more organized and navigable.</p>
+<h3 id="benefits-of-naming-code-chunks">Benefits of Naming Code Chunks</h3>
+<p>Naming your code chunks provides several advantages:</p>
+<ul>
+<li><strong>Improved Organization</strong>: It helps in keeping your document structured and organized, making it easier to find specific chunks of code.</li>
+<li><strong>Ease of Reference</strong>: Named chunks can be easily referenced in your narrative text or in other code chunks, facilitating cross-referencing within the document.</li>
+<li><strong>Better Documentation</strong>: Descriptive names act as comments, explaining the purpose of the code chunk or the type of output it generates.</li>
+</ul>
+<h3 id="how-to-reference-named-chunks">How to Reference Named Chunks</h3>
+<p>You can reference the output of a named chunk by using its label in cross-references within your Quarto document. This feature is particularly useful for creating dynamic documents where the output of analyses needs to be discussed or compared in the narrative sections.</p>
+<h3 id="best-practices-for-naming-code-chunks">Best Practices for Naming Code Chunks</h3>
+<p>When naming your code chunks, consider the following best practices:</p>
+<ul>
+<li><strong>Be Descriptive</strong>: Choose names that clearly describe the purpose or outcome of the code chunk.</li>
+<li><strong>Keep it Short and Simple</strong>: While being descriptive, also try to be concise to keep the readability of the document high.</li>
+<li><strong>Use a Consistent Naming Scheme</strong>: This could be based on the type of analysis, data being used, or the output being generated. Consistency helps in quickly understanding the role of different code chunks in your document.</li>
+</ul>
+<h3 id="example-of-naming-and-referencing-code-chunks">Example of Naming and Referencing Code Chunks</h3>
+<div class="highlight"><pre><span></span><code><span class="gh">#| label: data-summary</span>
+summary(cars)
+</code></pre></div>
+<p>In the narrative sections of your Quarto document, the ability to reference named code chunks can significantly enhance the clarity and coherence of your explanations. By directly linking to the results or analyses provided by specific chunks, you create a more interactive and connected document. This approach not only improves the flow of your document but also makes it easier for readers to follow your analytical journey.</p>
+<h3 id="linking-to-named-chunks-in-your-narrative">Linking to Named Chunks in Your Narrative</h3>
+<p>When you want to mention or discuss the output of a code chunk within your narrative, you can refer to it by its label. This method allows you to seamlessly integrate your analytical findings with your textual explanations, making your document more dynamic and informative.</p>
+<h3 id="example-of-referencing-a-named-chunk">Example of Referencing a Named Chunk</h3>
+<p>Assume you have a code chunk labeled <code>plot-distribution</code> that generates a plot of data distribution. In your narrative, you could refer to this plot like so:</p>
+<p></p><div class="highlight"><pre><span></span><code>See the distribution of our data in the "plot-distribution" section below
+</code></pre></div>
+This textual reference guides readers directly to the relevant analysis, enhancing the document’s navigability.
+<h3 id="integrating-a-bibliography-in-quarto-documents">Integrating a Bibliography in Quarto Documents</h3>
+<p>In Quarto documents, integrating a bibliography allows you to cite sources and references seamlessly within your text, enhancing the credibility and resourcefulness of your work. Quarto supports bibliographies by leveraging the power of R and the Pandoc citation processing system. To include a bibliography in your Quarto document, follow these steps:</p>
+<p>Step 1: Prepare Your Bibliography File
+First, you’ll need a bibliography file. This file is usually in BibTeX format, a common format for storing reference information. Create a file named  <code>references.bib</code> and include your bibliography entries in it. Each entry in the BibTeX file has a specific structure, starting with the type of reference ( <code>@article</code>,  <code>@book</code>, etc.), followed by a citation key and the details of the reference.</p>
+<p></p><div class="highlight"><pre><span></span><code><span class="nc">@article</span><span class="p">{</span><span class="nl">Doe2023</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{Title of the Article}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Doe, John and Roe, Jane}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">journal</span><span class="p">=</span><span class="s">{Journal of Important Studies}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">volume</span><span class="p">=</span><span class="s">{42}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">number</span><span class="p">=</span><span class="s">{1}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">pages</span><span class="p">=</span><span class="s">{123-456}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2023}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">publisher</span><span class="p">=</span><span class="s">{Publishing House}</span>
+<span class="p">}</span>
+</code></pre></div>
+For more details on BibTeX format, visit BibTeX.org.
+<p>Step 2: Include Your Bibliography in the YAML Header
+In the YAML header of your Quarto document, add a line to specify the bibliography file:</p>
+<div class="highlight"><pre><span></span><code>bibliography: references.bib
+</code></pre></div>
+<p>Step 3: Cite References in Your Document
+To cite references within your text, use Pandoc’s citation syntax. Here’s how you can reference the work in your narrative:</p>
+<p></p><div class="highlight"><pre><span></span><code>As discussed in the findings of Doe et al. [@Doe2023, p. 123].
+</code></pre></div>
+The <code>@Doe2023</code> corresponds to the citation key from your  <code>references.bib</code> file.
+<p>Step 4: Choose a Citation Style (Optional)
+If you want your citations and bibliography to be formatted in a specific style, you can specify a Citation Style Language (CSL) file in the YAML header:</p>
+<p></p><div class="highlight"><pre><span></span><code>csl: your-style.csl
+</code></pre></div>
+There are many CSL files available for different journals and style guides, allowing you to customize how your references are displayed.
+<p>Step 5: Generate Your Document
+When you render your Quarto document, the system will process the citations and automatically generate a bibliography section at the end of your document, formatted according to your specified style. This process ensures that all cited works are properly referenced, making your document both professional and informative.</p>
+<p>For further details on managing citations within Quarto using the visual editor, refer to the official <a href="https://quarto.org/docs/visual-editor/technical.html#citations">Quarto documentation on citations</a>. </p>
+<h2 id="47-lets-build-a-quarto-paperdocument">4.7 Let’s Build a Quarto Paper/Document</h2>
+<h2 id="practical-exercises">Practical Exercises</h2>
+<p>In this section, we’ll dive into hands-on exercises to apply what we’ve learned about Quarto and R. Ensure you’re ready to follow along by downloading the necessary data from <a href="https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data">Kaggle: Breast Cancer Wisconsin Data</a>.</p>
+<h3 id="step-0-create-a-yaml-header">Step 0: Create a YAML Header</h3>
+<p><strong>Objective</strong>: Set up the YAML header for your document titled “Breast Cancer Data Analysis”.</p>
+<p><strong>Instructions</strong>:</p>
+<ol>
+<li>Title the document “Breast Cancer Data Analysis.”  </li>
+<li>Specify the author as your research team’s name.  </li>
+<li>Include a bibliography file named “references.bib.”  </li>
+<li>Make sure the document includes the current date.  </li>
+<li>Enable a table of contents.  </li>
+<li>Number the sections.  </li>
+<li>Use the Pygments highlight style for code.  </li>
+<li>Hide code echo during execution.  </li>
+<li>For HTML output, enable code folding, code tools, and paged data frame printing.  </li>
+<li>Indicate a preference for the visual editor.</li>
+</ol>
+<details>
+<summary><strong>Solution: YAML Header</strong></summary>
+<p>  
+
+</p><div class="highlight"><pre><span></span><code><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">"Breast</span><span class="nv"> </span><span class="s">Cancer</span><span class="nv"> </span><span class="s">Data</span><span class="nv"> </span><span class="s">Analysis"</span>
+<span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="s">"Your</span><span class="nv"> </span><span class="s">Research</span><span class="nv"> </span><span class="s">Team's</span><span class="nv"> </span><span class="s">Name"</span>
+<span class="nt">bibliography</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">references.bib</span>
+<span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="s">"`r</span><span class="nv"> </span><span class="s">Sys.Date()`"</span>
+<span class="nt">toc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">number-sections</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">highlight-style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pygments</span>
+<span class="nt">execute</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">echo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">format</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">html</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">code-fold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">code-tools</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">df-print</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">paged</span>
+<span class="nt">editor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">visual</span>
+</code></pre></div>
+
+**Figure 2**: Example of how the Quarto HTML document head looks.  
+
+![Quarto HTML Document Head](./Figure_CodRep/CodeRep1.png)
+
+
+</details>
+
+<h3 id="step-1-import-required-packages">Step 1: Import Required Packages</h3>
+<p>In this step, we’ll ensure that all necessary R packages are loaded for our analysis. These packages provide functions for data manipulation, visualization, and analysis.</p>
+<p><strong>Task</strong>: Incorporate the provided code into your Quarto document to load the necessary R packages for our analysis.</p>
+<details>
+<summary><strong>Exercise: Import Required Packages (Step 1)</strong></summary>
+<p>  
+
+</p><div class="highlight"><pre><span></span><code># Load the required packages
+library(tibble)   # For data frames.
+library(dplyr)    # For data manipulation.
+library(readr)    # For reading CSV files.
+library(ggplot2)  # For data visualization.
+library(caret)    # For machine learning.
+library(ROCR)     # For ROC curves.
+library(pROC)     # For AUC and ROC analysis.
+theme_set(theme_bw(12))  # Set a theme for ggplot2.
+knitr::opts_chunk$set(fig.align = "center")
+</code></pre></div>
+
+</details>
+
+<details>
+<summary><strong>Solution</strong></summary>
+<p>
+
+**Figure 3**: Example of importing packages in Quarto.  
+![Importing Packages in Quarto](./Figure_CodRep/CoderRep2.png)
+
+</p>
+</details>
+
+<h3 id="step-2-insert-text-and-code">Step 2: Insert Text and Code</h3>
+<p>Integrating text and code into your Quarto document is crucial for creating a dynamic document that not only presents data analysis but also explains the context and significance of the findings.</p>
+<details>
+<summary><strong>Material: Reading Data and Initial Analysis</strong></summary>
+
+Text: "Now we read the data, which is available as a CSV file in the relative path breast-cancer-wisconsin/. Using various R functions, we'll have a glimpse of its structure and dimensions. We also convert the diagnosis variable to a factor, facilitating further analysis."
+
+Code: 
+<div class="highlight"><pre><span></span><code>cancer_data &lt;- as_tibble(read.csv("data/breast-cancer-wisconsin.csv"))
+head(cancer_data)
+cancer_data$diagnosis &lt;- as.factor(cancer_data$diagnosis)
+colnames(cancer_data)
+dim(cancer_data)
+</code></pre></div>
+Text: "Reflecting on the dimensions displayed above, this data frame consists of r nrow(cancer_data) rows and r ncol(cancer_data) columns. Except for the first two columns, the remaining columns are features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass, describing characteristics of the cell nuclei present in the image."
+
+Follow-Up Code:
+<div class="highlight"><pre><span></span><code>cancer_data &lt;- cancer_data |&gt; select(where(~ all(!is.na(.x))))
+head(cancer_data)
+</code></pre></div>
+After removing columns with missing values, our dataset is now more streamlined for analysis. This preprocessing step is crucial for ensuring the accuracy of our subsequent analyses.
+
+</details>
+
+<p><strong>Task</strong>: Add the provided texts and corresponding code snippets into your Quarto document, utilizing Markdown formatting to emphasize key points or terms.</p>
+<p><strong>Instructions</strong>:</p>
+<ol>
+<li>Add the provided text and corresponding R code snippets into the body of your Quarto document.</li>
+<li>Emphasize key points or terms using Markdown formatting (e.g., <strong>bold</strong>, <em>italic</em>).</li>
+</ol>
+<h3 id="step-3-visualizations-in-quarto-documents">Step 3: Visualizations in Quarto Documents</h3>
+<p>Creating visualizations is key to exploring and presenting data effectively. Quarto integrates seamlessly with ggplot2, allowing for complex visualizations to be included directly within your document.</p>
+<p>Exercise: Generate a Scatter Plot
+Objective: Create a scatter plot to explore the relationship between mean_radius and mean_texture of tumor cells, distinguishing between benign and malignant diagnoses.</p>
+<details>
+<summary><strong>Material: Scatter Plot Creation</strong></summary>
+Code:
+<div class="highlight"><pre><span></span><code>library(ggplot2)
+ggplot(cancer_data, aes(x = mean_radius, y = mean_texture, color = diagnosis)) +
+  geom_point() +
+  theme_minimal() +
+  labs(title = "Scatter Plot of Mean Radius vs. Mean Texture",
+       x = "Mean Radius",
+       y = "Mean Texture")
+</code></pre></div>
+</details>
+
+<p><strong>Task</strong>: Use the provided code to add a scatter plot to your Quarto document. Experiment with different ggplot2 options to customize the plot’s appearance.</p>
+<h3 id="step-4-reporting-tables-in-quarto-documents">Step 4: Reporting Tables in Quarto Documents</h3>
+<p>Quarto can dynamically generate and display tables from R code, making it easy to present data analyses in a structured format.</p>
+<p>Exercise: Create a Summary Table
+Objective: Generate a table summarizing the count of malignant and benign tumors within the dataset.</p>
+<details>
+<summary><strong>Material: Summary Table Creation</strong></summary>
+Text: "Using the diagnosis column in the data, we find that there are a certain number of Malignant and Benign tumors."
+
+Code for Summary Table:
+<div class="highlight"><pre><span></span><code>summary_counts &lt;- cancer_data %&gt;%
+  group_by(diagnosis) %&gt;%
+  summarise(Count = n())
+
+knitr::kable(summary_counts, caption = "Counts of Tumors by Diagnosis")
+</code></pre></div>
+</details>
+<p>Task: Incorporate the provided text and code into your document to create a summary table of tumor counts by diagnosis. Explore different options with knitr::kable() to format your table.</p>
+<p>ADD SCREENSHOT ON HOW IT LOOK </p>
+<h2 id="step-4-reporting-tables">Step 4: Reporting tables</h2>
+<details>
+<summary><strong>Solution: Insert text and code (Step 2)</strong></summary>
+
+Statistical tests  
+
+We can perform two-sample *t*-test to find out if there is a significant difference in the distribution of a feature according to the tumour status.
+<div class="highlight"><pre><span></span><code>area_worst_B &lt;- cancer_data$area_worst[cancer_data$diagnosis == "B"]
+area_worst_M &lt;- cancer_data$area_worst[cancer_data$diagnosis == "M"]
+ttest0 &lt;- t.test(area_worst_B, area_worst_M, var.equal = TRUE)
+options(scipen = 3, digits = 3)
+</code></pre></div>
+
+The $t$-statistic is `r ttest0$statistic` and the $p$-value is `r ttest0$p.value`. We can write a function to carry out the test more systematically:
+<div class="highlight"><pre><span></span><code>ttest1 &lt;- ttest_var(cancer_data, var = area_worst)
+ttest2 &lt;- ttest_var(cancer_data, var = fractal_dimension_mean)
+ttest3 &lt;- ttest_var(cancer_data, var = radius_se)
+</code></pre></div>
+
+The results are in the following table:
+
+| Variable | $t$-statistic | $p$-value |
+|----------|---------------|-----------|
+|Area worst|`r ttest1$statistic`| `r ttest1$p.value`|
+|Fractal dimension mean|`r ttest2$statistic`| `r ttest2$p.value`|
+|Radius se|`r ttest3$statistic`| `r ttest3$p.value`|
+</details>
+
+<p>TO DO:</p>
+<ol>
+<li>fix further this part of the exercise, in content but also appearance</li>
+<li>add the entire render document at the very end </li>
+</ol></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../chapter_03/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3. Writing prose for Literate Programming with Markdown: an Introduction">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                3. Writing prose for Literate Programming with Markdown: an Introduction
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../chapter_05/" class="md-footer__link md-footer__link--next" aria-label="Next: 5. Putting it all together">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                5. Putting it all together
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      By the ELIXIR Training Platform
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

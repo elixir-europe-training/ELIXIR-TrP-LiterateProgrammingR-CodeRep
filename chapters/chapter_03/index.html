@@ -1,0 +1,1049 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "LearningResource",
+    "@id": "https://elixir-europe-training.github.io/ELIXIR-TrP-LessonTemplate-MkDocs/",
+    "http://purl.org/dc/terms/conformsTo": {
+        "@type": "CreativeWork",
+        "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE"
+    },
+    "description": "Template for ELIXIR lessons",
+    "keywords": "FAIR, OPEN, Bioinformatics, Teaching",
+    "name": "ELIXIR Training Lesson template",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "educationLevel": "beginner",
+    "competencyRequired": "none",
+    "teaches": "nothing yet to teach"
+}
+</script>
+
+    
+      
+        <title>3. Writing prose for Literate Programming with Markdown: an Introduction - Literate Programming in R</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lato";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/neoteroi-mkdocs.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#31-what-is-markdown" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+Lesson Release V1.0.
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Literate Programming in R" class="md-header__button md-logo" aria-label="Literate Programming in R" data-md-component="logo">
+      
+  <img src="../../assets/images/white-orange-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Literate Programming in R
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. Writing prose for Literate Programming with Markdown: an Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Literate Programming in R" class="md-nav__button md-logo" aria-label="Literate Programming in R" data-md-component="logo">
+      
+  <img src="../../assets/images/white-orange-logo.png" alt="logo">
+
+    </a>
+    Literate Programming in R
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Course Content
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Course Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. The concepts and goals of Literate Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. The Literate Programming Approach: A Primer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    3. Writing prose for Literate Programming with Markdown: an Introduction
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    3. Writing prose for Literate Programming with Markdown: an Introduction
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-what-is-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 What is Markdown?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-why-markdown-for-literate-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Why Markdown for Literate Programming?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-how-to-use-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 How to use Markdown
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 How to use Markdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-formatting-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.1 Formatting text
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332-adding-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.2 Adding Headers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333-making-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.3 Making Lists
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#334-adding-images-and-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.4 Adding Images and Links
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#335-making-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.5 Making Tables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#336-paragraphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.6 Paragraphs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter_04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. An Introduction to Quarto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Putting it all together
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Conclusion and next steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>3. Writing prose for Literate Programming with Markdown: an Introduction</h1>
+
+<div><p><strong>Learning Outcomes</strong>:</p>
+<ul>
+<li>Understand that markdown is a text formatting language</li>
+<li>Understand why markdown is useful for literate programming</li>
+<li>Learn basic of markdown that can be applied for literate programming</li>
+</ul>
+<h2 id="31-what-is-markdown">3.1 What is Markdown?</h2>
+<p>Markdown is a simple markup language created by <a href="https://daringfireball.net/projects/markdown/">John Gruber in 2004</a>. As a markup language, Markdown, allows you to format plain text to enhance presentation and readability of your text.  From a technical perspective, Markdown is two things: (i) a syntax or grammar for formatting plain text files and; (2) a software tool that converts plain text files to <a href="https://en.wikipedia.org/wiki/HTML">HTML</a>. As a software Markdown is free and platform independent, meaning it can br run any device using any operating system.</p>
+<p>When using Markdown you annotate your text with chracters, such  as *s or #s, to achieve a desired formatting effect on that text (e.g. make a heading). In this sense it is different from <a href="https://en.wikipedia.org/wiki/WYSIWYG">WYSIWYG</a> editors like Microsoft Word where you use buttons, keystrokes and mouse strokes to acheive a desired effect. Also, unlike WYSIWYG editors, you won’t see the fruit of your formatting labours without an additional step of rendering your plain text file or notebook document into an HTML or other document format (these days some IDE’s, e.g. the <a href="https://posit.co/blog/exploring-rstudio-visual-markdown-editor/">visual markdown editor in RStudio</a>, support WYSIWYG rendering of Markdown in real time). </p>
+<h2 id="32-why-markdown-for-literate-programming">3.2 Why Markdown for Literate Programming?</h2>
+<p><a href="../chapter_01">Recall</a> that for literate programming, the narrative, rather than code, is the key focus, hence relevant and appropriate formatting of your text (e.g. using <strong>bold</strong> or <em>italic</em> font or incorporating images) is essential for other humans (perhaps your colleagues) to make sense of and engage with your code or analysis. Hence, literate programming involves mixing your code (written in Python,R etc.) with a document formatting or typesetting language to format your expositry narrative. HTML and <a href="https://www.latex-project.org/">LaTeX</a> are two popular markup languages utilized for document formatting in literate programming for scientific research. However, unlike these other markup langguages, Markdown is simple and lightweight. This means you can focus on constructing engaging and efficient narrative without kicking a fuss over what code or tag is required to make your text appear, for e.g., in <strong>bold</strong> or <em>italic</em> font. Compared to other markup languages, you can learn Markdown quickly and hence focus more on your content writing.</p>
+<p><strong>Figure 3.1</strong> displays a comparison of the code require to format plain text into bold, italic or both in LaTex <em>versus</em> Markdown. From the code below it showed be obvious how the markdown syntax is much simpler than LaTeX (or indeed other markup languages). Additionally, withouth even rendering the markdown annotated text, it remains easily readable by humans. More complex formatting like generating tables, inserting images, requires even more complex code in markup languages like LaTex or HTML, but remains simple in Markdown as you will see in the next section. This simplicity of Markdown means there is little overhead in learning the document formatting language for literate programming, freeing your mind to focus on your content.</p>
+<figure>
+<img src="../../assets/images/LaTeXvsMd.png" width="500" alt="Image comparing LaTex vs. Markdown sytnax">
+<figcaption> Figure 3.1 Comparing markup syntax of Latex verus Markdown. Code for either markup language is highlighted in yellow. On rendering either document, the markedup text should display in bold, italics or both. </figcaption>
+</figure>
+
+<p>Markdown’s growing popularity as the document formatting language of choice in literate programming needs is reflected in the availability of markdown support (in many cases right out of the box without any additional installation!) for popular IDEs and notebook formats such as RStudio, VS Code, Jupyter Notebooksand even GitHub (a code hosting platform for colloboration and version control - if you are unfamiliar with GitHub, don’t worry, this will be covered in a following course). </p>
+<div class="admonition info">
+<p class="admonition-title">Basic Markdown <em>vs.</em> Markdown Extensions</p>
+<p>Markdown’s simplicity comes at a cost: there are only a limited amount of formatting effects available to you in <strong>basic</strong> or <strong>vanilla</strong> Markdown. However, many applications supporting Markdown e.g. Jupyter Notebooks, R/RStudio,<br>
+GitHub etc. provide thier own <a href="https://www.markdownguide.org/extended-syntax/"><strong>extensions</strong> of Markdown syntax</a> which let you do more complex formatting with the simplicity of Markdown-like syntax. Additionally,
+if your needs ever grow, worry not, tools like <a href="https://pandoc.org/">pandoc</a> allow you to mix more flexible formatting languages such as LaTeX and/or HTML with Markdown allowing you to format your text to 
+your heart’s desire.</p>
+</div>
+<h2 id="33-how-to-use-markdown">3.3 How to use Markdown</h2>
+<p>It’s time to get our hands dirty and start getting some practise in how to use Markdown to format our text. For the examples and exercises that follow, you will need to implement markdown in RStudio/Quarto. Latest versions of RStudio come pre-installed with Quarto.</p>
+<p>In <strong>Rstudio</strong> you can do this as follows:</p>
+<ol>
+<li>Go to the <em>File</em> menu, select <em>New file</em>, theb select <em>Quarto Document…</em>, alternatively you also use the <strong>new file button</strong> to do the same, and this is what is done in the video below. This will open up a <em>dialog</em> box with several options. Leave everything as default but <strong>uncheck</strong> the <code>use visual markdown editor</code> option. Feel free to add a <strong>Title</strong> and <strong>Author</strong> in the relevant fields, then hit the <strong>create</strong> button.</li>
+<li>This will open a new <strong>Quarto Document</strong> in RStudio’s <strong>source</strong> editor (this where you normally write your R scripts). You can then add your text and markdown annotation in the <strong>body</strong> of the document. The <strong>body</strong> of the document referes to any space below the text between the <code>---</code> at the top. This latter section is called the YAML and controls how the document will look when rendered. You can just ignore the YAML for now, we’ll talk more about this in the (next lesson)[../Chapter_04]. Note that RStudio will automatically generate some standard text, code and markdown to give you flavour of this literate programming document works. <em>Optional:</em> delete everything in the body of the file making sure <strong>not to delete</strong> the YAML.</li>
+<li>After adding your text and markdown annotation to the document hit the <code>render</code> button to generate an HTML document (default). If you haven’t yet saved your document, RStudio will ask you save the document before rendering. Once saved, RStudio will generate an HTML docuement that shows your text but formatted according to any markdown code. The next time you make a cahnge to your Quarto Document and hit <strong>render</strong>, RStudio will automatically save the changes to your Quarto document before rendering.</li>
+</ol>
+<p><div class="video-container"><iframe src="https://youtube.com/embed/oAX9DSPVxX0" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p>
+<div class="admonition info">
+<p class="admonition-title">Rendering Markdown without a rendering step</p>
+<p>Since 2021 RStudio now has also has a <a href="https://posit.co/blog/exploring-rstudio-visual-markdown-editor/"><strong>visual</strong> markdown editor</a> that renders your markdown formatting live as 
+you type it in the Quarto document.</p>
+</div>
+<h3 id="331-formatting-text">3.3.1 Formatting text</h3>
+<p>You should have already seen examples of how to <em>italicise</em> or <strong>embolden</strong> you text (and both simulatenously) with markdown. There is other useful markdown sytnax for example for starting a new paragraph, use a blank like to seperate your paragraphs or if you want a <a href="https://en.wikipedia.org/wiki/Monospaced_font">monospaced font</a> to represent <code>code</code> in your text, enclose the relevant code in single backticks:`\<yourcodehere>`.</yourcodehere></p>
+<div class="admonition question">
+<p class="admonition-title">Exercise</p>
+<p>Below is some text produced using markdown formatting. Use your preferred markdown editor, to write markdown annotated text, to achieve the following result:   </p>
+<p>The <code>mean()</code> function on <code>line 13</code> calcualtes the <strong>average</strong> of the vector.</p>
+<p>Make sure to render your markdown text to make sure it works like you think it should.</p>
+<details class="success">
+<summary>Solution</summary>
+<p><code>The `mean()` function on `line 13` calcualtes the **average** of the vector.</code></p>
+</details>
+</div>
+<p>As mentioned in Section 3.2, Markdown’s simplicity comes at a cost. Not all formatting elements are natively represented in markdown. Depending on your application an <strong>extended syntax</strong> for Markdown may exist (e.g. <a href="https://rmarkdown.rstudio.com/">Rmarkdown</a>, which may offer a solution. In many cases HTML can help you acheive the desired result. Most applications rendering Markdown also support HTML. This does not mean you need to know HTML but you may have to rely on your googling or <a href="https://en.wikipedia.org/wiki/Prompt_engineering#:~:text=Prompt%20engineering%20is%20a%20concept,of%20it%20being%20explicitly%20given.">prompt engineering</a> skills.</p>
+<div class="admonition question">
+<p class="admonition-title">Exercise</p>
+<p>There is no native support for sub- or superscripts in markdown, however HTML tags can do the trick. Use your technical sophistication (googling or otherwise) to write Markdown- (and HTML) formatted text text to achive the following result:  </p>
+<p>An example of a subscript is C0<sub>2</sub>. An example of a superscript is 3<sup>3</sup>=27.</p>
+<p>Make sure to rener your markdown text to make sure it works like you think it should.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>An example of a subscript is C0<code>&lt;sub&gt;</code>2<code>&lt;/sub&gt;</code>. An example of a superscript is 3<code>&lt;sup&gt;</code>3<code>&lt;/sup&gt;</code>=27.</p>
+<p><code>&lt;sub&gt;&lt;/sub&gt;</code> and <code>&lt;sup&gt;&lt;/sup&gt;</code> are the HTML tags for subscripts and superscripts respectively. Some Makrdown editos also support encapsulating text in \^ or \~ for formattting superscript and subscript. respetively.</p>
+</details>
+</div>
+<h3 id="332-adding-headers">3.3.2 Adding Headers</h3>
+<p>Your literate programming document needs to be divided into sections. Perhaps you sub-sections or sub-sub-sections? Markdown provides simple syntax for <strong>header</strong> formatting that provides <strong>6 levels</strong> of headings to fullfill your sub-sectioning needs. To render headers using markdown all you need to do is start a line with a <code>#</code>, followed by a space and then your title, like so:</p>
+<div class="admonition example">
+<p class="admonition-title">Headers</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Markdown:</label><label for="__tabbed_1_2">Rendered output:</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><code>#### My Excellent Title</code></p>
+</div>
+<div class="tabbed-block">
+<h4 id="my-excellent-title">My Excellent Title</h4>
+</div>
+</div>
+</div>
+</div>
+<p>The number of <code>#</code> controls the size or level of the headers - more means smaller headers.</p>
+<div class="admonition question">
+<p class="admonition-title">Generating Headers of different size</p>
+<p>The following headers have been produced using Markdown. Can you reproduce them using Markdown-formatted text?</p>
+<h4 id="my-smaller-section-title">My smaller section title</h4>
+<h5 id="this-is-my-other-header">This is my <em>other</em> header</h5>
+<details class="success">
+<summary>Solution</summary>
+<p><code>#### My smaller section title</code></p>
+<p><code>##### This is my _other_ header</code></p>
+</details>
+</div>
+<h3 id="333-making-lists">3.3.3 Making Lists</h3>
+<p>Every now and then, documentation of your code or analysis will need a list. Maybe it is a list of dependencies your colleague s need to run your code or perhaps it a list of genes you need to highlight in your latest gene expression anlaysi. It is easy to generate lists in Markdown. Basic Markdown supports ordered (i.e. numbered) or unordered lists.</p>
+<p>You can make ordered ordered lists by adding line items with numbers followed by periods. The numbers don’t have to be in numerical order, but the list should start with the number one.</p>
+<div class="admonition example">
+<p class="admonition-title">Ordered lists</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Markdown:</label><label for="__tabbed_2_2">Rendered output:</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>1. first item
+2. second item
+3. third item
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>first item</li>
+<li>second tiem</li>
+<li>third item</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<p>You can generate an unordered list, add dashes (-), asterisks (*), or plus signs (+) in front of line items.</p>
+<div class="admonition example">
+<p class="admonition-title">Unordered lists</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Markdown:</label><label for="__tabbed_3_2">Rendered output:</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>* first item
+* second item
+* third item
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>first item</li>
+<li>second tiem</li>
+<li>third item</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Making nested lists</p>
+<p>It is easy to generate nested lists in Markdown. Can you reproduce the following nested list using Markdown-formatted text?</p>
+<ol>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item<ul>
+<li>Indented item A</li>
+<li>Indented item B</li>
+</ul>
+</li>
+<li>Fourth item</li>
+</ol>
+<details class="success">
+<summary>Solution</summary>
+<div class="highlight"><pre><span></span><code>1. First item
+2. Second item
+3. Third item
+     - Indented item A
+     - Indented item B
+4. Fourth item
+</code></pre></div>
+</details>
+</div>
+<h3 id="334-adding-images-and-links">3.3.4 Adding Images and Links</h3>
+<p>Every now and then you may need to provide a link in your literate document. You can provide links in basic Markdown in two ways. The first one we demonstrate are called _inline_links: here you provide the text of the link in square brackets (<span class="keys"><kbd class="key-bracket-left">[</kbd></span> <span class="keys"><kbd class="key-bracket-right">]</kbd></span>`) and the link itself follows in paranthesis.</p>
+<div class="admonition example">
+<p class="admonition-title">Inline links</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Markdown:</label><label for="__tabbed_4_2">Rendered output:</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>[Visit Elixir!](https://elixir-europe.org/)
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><a href="https://elixir-europe.org/">Visit Elixir!</a></p>
+</div>
+</div>
+</div>
+</div>
+<p>The other type of link in basic Markdown is a <em>reference</em> link. In this case the link is to another place in your literate document itself, kind of almost like a citation. </p>
+<div class="admonition example">
+<p class="admonition-title">Reference links</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Markdown:</label><label for="__tabbed_5_2">Rendered output:</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>Want to do [Repdroducible Science?][link one]
+Here are some [practical guides][another-link]. 
+Don't forget to read [this article][link one] in its entirety. 
+
+
+[link one]: https://www.nature.com/articles/s41562-016-0021
+[another-link]: https://ziemann-lab.net/public/5pillars/practical_guides.html
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Want to do <a href="https://www.nature.com/articles/s41562-016-0021">Repdroducible Science?</a>.
+Here are some <a href="https://ziemann-lab.net/public/5pillars/practical_guides.html">practical guides</a>. 
+Don’t forget to read <a href="https://www.nature.com/articles/s41562-016-0021">this article</a> in its entirety. </p>
+</div>
+</div>
+</div>
+</div>
+<p>The “references” above are the second set of brackets: <a href="https://www.nature.com/articles/s41562-016-0021">link one</a> and <a href="https://ziemann-lab.net/public/5pillars/practical_guides.html">another-link</a>. At the bottom of a Markdown document, these brackets are defined as proper with a colon and then links to outside websites. An advantage of the reference link style is that multiple links to the same place only need to be updated once, as you would expect from a citation management software e.g. (Zotero), but as you’ll see later there are better ways to do citations using extended in Markdown. Also note the reference links (the one at the bottom) don’t actually appear in the renderded markdown document above.</p>
+<p>Similar to links you can add images in two ways. Additionally images can be online urls or from your local computer (in which case you need to provide the path to the image on your local computer instead of the url). Similar to links, one way to displayimg images is called <em>inline image</em> link. To generate one if these you add an exclamation mark (<span class="keys"><kbd class="key-exclam">!</kbd></span>), followed by square brackets (<span class="keys"><kbd class="key-bracket-left">[</kbd></span> <span class="keys"><kbd class="key-bracket-right">]</kbd></span>) that can optional include <a href="https://www.w3schools.com/tags/att_img_alt.asp">alt text</a> the image (to make your content more accessible for visually impaired readers) and then finally the link (or path) to the image in parenthesis.</p>
+<div class="admonition example">
+<p class="admonition-title">Inline image links</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">Markdown:</label><label for="__tabbed_6_2">Rendered output:</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>![Two happy penguins taking a selfie together in a snowy landscape](https://github.com/allisonhorst/stats-illustrations/blob/main/julie-mine-quarto-keynote/quarto_share.png?raw=true)  
+
+"Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst."
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="Two happy penguins taking a selfie together in a snowy landscape" src="https://github.com/allisonhorst/stats-illustrations/blob/main/julie-mine-quarto-keynote/quarto_share.png?raw=true"><br>
+ “Artwork from “Hello, Quarto” keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst.”</p>
+</div>
+</div>
+</div>
+</div>
+<p>You can make <em>reference image</em> links very similar to how you would make inline links. Redoing the inline image link is a reference image link is left as an <strong>exercise</strong> for the reader. </p>
+<h3 id="335-making-tables">3.3.5 Making Tables</h3>
+<p>At some point in your literate document, you may want to present information in a table. Although basic Markdown does not come with a syntax to make tables, almost all <a href="https://www.markdownguide.org/extended-syntax/#tables">extensions</a> now have a universal syntax to do so. </p>
+<p>To make a table, use three or more hyphens (—) to create each column’s header, and use pipes (|) to separate each column.</p>
+<div class="admonition example">
+<p class="admonition-title">Tables</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">Markdown:</label><label for="__tabbed_7_2">Rendered output:</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p></p><div class="highlight"><pre><span></span><code>| Column 1    | Column 2    |
+| ----------- | ----------- |
+| blah        | blah        |
+| blah        | blah        |
+</code></pre></div>
+<strong>Note:</strong> the cell widths don’t have to be fixed as above and can vary, yiedling the same output (try it yourself if you don’t believe me)
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Column 1</th>
+<th>Column 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blah</td>
+<td>blah</td>
+</tr>
+<tr>
+<td>blah</td>
+<td>blah</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition exercise">
+<p class="admonition-title">Making a two column table</p>
+<p>Can you write the Markdown-formatted text to generate the exact following table (don’t forget the cell alginment)?</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Gene</th>
+<th style="text-align: left;"><em>p-value</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Gene A</td>
+<td style="text-align: left;">0.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gene B</td>
+<td style="text-align: left;">0.005</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gene C</td>
+<td style="text-align: left;">0.01</td>
+</tr>
+</tbody>
+</table>
+<details class="success">
+<summary>Solution</summary>
+<div class="highlight"><pre><span></span><code>| Gene        | _p-value_ |
+| :----------:| :--------:|
+| Gene A      | 0.1  |
+| Gene B      | 0.005|
+| Gene C      | 0.01 |
+</code></pre></div>
+</details>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Making tables in Markdown…</p>
+<p>Making small tables is simple enough but making larger tables can get painful in markdown. For larger tables in markdon the <a href="https://www.tablesgenerator.com/markdown_tables">Markdown Tables Generator</a> is a great tool. Make your table using their graphical interface and then copy the generated Markdown-formatted text into your file. In RStudio you can use the <a href="https://posit.co/blog/exploring-rstudio-visual-markdown-editor/"><strong>visual</strong> editor</a> to do the <a href="https://rstudio.github.io/visual-markdown-editing/content.html#:~:text=You%20can%20insert%20a%20table,delete%20command%20will%20behave%20accordingly.">same</a>, so you don’t even have to leave the warm confines of RStudio.</p>
+</div>
+<h3 id="336-paragraphs">3.3.6 Paragraphs</h3>
+<p>Formatting paragrahs is simple but perhaps not as intuitive in Markdown. For example, consider the verse below (I got <a href="https://openai.com/blog/chatgpt">ChatGPT</a> to wax poetic about the graces of Markdown):</p>
+<p>In the realm of code, where words and logic intertwine,<br>
+There exists a tool, both simple and sublime.<br>
+Markdown, the poet’s brush, the programmer’s aid,<br>
+Unveils the advantages of a seamless cascade.  </p>
+<p>You may be tempted to think, that way you format a pargraph like this in Markdown would be like so:</p>
+<div class="highlight"><pre><span></span><code>In the realm of code, where words and logic intertwine,
+There exists a tool, both simple and sublime.
+Markdown, the poet's brush, the programmer's aid,
+Unveils the advantages of a seamless cascade.
+</code></pre></div>
+<p>Unfortunately, if you did this the whole verse would come in a single line! Not very fitting for a poem.</p>
+<p>To acheive the desired affect, you can enforce a <em>hard break</em> by inserting a new line between each line of the verse:</p>
+<div class="admonition example">
+<p class="admonition-title">Hard breaks for formatting</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked id="__tabbed_8_1" name="__tabbed_8" type="radio"><input id="__tabbed_8_2" name="__tabbed_8" type="radio"><div class="tabbed-labels"><label for="__tabbed_8_1">Markdown:</label><label for="__tabbed_8_2">Rendered output:</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>In the realm of code, where words and logic intertwine,
+
+There exists a tool, both simple and sublime.
+
+Markdown, the poet's brush, the programmer's aid,
+
+Unveils the advantages of a seamless cascade.
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>In the realm of code, where words and logic intertwine,</p>
+<p>There exists a tool, both simple and sublime.</p>
+<p>Markdown, the poet’s brush, the programmer’s aid,</p>
+<p>Unveils the advantages of a seamless cascade.</p>
+</div>
+</div>
+</div>
+</div>
+<p>The hard break works but not the formatting is now disconnected between the Markdown document and the rendered output. A more subtle way to achieve this sort of paragraph formatting effect is to use what is called <em>soft break</em>. A soft break involves inserting two blank spaces with the <span class="keys"><kbd class="key-space">Space</kbd></span> key at the end of each line. A soft break acheives the same effect a a hard break but leaves more of a semblance between the text in the Markdown document and the final rendered document. which may be more desirable in several instances.</p>
+<div class="admonition question">
+<p class="admonition-title">Using soft breaks</p>
+<p>Here is the last verse from the ChatGP epic poem about the advanatges of Makrdown for literate progamming:</p>
+<p>So let markdown be your ally, your creative friend,<br>
+In the realm of literate programming, where wonders never end.<br>
+For within its simplicity lies a powerful tool,<br>
+Unleashing the potential of both scholar and fool.  </p>
+<p>Use <strong><em>soft breaks</em></strong> in Markdown to recreate the formatted verse above.</p>
+</div>
+<h2 id="34-summary">3.4 Summary</h2>
+<ul>
+<li>Markdown is a simple language for formatting text.  </li>
+<li>Markdown is not the only tool for formatting text but it’s easy to learn making it one of the most popular tools for various purposes including Literate Programming.  </li>
+<li>Markdown is supported by many of the popular IDEs including RStudio</li>
+<li>Although basic Markdown has limited functionality, many extensions, often language-specific, exist to enhance Markdown’s capability.</li>
+</ul></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../chapter_02/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2. The Literate Programming Approach: A Primer">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                2. The Literate Programming Approach: A Primer
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Chapter_04/" class="md-footer__link md-footer__link--next" aria-label="Next: 4. An Introduction to Quarto">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                4. An Introduction to Quarto
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      By the ELIXIR Training Platform
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
