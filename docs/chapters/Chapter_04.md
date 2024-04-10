@@ -63,8 +63,6 @@ Quarto documents bring together code, results, and narrative in a single file, e
 2. **Quarto-formatted Text**: Narrative text follows Markdown syntax, allowing for straightforward formatting of headers, lists, links, and more. This makes your document both readable and versatile.
 3. **R Code Chunks**: Enclosed by three backticks (```), code chunks can contain R code (or other supported languages) for executing within your document. These chunks can perform data analysis, visualize results, and more. You can directly copy and paste existing R scripts into these chunks, with Quarto handling the execution and integration of results into the final document.
 
-Quarto's flexibility extends to supporting multiple programming languages within the same document, facilitating interdisciplinary collaboration and analysis.
-
 **Example Code:**
 
 ```{r}
@@ -128,16 +126,17 @@ This header sets up the document with a title, an author, specifies that code ec
         1. **Create Document**: In RStudio, use `File > New File > Quarto Document`.  
         2. **Edit YAML Header**: Add `title: "Your Title"` and `author: "Your Name"`.  
         3. **Set Output**: Ensure the YAML includes `format: html`.  
-        4. **Render**: Click the "Render" button to produce your HTML document.Here are some potential problems we can think of (you may have similar):
+        4. **Render**: Click the "Render" button to produce your HTML document.
 
 
 *Insert screenshots demonstrating each step for clarity.*
 
-        To do : *[Provide screenshots of the solution here]* or describe it 
         
 ## 4.5 Writing Quarto Documents
 
 ### RStudio Visual Editor: Simplified Formatting
+
+*Insert screenshots of visual editor.*
 
 The RStudio Visual Editor offers a user-friendly approach to formatting Quarto documents, featuring a rich text interface similar to popular word processors. This guide will help you navigate the essential features of the Visual Editor to enhance your document creation process.
 
@@ -147,7 +146,7 @@ To access the Visual Editor, click the "Visual" option at the top-left corner of
 
 #### Switch Between Modes
 
-RStudio allows you to toggle between Source and Visual modes effortlessly, enabling you to work with the code directly or through the visual interface without losing your place. This flexibility ensures that you can enjoy the best of both worlds—direct code manipulation and simplified visual editing.
+RStudio allows you to toggle between Source and Visual modes effortlessly, enabling you to work with the code directly or through the visual interface without losing your place. 
 
 ### Writing Text
 
@@ -200,7 +199,8 @@ Images significantly enhance the visual appeal and clarity of documents. To inse
 ```markdown
 ![Alt text for the image](path/to/image.png "Optional title")
 ```
-**Browse and Insert**: Click on the image icon in the formatting bar, browse your computer to find the image file, and insert it into your Qmd document.
+
+**Using visual editor**: Click on the image icon in the formatting bar, browse your computer to find the image file, and insert it into your Qmd document.
 
 ### Adding Links
 
@@ -321,27 +321,28 @@ When naming your code chunks, consider the following best practices:
 - **Keep it Short and Simple**: While being descriptive, also try to be concise to keep the readability of the document high.
 - **Use a Consistent Naming Scheme**: This could be based on the type of analysis, data being used, or the output being generated. Consistency helps in quickly understanding the role of different code chunks in your document.
 
-### Example of Naming and Referencing Code Chunks
+To name a code chunk in Quarto, you add a label. This helps you refer to the chunk later in your document. For example:
 
 ```markdown
 #| label: data-summary
 summary(cars)
 ```
+This chunk is labeled data-summary, allowing you to mention it easily elsewhere.
 
-In the narrative sections of your Quarto document, the ability to reference named code chunks can significantly enhance the clarity and coherence of your explanations. By directly linking to the results or analyses provided by specific chunks, you create a more interactive and connected document. This approach not only improves the flow of your document but also makes it easier for readers to follow your analytical journey.
+**The Importance of Naming and Referencing Code Chunks**
+Naming code chunks allows you to refer to them in your narrative sections, improving the clarity of your explanations. When you link directly to the results or analyses of specific chunks, your document becomes more connected and easier to navigate. This method improve the document's structure and guides readers through your analysis.
 
 ### Linking to Named Chunks in Your Narrative
-
-When you want to mention or discuss the output of a code chunk within your narrative, you can refer to it by its label. This method allows you to seamlessly integrate your analytical findings with your textual explanations, making your document more dynamic and informative.
+You can refer to a named code chunk in your narrative by its label. This integration helps in making your explanations more cohesive with your analytical findings.
 
 ### Example of Referencing a Named Chunk
 
-Assume you have a code chunk labeled `plot-distribution` that generates a plot of data distribution. In your narrative, you could refer to this plot like so:
+Suppose you have a code chunk named plot-distribution that generates a plot. You can reference this plot in your narrative like so:
 
 ```markdown
 See the distribution of our data in the "plot-distribution" section below
 ```
-This textual reference guides readers directly to the relevant analysis, enhancing the document's navigability.
+This reference makes it easy for readers to find and understand the relevant analysis, improving the navigability of your document.
 
 ### Integrating a Bibliography in Quarto Documents
 
