@@ -12,7 +12,7 @@ It is time for a more comprehensive rounding-off exercise to bring it all togeth
 !!! question "Exercise"
 
     Return to our original example of [non-LP script](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/blob/main/docs/scripts/analysis.R) and rework it into a full fledged literate programming 
-    document by applying uour knowledge of markdown and quarto to transform the original script into an LP HTML or PDF document (Fig. 5.1).
+    document by applying uour knowledge of markdown and quarto to transform the original script into an LP HTML or PDF document (Fig. 5.1). The script relies on the the [Wiconsin Breast Cancer data set](https://github.com/clement-lee/coderep/blob/master/data/breast-cancer-wisconsin.csv).
 
     Specifically:
     
