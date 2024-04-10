@@ -8,13 +8,12 @@ By the end of this chapter, you'll have a solid understanding of Quarto and how 
 Quarto isn't just a new version of R Markdown; it's a powerful tool made by Posit for data scientists, researchers, and anyone sharing knowledge. Built on Pandoc, this free tool works with many programming languages like R, Python, and Julia, and lets you create documents in formats such as HTML, PDF, and Word.
 
 **Why Quarto is great:**
-- Works with many languages: Facilitates seamless integration of R, Python, Julia, and Observable JS, catering to interdisciplinary projects.
-- Versatility in Output Formats: From academic PDFs to web pages and presentations, Quarto adapts your work for any audience.
-- Guaranteed Reproducibility: Ensures your research can be easily verified, fostering a culture of transparency and reliability.
 
-Quarto also lets you:
-- Make websites: Share your projects online.
-- Create learning materials: Build tutorials or textbooks for online learning.
+1. Facilitates seamless integration of R, Python, Julia, and Observable JS, catering to interdisciplinary projects.
+2. From academic PDFs to web pages and presentations, Quarto adapts your work for any audience.
+3. Ensures your research can be easily verified, fostering a culture of transparency and reliability.
+
+Quarto also lets you make websites and build tutorials or textbooks for online learning.
 
 Check out the [Quarto gallery](https://quarto.org/docs/gallery/) to see its capabilities. 
 
