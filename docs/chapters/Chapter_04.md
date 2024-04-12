@@ -21,18 +21,18 @@ Check out the [Quarto gallery](https://quarto.org/docs/gallery/) to see its capa
 In this part of the tutorial, we'll focus on using Quarto with R. But remember, Quarto isn't limited to [R](https://quarto.org/docs/computations/r.html) — it also works with Python, Julia, and Observable JS!
 
 ### Installation Guide 
-Before we start, it's essential to set up our environment. Here's what you need:
+Before we start, it's essential to set up our environment. Here's what you need (you should already have the first three from the [software setup](../../#software-setup)):
 
 1. **RStudio Installation**: Ensure you have the latest version of RStudio. This will provide the best compatibility with Quarto.
 
-2. **Quarto Installation:** Visit the [Quarto website](https://quarto.org/) for installation instructions. For a more detailed guide, check out the [Quarto guide]([https://quarto.org/](https://quarto.org/docs/guide/)). Make sure to follow the steps appropriate for your operating system.
+2. **Quarto Installation**: Visit the [Quarto website](https://quarto.org/) for installation instructions. For a more detailed guide, check out the [Quarto guide]([https://quarto.org/](https://quarto.org/docs/guide/)). Make sure to follow the steps appropriate for your operating system.
    
-3. **TinyTeX Setup**
+3. **TinyTeX Setup**:
 TinyTeX is a minimal TeX distribution specifically tailored for Quarto, which you'll need for generating PDFs. Here's how to install it:
 - Open RStudio, navigate to *Tools* > *Terminal* > *New Terminal*.
 - In the terminal, type *quarto install tinytex* to start the installation process.
 
-4. **Update R Packages**
+4. **Update R Packages**:
 To ensure smooth operation with Quarto, update the following R packages by running this command in RStudio:
 
 ```R
