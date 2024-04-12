@@ -60,13 +60,14 @@ Please cite as:
 ## Setup
 
 ### Data setup
-To run this lesson you need to install data from the [Elixir CodeRep R script repository](https://github.com/elixir-europe-training/ELIXIR-TrP-CodeRep-Example-Python) NB This currently points to the __Python___ example script - need Alexia to create one for R and then use link to that here....   
+To run this lesson you need to download the data [here](https://github.com/elixir-europe-training/ELIXIR-TrP-LiterateProgrammingR-CodeRep/tree/main/docs/data/breast-cancer-wisconsin.csv); the GitHub repository at which the csv file is situated also contains the scripts that generate the page you are looking at. To ensure that the code in [Chapter 4](./chapters/Chapter_04) works, it is recommended that you put the downloaded csv file a (sub-)directory called `data/` on your machine; see the example structure in [Chapter 2](./chapters/chapter_02/#221-example-structure).
 
 ### Software setup
-To run this course you need to install the following:  
+The following is consistent with the [installation guide](./chapters/Chapter_04/#installation-guide) in [Chapter 4](./chapters/Chapter_04). To run this lesson you need to install the following:  
 
-  * R and Rstudio - please follow the instructions [here](https://posit.co/download/rstudio-desktop/) for your machine.   
-  * Quarto - please follow the instructions [here](https://quarto.org/docs/get-started/) for your machine.
-  * TinyTex (R package) - required if you want to use LaTex and/or render PDFs. This is an R package, more info and installation instructions [here](https://yihui.org/tinytex/)
+  * R - follow the instructions [here](https://cran.r-project.org/). You will need R for everything that follows.  
+  * RStudio - follow the instructions [here](https://posit.co/download/rstudio-desktop/). You will need RStudio (and R) for Chapters [2](./chapters/chapter_02) and [3](./chapters/chapter_03).   
+  * Quarto - follow the instructions [here](https://quarto.org/docs/get-started/). You will need Quarto (and R and RStudio) for Chapters [4](./chapters/Chapter_04) and [5](./chapters/chapter_05).  
+  * TinyTex (R package) - required if you want to use LaTeX and/or render PDFs. This is an R package, more info and installation instructions [here](https://yihui.org/tinytex/).
 
 
