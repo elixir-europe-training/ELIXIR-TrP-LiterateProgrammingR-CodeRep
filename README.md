@@ -10,4 +10,4 @@ While the training can be completed without referring to this repository at all,
 
 Please cite as
 
-> Arif, S., Fernandes, M., Lee, C., & Pierfederici, E. (2024). Literate Programming in R. Zenodo. https://doi.org/10.5281/zenodo.11259813
+>  Saad Arif, Mark Fernandes, Clement Lee, & Elisa Pierfederici. (2024). Literate Programming in R. Zenodo. https://doi.org/10.5281/zenodo.11259813
