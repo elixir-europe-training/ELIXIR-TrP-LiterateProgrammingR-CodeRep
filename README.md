@@ -1,6 +1,6 @@
 # Elixir Training Lesson: Literate Programming in R
 
-(placeholder for badge) 
+[![DOI](https://zenodo.org/badge/638911137.svg)](https://zenodo.org/badge/latestdoi/638911137) 
 
 This repository contains the scripts and source files for the [Elixir Training Lesson: Literate Programming in R](https://elixir-europe-training.github.io/ELIXIR-TrP-LiterateProgrammingR-CodeRep/), using the template from [this repository](https://elixir-europe-training.github.io/ELIXIR-TrP-LessonTemplateInstructions-MkDocs/)
 
@@ -10,4 +10,4 @@ While the training can be completed without referring to this repository at all,
 
 Please cite as
 
-(placeholder for citation)
+>  Saad Arif, Mark Fernandes, Clement Lee, & Elisa Pierfederici. (2024). Literate Programming in R. Zenodo. https://doi.org/10.5281/zenodo.11259813
