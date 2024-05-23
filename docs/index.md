@@ -53,7 +53,7 @@ Greek Mythology icons made by [max.icons](https://www.flaticon.com/authors/maxic
 
 Please cite as:
 
-  1. Enter your citation here.
+  1. Saad Arif, Mark Fernandes, Clement Lee, & Elisa Pierfederici. (2024). Literate Programming in R. Zenodo. https://doi.org/10.5281/zenodo.11259813
   2. Geert van Geest, Elin Kronander, Jose Alejandro Romero Herrera, Nadja Žlender, & Alexia Cardona. (2023). The ELIXIR Training Lesson Template - Developing Training Together (v1.0.0-alpha). Zenodo. https://doi.org/10.5281/zenodo.7913092. 
 
 ---
